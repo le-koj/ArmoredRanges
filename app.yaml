@@ -1,0 +1,34 @@
+###############################################
+### FILE: Configuration File                ###
+###                                         ###
+### DESCRIPTION: main configuration file    ###
+###             for armoredrange.com webapp ###
+###                                         ###
+### PURPOSE: specifies how URL paths        ###
+###          correspond to request handlers ###
+###          and static files,  contains    ###
+###          other information about app    ###
+###############################################
+
+runtime: python27             # runtime program language
+api_version: 1                # application program interface version
+threadsafe: true
+
+##______handlers for posted/requested urls_____##
+handlers:
+- url: /static                  # '/static' file paths
+  static_dir: static            # static folder directory
+
+- url: .*                       # all other file paths
+  script: main.app              # main.py module
+
+- url: /armoredrange/static/images
+  script: main.app
+
+##_______frameworks libraries in use_____##
+libraries:
+- name: webapp2                 # library name
+  version: "2.5.2"              # library version
+
+- name: jinja2                  # html template library name
+  version: latest
