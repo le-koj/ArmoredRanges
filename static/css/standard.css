@@ -1,0 +1,294 @@
+/*________________________
+
+name: STANDARD CSS FILE
+version: 1
+date: 07/19/2018
+author: Le Koj
+website: armoredrange.com
+
+_________________________*/
+
+  /*** Initial CSS settings  ***/
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+
+  padding: 0;
+  margin: 0;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+:link, :visited {
+  text-decoration: none;
+}
+
+
+  /*** General body settings  ***/
+body {
+  background-color: #fff;   /*-- white background  --*/
+
+  color: #000;        /*-- black text  --*/
+  font-family: "Source Sans Pro",Helvetica,sans-serif, verdana, Arial;
+  font-size: 14px;        /*-- font size = default browser settings --*/
+  font-weight: normal;
+  text-align: center;     /*-- centered text placement  --*/
+
+  overflow-x: scroll;
+  min-width: 320px;
+}
+
+  /*** Nav-Bar settings  ***/
+.nav-bar {
+   position: fixed;    /*-- stationary at top of window  --*/
+   top: 0px;           /*-- very top-corner position  --*/
+   left: 0px;          /*-- very left-corner position  --*/
+   z-index: 999;       /*-- top stacked element  --*/
+
+   background-color: #332D2E;
+
+   width: 100%;      /*-- full window width  --*/
+   height:5vh ;      /*-- 5% viewport height  --*/
+   min-height: 75px;    /*-- restrict minimum viewport height  --*/
+   max-height: 90px;    /*-- restrict maximum viewport height  --*/
+
+    /*-- set as grid  --*/
+   display: grid;
+
+    /*-- set as 2-row grid  --*/
+   grid-template-rows:  [start] 60% [mid] 40% [end];
+
+    /*-- set grid areas  --*/
+   grid-template-areas: "logo-bar"
+                         "menu-bar";
+  }
+
+  #logo-bar {
+    grid-area: logo-bar;    /*-- place in row-1  --*/
+    justify-items: start;
+  }
+
+  #menu-bar {
+    grid-area: menu-bar;
+    width: 100%;
+
+    padding-left: 20px;
+    padding-right: 30px;
+
+    background-color: #00AEEF;    /*-- light blue bg-color for menu options --*/
+
+    font-weight: 300;
+    line-height: 20px;
+  }
+
+  #menu-bar .left, #menu-bar a {
+    color: #fff;
+  }
+
+  #menu-bar .left {
+    height: 100%;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  #menu-bar .right {
+    height: 100%;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  #menu-bar #scroll-top{
+    font-size: 20px;
+
+    padding-top: 8px;
+
+    /* border: 1px solid black; */
+  }
+
+  #menu-bar .left:hover {
+    background-color: #337ab7;
+  }
+
+  #menu-bar .right:hover {
+    background-color: #337ab7;
+  }
+
+    /*** footer settings  ***/
+  footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 338px;
+
+    background-color: #484242;
+
+    /*-- set as grid  --*/
+    display: grid;
+
+    /*-- set as 2-row grid  --*/
+    grid-template-rows:  [start] 80% [row-1-2] 20% [end];
+
+    /*-- set grid areas  --*/
+    grid-template-areas: "xtra-info-section"
+                         "share-copyright-section";
+  }
+
+  .xtra-info-section {
+    grid-area: xtra-info-section;
+
+    /*-- set as grid  --*/
+    display: grid;
+
+    /*-- set as 2-row grid  --*/
+    grid-template-rows:  [start] 15% [row-1-2] 85% [end];
+
+    /*-- set grid areas  --*/
+    grid-template-areas: "footer-scroll-top"
+                         "info-section";
+
+  }
+
+  #footer-scroll-top {
+    grid-area: footer-scroll-top;
+    justify-self: center;
+    align-self: center;
+
+    width: 100%;
+
+    font-size: 25px;
+    font-weight: bolder;
+
+    /*border: 1px solid black;*/
+  }
+
+  #footer-scroll-top a {
+    color: #00AEEF;
+  }
+
+  #info-section {
+    grid-area: info-section;
+    width: 100%;
+    height: 100%;
+
+    /*-- set as grid  --*/
+    display: grid;
+
+    /*-- set as 12-column grid  --*/
+    grid-template-columns:  [start] repeat(12, 1fr) [end];
+
+    /*border: 1px solid black;*/
+  }
+
+  #info-section-about {
+    grid-column-start: 5;
+    grid-column-end: 7;
+    width: 100%;
+
+    padding: 10px;   /*-- 2x unit padding */
+    text-align: left;
+
+    /*border: 1px solid #fff;*/
+  }
+
+  #info-section-about li{
+    display: block;
+    margin: 5px;  /*-- unit margin */
+
+    color: #fff;
+  }
+
+  #info-section-about a{
+    color: #999696;
+  }
+
+  #info-section-about a:hover{
+    color: #00AEEF;
+  }
+
+  #info-section-about #heading{
+    color: #eaeaea;
+    font-weight: 600;
+  }
+
+  #info-section-address {
+    grid-column-start: 7;
+    grid-column-end: 10;
+    width: 100%;
+
+    /*border: 1px solid #f2ff22;*/
+  }
+
+  .share-copyright-section {
+    grid-area: share-copyright-section;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: #342d2e;
+
+    /*-- set as grid  --*/
+    display: grid;
+
+    /*-- set as 12-column grid  --*/
+    grid-template-columns:  [start] repeat(12, 1fr) [end];
+
+    /*border: 1px solid #e4f4d4;*/
+  }
+
+  .share-copyright-section ul {
+    grid-column-start: 3;
+    grid-column-end: 7;
+
+    height: 100%;
+
+    /*-- set as grid  --*/
+    display: grid;
+
+    /*-- set as 12-column grid  --*/
+    grid-template-columns:  [start] 40% [middle] repeat(3, 1fr) [end];
+
+    /*border: 1px solid #f2ff22;*/
+
+  }
+
+  .share-copyright-section li {
+    align-self: center;
+
+    color: #706c6c;
+
+    /*border: 1px solid #f2ffff;*/
+  }
+
+  .share-copyright-section a {
+    align-self: center;
+
+    color: #c2c0c0;
+
+    /*border: 1px solid #f2ffff;*/
+  }
+
+  .share-copyright-section p {
+    grid-column-start: 7;
+    grid-column-end: 10;
+
+    align-self: center;
+
+    width: 100%;
+
+    color: #706c6c;
+
+    /*border: 1px solid #f2ffff;*/
+  }
