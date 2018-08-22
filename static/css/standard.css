@@ -40,8 +40,8 @@ body {
   background-color: #fff;   /*-- white background  --*/
 
   color: #000;        /*-- black text  --*/
-  font-family: "Source Sans Pro",Helvetica,sans-serif, verdana, Arial;
-  font-size: 14px;        /*-- font size = default browser settings --*/
+  font-family: "Source Sans Pro", Helvetica,sans-serif, verdana, Arial;
+  font-size: .875em;        /*-- 14px of 16px --*/
   font-weight: normal;
   text-align: center;     /*-- centered text placement  --*/
 
@@ -52,16 +52,16 @@ body {
   /*** Nav-Bar settings  ***/
 .nav-bar {
    position: fixed;    /*-- stationary at top of window  --*/
-   top: 0px;           /*-- very top-corner position  --*/
-   left: 0px;          /*-- very left-corner position  --*/
+   /*top: 0px;           /*-- very top-corner position  --*/
+   /*left: 0px;          /*-- very left-corner position  --*/
    z-index: 999;       /*-- top stacked element  --*/
 
-   background-color: #332D2E;
+   background-color: #342d2e /*#332D2E*/;
 
    width: 100%;      /*-- full window width  --*/
-   height:5vh ;      /*-- 5% viewport height  --*/
-   min-height: 75px;    /*-- restrict minimum viewport height  --*/
-   max-height: 90px;    /*-- restrict maximum viewport height  --*/
+   height:90px ;
+   /*min-height: 75px;    /*-- restrict minimum viewport height  --*/
+   /*max-height: 90px;    /*-- restrict maximum viewport height  --*/
 
     /*-- set as grid  --*/
    display: grid;
@@ -78,6 +78,15 @@ body {
     grid-area: logo-bar;    /*-- place in row-1  --*/
     justify-items: start;
   }
+
+/*
+  #logo-bar img{
+    width: 160px;
+    float: left;
+    margin-left: 15px;
+
+    padding-top: 3px;
+  } */
 
   #menu-bar {
     grid-area: menu-bar;
@@ -98,14 +107,14 @@ body {
 
   #menu-bar .left {
     height: 100%;
-    padding: 5px;
+    padding: 7px;
     padding-left: 10px;
     padding-right: 10px;
   }
 
   #menu-bar .right {
     height: 100%;
-    padding: 5px;
+    padding: 7px;
     padding-left: 10px;
     padding-right: 10px;
   }
@@ -113,7 +122,7 @@ body {
   #menu-bar #scroll-top{
     font-size: 20px;
 
-    padding-top: 8px;
+    padding-top: 10px;
 
     /* border: 1px solid black; */
   }
@@ -126,23 +135,321 @@ body {
     background-color: #337ab7;
   }
 
+    /*** opening article settings  ***/
+ .opening-article {
+    position: relative;
+    top: 90px;
+    background: url("../images/armored-range-logo.jpg") no-repeat center center;
+    background-color: #000;
+    background-size: 100% auto;
+    width: 100%;
+    height: 542px ;/*605px;   /*45vh;*/
+  }
+
+/*.blurred-bg {
+  width: 100%;
+  height: 60vh;
+  background-color: rgba(30,23,13);
+  /*border: 3px solid black;*/
+
+  /*-- set as grid  --*/
+  display: grid;
+
+  /* set as 2-row grid */
+  grid-template-rows: [start] 70% [row-3] 30% [end];
+
+  /* set grid area */
+  grid-template-areas: "logo"
+                      "statement";
+  }
+
+#opening-article-logo {
+  grid-area: logo;
+  width: 100%;
+  height: 100%;
+
+  /*padding-left: 155px;*/
+
+  /*-- set as grid  --*/
+  display: grid;
+
+  /* set as 1-row grid */
+  grid-template-rows: [start] 50% [end];
+
+  /* set as 1-column grid */
+  grid-template-rows: [start] 100% [end];
+
+  /* set grid area */
+  grid-template-areas: "article-logo";
+
+  /*border: 3px solid black;*/
+}
+
+#opening-article-logo img {
+  grid-area: article-logo;
+  height: 35vh;
+  justify-self: center;
+  align-self: start;
+
+  /*border: 3px solid black;*/
+
+}
+
+#opening-article-statement {
+  grid-area: statement;
+  justify-self: center;
+  align-self: center;
+  width: 50%;
+  height: 70%;
+
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.5em;
+  color: #00AEEF;
+
+  /*border: 3px solid black;*/
+}
+
+  /*** product section settings  ***/
+.product-section {
+  position: relative;
+  top: 90px;
+  /*background-color: #000;*/
+  width: 1170px;
+  height: 400px; /*35vh;*/
+
+  margin: 0 auto; /* center box */
+
+  /*-- set as grid  --*/
+  display: grid;
+
+  /* set as 3-row grid */
+  grid-template-rows: [start] 15% [row-2] 65% [row-3] 20% [end];
+
+  /* set grid area */
+  grid-template-areas: "section-header"
+                       "product-table"
+                       "section-button";
+
+  /*border: 3px solid black;*/
+
+}
+
+  .product-section .section-header {
+    grid-area: section-header;
+    align-self: center;
+    justify-self: start;
+    width: auto;
+
+    font-style: italic;
+    font-size: 2em;
+    font-weight: 600;
+    color: #00AEEF;
+    letter-spacing: 1px;
+
+    /*border: 1px solid black;*/
+  }
+
+  .product-section #product-table {
+    grid-area: product-table;
+    width: 100%;
+
+    /*set as grid*/
+    display: grid;
+
+    /* set as 12-column grid */
+    grid-template-columns: [start] repeat(3, 1fr) [end];
+
+    /* set grid area */
+    grid-template-areas: "product-1 product-2 product-3";
+
+    grid-column-gap: 10px;
+
+    /*border: 1px solid black;*/
+  }
+
+  .product-box {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    /* set as grid */
+    display: grid;
+
+    /* set as 2-row grid */
+    grid-template-rows: [start] 70% [last] 30% [end];
+
+    background: #c0c0c0;
+  }
+
+  #product-1 {
+    grid-area: product-1;
+  }
+
+  .product-box img {
+    width: 100%;
+    height: 100%;
+
+    background: #fff;
+  }
+
+  .product-box img:hover {
+    background: #ececec;
+  }
+
+  #product-2 {
+    grid-area: product-2;
+  }
+
+  #product-3 {
+    grid-area: product-3;
+  }
+
+  .product-section .section-button {
+    grid-area: section-button;
+    width: 100%;
+
+    /*-- set as grid  --*/
+    display: grid;
+
+    /*-- set as 12-column grid  --*/
+    grid-template-columns:  [start] repeat(1, 1fr) [end];
+
+   /* set grid area */
+   grid-template-areas: "button-text";
+
+   justify-items: center;
+   align-items: center;
+
+  }
+
+  /*...
+  .product-section .button {
+    border: 1px solid #000;
+    width: 100px;
+
+  } ...*/
+
+  .product-section .button-text{
+    grid-area: button-text;
+
+    width: 250px;
+    height: 49px;
+
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #00AEEF;
+
+    padding-top: 10px;
+
+    border: 2px solid #00AEEF;
+    -webkit-border-radius: .2em .2em .2em .2em / .2em .2em .2em .2em;
+       -moz-border-radius: .2em .2em .2em .2em / .2em .2em .2em .2em;
+            border-radius: .2em .2em .2em .2em / .2em .2em .2em .2em;
+
+  }
+
+  .product-section .button-text:hover {
+    color: #fff;
+    background: #00AEEF;
+  }
+
+
+
+  /****************   CONTAINER.HTML   ******/
+
+  .video-section {
+    position: relative;
+    top: 90px;
+    background-color: #000;
+    background-position: center;
+    height: 85vh;
+    border: 2px solid #00AEEF;
+
+    /* set as grid */
+    display: grid;
+
+    /* set as 1-row-grid */
+    grid-template-rows: [start] 100% [end];
+
+    /* set grid area */
+    grid-template-areas: "fill";
+
+  }
+
+  .bg-video {
+    grid-area: fill;
+    height: 100%;
+    width: 100%;
+    background: #c0c0c0;
+
+    border: 2px solid #000;
+  }
+
+  .video-play-button  {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    border: 2px solid #00AEEF;
+  }
+
+  .container-section-2 {
+    position: relative;
+    top: 90px;
+    height: 250px;
+    background: #00ff00;
+    border: 1px solid #fff;
+  }
+
+  .container-section-3 {
+    position: relative;
+    top: 90px;
+    height: 70px;
+    background: #c0c0c0;
+
+    border: 1px solid #000;
+  }
+
+  .container-section-3 a {
+    display: inline;
+  }
+
+  .container-section-4 {
+    position: relative;
+    top: 90px;
+    height: 230px;
+    background: #f4f4f4;
+
+    border: 1px solid #fff;
+  }
+
+  .features-section {
+    position: relative;
+    top: 90px;
+    height: 2000px;
+  }
+
+  /****************   END CONTAINER.HTML   ******/
+
     /*** footer settings  ***/
   footer {
-    position: absolute;
-    bottom: 0;
+    position: relative;
+    top: 90px;
     width: 100%;
-    height: 338px;
+    height: 339px;
 
     background-color: #484242;
 
     /*-- set as grid  --*/
     display: grid;
 
-    /*-- set as 2-row grid  --*/
-    grid-template-rows:  [start] 80% [row-1-2] 20% [end];
+    /*-- set as 3-row grid  --*/
+    grid-template-rows:  [start] 10% [row-1-2] 70% [row-2-3] 20% [end];
 
     /*-- set grid areas  --*/
-    grid-template-areas: "xtra-info-section"
+    grid-template-areas: "footer-scroll-top"
+                         "info-section"
                          "share-copyright-section";
   }
 
@@ -156,17 +463,18 @@ body {
     grid-template-rows:  [start] 15% [row-1-2] 85% [end];
 
     /*-- set grid areas  --*/
-    grid-template-areas: "footer-scroll-top"
-                         "info-section";
+    /*grid-template-areas: "footer-scroll-top"
+                         "info-section";*/
 
   }
 
   #footer-scroll-top {
     grid-area: footer-scroll-top;
-    justify-self: center;
-    align-self: center;
+    justify-items: center;
+    align-items: center;
 
     width: 100%;
+    height: 100%;
 
     font-size: 25px;
     font-weight: bolder;
@@ -186,16 +494,46 @@ body {
     /*-- set as grid  --*/
     display: grid;
 
-    /*-- set as 12-column grid  --*/
-    grid-template-columns:  [start] repeat(12, 1fr) [end];
+    /*-- set as 1-column grid  --*/
+    grid-template-columns:  [start] 100% [end];
+
+    /* set as 1-row-grid */
+    grid-template-rows: [start] 100% [end];
+
+    /* set grid area */
+    grid-template-areas: "info-section-wrapper";
+
+
+    /*border: 1px solid black;*/
+  }
+
+  .info-section-wrapper {
+    grid-area: info-section-wrapper;
+    justify-items: center;
+    align-items: center
+
+    width: 25%;
+    min-width: 600px;
+    height: 95%;
+
+    margin: 0 auto;
+
+    /*-- set as grid  --*/
+    display: grid;
+
+    /*-- set as 2-column grid  --*/
+    grid-template-columns:  [start] repeat(2, 1fr) [end];
+
+    /* set grid area */
+    grid-template-areas: "info-section-about info-section-address";
 
     /*border: 1px solid black;*/
   }
 
   #info-section-about {
-    grid-column-start: 5;
-    grid-column-end: 7;
+    grid-area: info-section-about;
     width: 100%;
+    height: 100%;
 
     padding: 10px;   /*-- 2x unit padding */
     text-align: left;
@@ -205,7 +543,7 @@ body {
 
   #info-section-about li{
     display: block;
-    margin: 5px;  /*-- unit margin */
+    margin: 10px;  /*-- 2x unit margin */
 
     color: #fff;
   }
@@ -224,11 +562,41 @@ body {
   }
 
   #info-section-address {
-    grid-column-start: 7;
-    grid-column-end: 10;
+    grid-area: info-section-address;
     width: 100%;
+    height: 100%;
+
+    margin: 0px 0px 0px 0px;   /*-- 2x unit margin */
+    padding-left: 20px;
+
+    border-left: 1.5px dashed #342d2e;
 
     /*border: 1px solid #f2ff22;*/
+  }
+
+  #info-section-address img {
+    display: block;
+    height: 10vh;
+    min-height: 111px;
+    margin: 0 auto;
+    margin-bottom: 5px;
+
+  }
+
+  #info-section-address p {
+    display: block;
+    margin: 2px auto;
+    letter-spacing: 3px;
+
+    color: #999696;
+
+    /*border: 1px solid #fff;*/
+  }
+
+  #info-section-address p b {
+    color: #bcbcbc;
+
+    /*border: 1px solid #fff;*/
   }
 
   .share-copyright-section {
@@ -243,36 +611,38 @@ body {
     display: grid;
 
     /*-- set as 12-column grid  --*/
-    grid-template-columns:  [start] repeat(12, 1fr) [end];
+    grid-template-columns:  [start] repeat(2, 1fr) [end];
+
+    /* set grid area */
+    grid-template-areas: "ul copyright";
 
     /*border: 1px solid #e4f4d4;*/
   }
 
   .share-copyright-section ul {
-    grid-column-start: 3;
-    grid-column-end: 7;
+    grid-area: ul;
+    justify-self: end;
+    align-self: center;
 
-    height: 100%;
-
-    /*-- set as grid  --*/
-    display: grid;
-
-    /*-- set as 12-column grid  --*/
-    grid-template-columns:  [start] 40% [middle] repeat(3, 1fr) [end];
+    width: 70%;
+    min-width: 525px;
 
     /*border: 1px solid #f2ff22;*/
 
   }
 
   .share-copyright-section li {
-    align-self: center;
+    display: inline;
+    float: none;
+
+    margin: 20px;
 
     color: #706c6c;
 
     /*border: 1px solid #f2ffff;*/
   }
 
-  .share-copyright-section a {
+.share-copyright-section a {
     align-self: center;
 
     color: #c2c0c0;
@@ -281,12 +651,12 @@ body {
   }
 
   .share-copyright-section p {
-    grid-column-start: 7;
-    grid-column-end: 10;
+    grid-area: copyright;
 
     align-self: center;
 
-    width: 100%;
+    width: 60%;
+    min-width: 450px;
 
     color: #706c6c;
 

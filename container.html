@@ -22,28 +22,25 @@
     <div class="nav-bar"> <!--- 2-rows-1-column --->
       <div id="logo-bar"><img src="" alt=""></div> <!--- row-1 --->
       <ul id="menu-bar"> <!--- row-2 --->
-        <li id="scroll-top"> ^ </li>                            <!--- column-1 --->
-        <li id="features-tab"> <a href="#"> FEATURES </a> </li>     <!--- column-2 --->
-        <li id="gallery-tab"> <a href="#"> GALLERY </a> </li>       <!--- column-3 --->
-        <li id="performance-tab"> <a href="#"> PERFORMANCE </a>  </li>  <!--- column-4 ---->
-        <li id="charging-tab"> <a href="#"> CHARGING </a>  </li>    <!--- column-5 ---->
-        <li id="specs-tab"> <a href="#"> SPECIFICATIONS </a>  </li>   <!--- column-6 ---->
-        <li id="compare-tab"> <a href="#"> COMPARE </a>  </li>    <!--- column-7 ---->
-        <li id="about-tab"> <a href="about.html"> ABOUT US </a>  </li>    <!--- column-8 ---->
-        <li id="build-tab"> <a href="build.html"> BUILD & PRICE </a>  </li>   <!--- column-9 ---->
+        <li id="scroll-top" class="left"> <a href="#">^</a> </li>                            <!--- column-1 --->
+        <li class="left" id="features-tab"> <a href="#"> FEATURES </a> </li>     <!--- column-2 --->
+        <li class="left" id="gallery-tab"> <a href="#"> GALLERY </a> </li>       <!--- column-3 --->
+        <li class="left" id="performance-tab"> <a href="#"> PERFORMANCE </a>  </li>  <!--- column-4 ---->
+        <li class="left" id="charging-tab"> <a href="#"> CHARGING </a>  </li>    <!--- column-5 ---->
+        <li class="left" id="specs-tab"> <a href="#"> SPECIFICATIONS </a>  </li>   <!--- column-6 ---->
+        <li class="left" id="compare-tab"> <a href="#"> COMPARE </a>  </li>    <!--- column-7 ---->
+        <li class="left" id="about-tab"> <a href="about.html"> ABOUT US </a>  </li>    <!--- column-8 ---->
+        <li class="right" id="build-tab"> <a href="build.html"> BUILD & PRICE </a>  </li>   <!--- column-9 ---->
       </ul>
     </div>  <!--- end .nav-bar --->
 
     <div class="video-section">  <!-- 1-row-1-column --->
-      <div id="bg-video-preview"></div>   <!--- background video sequence --->
-      <button id="play-button">              <!--- play button --->
-        <a href="#"> <img src="" alt=""> </a>   <!--- button image --->
-      </button>
-      <video width="320" height="240" autoplay>   <!--- main video clip --->
-        <source src="movie.mp4" type="video/mp4">
-        <source src="movie.ogg" type="video/ogg">
-        Your browser does not support the video tag.
+      <video class="bg-video" src="#"  autoplay="" loop="" width="320" height="240">
+         <source src="movie.mp4" type="video/mp4">
+         <source src="movie.ogg" type="video/ogg">
+         Your browser does not support the video tag.
       </video>
+      <img class="video-play-button" src="" alt="">
     </div>  <!--- end .video-section --->
 
     <div class="container-section-2">   <!--- 1-row-4-columns --->
@@ -66,12 +63,12 @@
       </div>
     </div>  <!--- end .container-section-2 --->
 
-    <ul class="container-section-3">    <!--- 1-row-6-columns --->
-      <li id="cs3-col-2"> <h2> <a href="#">FEATURES</a> </h2> </li>
-      <li id="cs3-col-3"> <h2> <a href="#">PERFORMANCE</a> </h2> </li>
-      <li id="cs3-col-4"> <h2> <a href="#">CHARGING</a> </h2> </li>
-      <li id="cs3-col-5"> <h2> <a href="#">SPECIFICATIONS</a> </h2> </li>
-    </ul>   <!--- end .container-section-3 --->
+    <div class="container-section-3">    <!--- 1-row-6-columns --->
+      <a href="#">FEATURES</a>
+      <a href="#">PERFORMANCE</a>
+      <a href="#">CHARGING</a>
+      <a href="#">SPECIFICATIONS</a>
+    </div>   <!--- end .container-section-3 --->
 
     <div class="container-section-4">    <!--- 1-row-6-columns --->
       <p id="cs4-col-2"> $412-722 <span>FT LBS</span> <span>TORQUE</span></p>
@@ -210,27 +207,32 @@
       </div>
     </div>    <!--- end .popup-window --->
 
-    <footer>    <!--- 2-row-1-column --->
-      <div class="xtra-info-section">   <!-- 2-rows-1-column --->
+    <footer>    <!--- 3-row-1-column --->
+      <!--- <div class="xtra-info-section">  ---> <!-- 2-rows-1-column --->
 
         <div id="footer-scroll-top"> <a href="#">^</a> </div>
 
         <div id="info-section">   <!--- 1-row-2-column --->
-          <ul id="info-section-about">    <!--- 1-column-5-rows --->
-            <li id="heading"> ABOUT ARMORED RANGES </li>
-            <li> <a href="#"> COMPANY </a> </li>
-            <li> <a href="#"> GALLERY </a> </li>
-            <li> <a href="#"> CONTACT </a> </li>
-            <li> <a href="#"> GET YOUR FREE ESTIMATE  </a></li>
-          </ul>
 
-          <div id="info-section-address">
-            <img src="" alt="">
-            <p></p>
-            <p></p>
+          <div class="info-section-wrapper">
+            <ul id="info-section-about">    <!--- 1-column-5-rows --->
+              <li id="heading"> ABOUT ARMORED RANGES </li>
+              <li> <a href="#"> COMPANY </a> </li>
+              <li> <a href="#"> GALLERY </a> </li>
+              <li> <a href="#"> CONTACT </a> </li>
+              <li> <a href="#"> GET YOUR FREE ESTIMATE  </a></li>
+            </ul>
+
+            <div id="info-section-address">
+              <img src="static/images/armoredRange-logo-06.png" alt="armored range logo">
+              <p>3806 Latifa Tower,</p>
+              <p>Sheikh Zayed Road,</p>
+              <p>Dubai. <span> UAE. <span> </p>
+              <p>Main: <span><b>+971-551-557-557</b><span></p>
+            </div>
           </div>
         </div>
-      </div>
+      <!--- </div> --->
 
       <div class="share-copyright-section">
         <ul>    <!--- 1-row-4-columns --->
