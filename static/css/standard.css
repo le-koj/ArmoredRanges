@@ -34,6 +34,10 @@ ol, ul {
   text-decoration: none;
 }
 
+a {
+  outline: 0;
+}
+
 
   /*** General body settings  ***/
 body {
@@ -136,79 +140,57 @@ body {
   }
 
     /*** opening article settings  ***/
+
+@keyframes slidy {
+  0% { left: 0%;}
+  /*5% {left: 0%}*/
+  5% {left: 0%;}
+  20% {left: -100%;}
+  25% {left: -100%;}
+  40% { left: -200%;}
+  45% {left: -200%;}
+  60% { left: -300%;}
+  65% {left: -300%;}
+  90% { left: -400%;}
+  100% { left: -500%;}
+}
+
  .opening-article {
     position: relative;
     top: 90px;
-    background: url("../images/armored-range-logo.jpg") no-repeat center center;
-    background-color: #000;
-    background-size: 100% auto;
+    background: #101010;
     width: 100%;
     height: 542px ;/*605px;   /*45vh;*/
+
+    overflow: hidden;
   }
 
-/*.blurred-bg {
-  width: 100%;
-  height: 60vh;
-  background-color: rgba(30,23,13);
-  /*border: 3px solid black;*/
+  .slider {
+    position: relative;
+    width: 600%;
+    height: auto;
 
-  /*-- set as grid  --*/
-  display: grid;
+    /*-- set as grid  --*/
+    display: grid;
 
-  /* set as 2-row grid */
-  grid-template-rows: [start] 70% [row-3] 30% [end];
+    /* set as 3-row grid */
+    grid-template-columns: [start] repeat(6,1fr) [end];
 
-  /* set grid area */
-  grid-template-areas: "logo"
-                      "statement";
+    grid-template-rows: [start] 100% [end];
+
+    animation: 60s slidy infinite;
   }
 
-#opening-article-logo {
-  grid-area: logo;
-  width: 100%;
-  height: 100%;
+  .figure {
+    width: 100%;
+    display: inline;
+  }
 
-  /*padding-left: 155px;*/
+  .figure img {
+    width: 100%;
+    height: auto;
 
-  /*-- set as grid  --*/
-  display: grid;
-
-  /* set as 1-row grid */
-  grid-template-rows: [start] 50% [end];
-
-  /* set as 1-column grid */
-  grid-template-rows: [start] 100% [end];
-
-  /* set grid area */
-  grid-template-areas: "article-logo";
-
-  /*border: 3px solid black;*/
-}
-
-#opening-article-logo img {
-  grid-area: article-logo;
-  height: 35vh;
-  justify-self: center;
-  align-self: start;
-
-  /*border: 3px solid black;*/
-
-}
-
-#opening-article-statement {
-  grid-area: statement;
-  justify-self: center;
-  align-self: center;
-  width: 50%;
-  height: 70%;
-
-  text-align: center;
-  font-weight: 500;
-  font-size: 1.5em;
-  color: #00AEEF;
-
-  /*border: 3px solid black;*/
-}
+  }
 
   /*** product section settings  ***/
 .product-section {
@@ -608,6 +590,7 @@ body {
     position: relative;
     top: 90px;
     height: 2000px;
+
     /* set as grid */
     display: grid;
 
@@ -617,7 +600,9 @@ body {
     /* set as 1-column-grid */
     grid-template-columns: [start] 100% [end];
 
-    background: #000;
+    background: #1e1e1e;
+    color: #fff;
+    font-family: sans-serif, verdana, Arial;
   }
 
 .fs-wrapper {
@@ -630,45 +615,342 @@ body {
   /* set as 4-row-grid */
   grid-template-rows: [start] repeat(4, 1fr) [end];
 
-  border: 1px solid blue;
+  justify-items: center;
+  align-items: center;
+
+
+  /*border: 1px solid blue;*/
 }
 
 .fs-row-wrapper {
   width: 1140px;
-  height: 90%;
+  height: 80%;
   margin: 0 auto;
-  border: 1px solid red;
+  /*border: 1px solid red;*/
 }
 
-.fs-row-wrapper div {
+.fs-row-wrapper h1 {
+  width: 80%;
+  font-size: 60px;
+  text-align: left;
+  line-height: 60px;
 
+  padding: 5px;
+}
+
+.fs-row-wrapper p {
+  width: 80%;
+  text-align: left;
+  line-height: 25px;
+  font-size: 15px;
+
+  margin-top: 5px;
+  padding: 5px;
+  color: #a5a5a5;
+
+}
+
+.fs-row-wrapper span {
+  display: block;
+  margin-top: 10px;
+  color: #a5a5a5;
+
+}
+
+.fs-article .quote {
+  margin-top: 10px;
+  text-align: left;
+  font-size: 20px;
+  font-style: italic;
+  color: #00AEEF;
 }
 
 .fs-row-1 {
   display: grid;
+  height: 100%;
   grid-template-columns: [start] 30% [middle] 70% [end];
+  grid-template-rows: [start] 100% [end];
 
 }
 
 .fs-row-2 {
   display: grid;
+  height: 100%;
   grid-template-columns: [start] 70% [middle] 30% [end];
+  grid-template-rows: [start] 100% [end];
 
 }
 
 .fs-row-3 {
   display: grid;
+  height: 100%;
   grid-template-columns: [start] 30% [middle] 70% [end];
+  grid-template-rows: [start] 100% [end];
 
 }
 
 .fs-row-4 {
   display: grid;
+  height: 100%;
   grid-template-columns: [start] 70% [middle] 30% [end];
+  grid-template-rows: [start] 100% [end];
 
 }
 
+.fs-row-wrapper div.fs-article, img {
+  /*border: 1px solid #fff;*/
+
+}
+
+.gallery-section {
+  position: relative;
+  top: 90px;
+  height: 850px;
+}
+
+.specs-section {
+  position: relative;
+  top: 90px;
+  height: 500px;
+
+  background-color: #000;
+}
+
   /****************   END CONTAINER.HTML   ******/
+
+
+
+  /*************** TRAINING.HTML *********/
+  ul#menu-bar.training-nav {
+    background-color: #BA906D;
+  }
+
+  div.train.container-section-3 {
+    background-color: #BA906D;
+    color: #fff;
+  }
+
+  div.train.container-section-3 h2 {
+    color: #fff;
+  }
+
+  div.train.container-section-3 h2:hover {
+    color: #000;
+  }
+
+  .train.features-section {
+    height: 1500px;
+    background-color: #202020;
+  }
+
+  .train.fs-wrapper {
+    width: 1170px;
+    min-width: 1000px;
+
+    margin: 0 auto;
+    grid-template-rows: [start] 10% [row-1-2] 45% [row-2-3] 45% [end];
+  }
+
+  .train.fs-wrapper h2 {
+    justify-self: start;
+    font-size: 85px;
+    text-align: left;
+
+    padding-top: 30px;
+
+    /*border: 1px solid #fff;*/
+  }
+
+  .tfs.row-2 {
+
+    width: 100%;
+    height: 100%;
+
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: [start] repeat(3, 1fr) [end];
+
+
+    /*border: 1px solid red;*/
+  }
+
+  .tfs.row-3 {
+
+    width: 100%;
+    height: 100%;
+
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: [start] repeat(3, 1fr) [end];
+
+    /*border: 1px solid red;*/
+  }
+
+
+  div .fs-col-1 {
+    display: grid;
+    width: 100%;
+    height: 95%;
+
+    padding: 50px;
+    grid-template-rows: [start] 40% [col-1-2] 10% [col-2-3] 40% [end];
+    grid-template-columns: [start] 100% [end];
+
+    grid-row-gap: 20px;
+
+    box-shadow: #000 9px 5px 9px 0px;
+
+    /*border: 1px solid red;*/
+
+  }
+
+  div .fs-col-2 {
+    display: grid;
+    width: 100%;
+    height: 95%;
+
+    padding: 50px;
+
+    grid-template-rows: [start] 40% [col-1-2] 10% [col-2-3] 40% [end];
+    grid-template-columns: [start] 100% [end];
+
+    grid-row-gap: 20px;
+
+    box-shadow: #000 9px 5px 9px 0px;
+
+
+
+  }
+
+
+
+  div .fs-col-3 {
+      display: grid;
+      width: 100%;
+      height: 95%;
+
+      padding: 50px;
+
+      grid-template-rows: [start] 40% [col-1-2] 10% [col-2-3] 40% [end];
+      grid-template-columns: [start] 100% [end];
+
+      grid-row-gap: 20px;
+
+      box-shadow: #000 9px 5px 9px 0px;
+
+
+    }
+
+    div .fs-col-4 {
+      display: grid;
+      width: 100%;
+      height: 95%;
+
+      padding: 50px;
+
+      grid-template-rows: [start] 40% [col-1-2] 10% [col-2-3] 40% [end];
+      grid-template-columns: [start] 100% [end];
+
+      grid-row-gap: 20px;
+
+      box-shadow: #000 9px 5px 9px 0px;
+
+
+
+    }
+
+    div .fs-col-5 {
+      display: grid;
+      width: 100%;
+      height: 95%;
+
+      padding: 50px;
+
+      grid-template-rows: [start] 40% [col-1-2] 10% [col-2-3] 40% [end];
+      grid-template-columns: [start] 100% [end];
+
+      grid-row-gap: 20px;
+
+      box-shadow: #000 9px 5px 9px 0px;
+
+
+    }
+
+    div .fs-col-6 {
+      display: grid;
+      width: 100%;
+      height: 95%;
+
+      padding: 50px;
+
+      grid-template-rows: [start] 40% [col-1-2] 10% [col-2-3] 40% [end];
+      grid-template-columns: [start] 100% [end];
+
+      grid-row-gap: 20px;
+
+      box-shadow: #000 9px 5px 9px 0px;
+
+
+
+    }
+
+  .tfs .fs-row-wrapper h1 {
+    width: 80%;
+    font-size: 40px;
+    line-height: 60px;
+
+    padding: 5px;
+  }
+
+
+  .train.fs-wrapper p {
+    width: 80%;
+    line-height: 20px;
+    font-size: 15px;
+
+    margin: 0 auto;
+    margin-top: 5px;
+    padding: 5px;
+    color: #4d4d4d;
+
+
+
+  }
+
+  .tfs .fs-row-wrapper span {
+    display: block;
+    margin-top: 10px;
+    color: #a5a5a5;
+
+  }
+
+  .tfs .fs-article .quote {
+    margin-top: 10px;
+    font-size: 20px;
+    font-style: italic;
+    color: #00AEEF;
+  }
+
+  .fs-row-wrapper div.fs-article, img {
+    /*border: 1px solid #fff;*/
+
+  }
+
+  .train.gallery-section {
+
+  }
+
+  .train.specs-section {
+    height: 900px;
+    background-color: #BA906D;
+  }
+
+
+  /************** END TRAINING.HTML *****/
+
+
 
     /*** footer settings  ***/
   footer {
