@@ -9,7 +9,6 @@
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
     <meta name="keywords" content="armored, container, range, military, gso">
     <meta name="description" content="affordable armored container ranges">
-    <meta http-equiv="refresh" content="60">
     <meta name="author" content="Le koj">
     <link rel="icon" type="image/png" href="" sizes="">
     <link rel="icon" type="image/png" href="" sizes="">
@@ -18,64 +17,71 @@
     <link rel="stylesheet" type="text/css" media="" href="">
   </head>
 
-  <body>
+  <body class="buildPage">
     <div class="nav-bar"> <!--- 2-rows-1-column --->
-      <div id="logo-bar"><img src="" alt=""></div> <!--- row-1 --->
+      <a id="logo-bar" href="index.html"> <img src="static/images/armoredRange-logo-06-01.png" alt="armored-range-logo"> </a> <!--- row-1 --->
       <ul id="menu-bar"> <!--- row-2 --->
+        <li id="scroll-top" class="left"> <a href="#">^</a> </li>                            <!--- column-1 --->
       </ul>
     </div>  <!--- end .nav-bar --->
 
-    <div class="opening-carousel">  <!-- 2-row-1-column --->
-    </div>  <!--- end .opening-article --->
+    <div id="message-box">
+      <h3>Contact Us</h3>
+      <p>Please let us know questions or concerns by filling the contact form below</p>
+    </div>
 
-    <div class="build-section">   <!--- 1-row-2-columns --->
-      <div class="build-selection-col-1">   <!--- column-1 --->
-        <div class="bs-col-1-row-1">
-        </div>
-
-        <div class="bs-col-1-row-2">
-        </div>
-
-        <div class="bs-col-1-row-3">
-        </div>
+    <div id="after_submit"></div>
+    <form id="contact_form" action="#" method="POST" enctype="multipart/form-data">
+      <div class="row-1">
+        <label class="required" for="name">Name</label>
+        <input id="first" class="input" name="name" type="text" value="First" size="30" />
+        <input id="last" class="input" name="name" type="text" value="Last" size="30" />
+        <span id="name_validation" class="error_message"></span>
+      </div>
+      <div class="row-2">
+        <label class="required" for="email">Email</label>
+        <input id="email" class="input" name="email" type="text" value="" size="30" />
+        <span id="email_validation" class="error_message"></span>
+      </div>
+      <div class="row-3">
+        <label class="required" for="message">Message</label>
+        <textarea id="message" class="input" name="message" rows="7" cols="30"></textarea>
+        <span id="message_validation" class="error_message"></span>
       </div>
 
-      <div class="build-selection-col-2">   <!--- column-2 --->
-      </div>
-    </div>     <!--- end .buid-section --->
+      <input class="button-text" id="submit_button" type="submit" value="Send email" />
+    </form>
 
-    <div class="popup-window">
-      <div class="content-container">
-
-      </div>
-    </div>    <!--- end .popup-window --->
-
-    <footer>    <!--- 2-row-1-column --->
-      <div class="xtra-info-section">   <!-- 2-rows-1-column --->
+    <footer>    <!--- 3-row-1-column --->
+      <!--- <div class="xtra-info-section">  ---> <!-- 2-rows-1-column --->
 
         <div id="footer-scroll-top"> <a href="#">^</a> </div>
 
         <div id="info-section">   <!--- 1-row-2-column --->
-          <ul id="info-section-about">    <!--- 1-column-5-rows --->
-            <li id="heading"> ABOUT ARMORED RANGES </li>
-            <li> <a href="#"> COMPANY </a> </li>
-            <li> <a href="#"> GALLERY </a> </li>
-            <li> <a href="#"> CONTACT </a> </li>
-            <li> <a href="#"> GET YOUR FREE ESTIMATE  </a></li>
-          </ul>
 
-          <div id="info-section-address">
-            <img src="" alt="">
-            <p></p>
-            <p></p>
+          <div class="info-section-wrapper">
+            <ul id="info-section-about">    <!--- 1-column-5-rows --->
+              <li id="heading"> ABOUT ARMORED RANGES </li>
+              <li> <a href="#"> COMPANY </a> </li>
+              <li> <a href="gallery.html"> GALLERY </a> </li>
+              <li> <a href="#"> CONTACT </a> </li>
+              <li> <a href="#"> GET YOUR FREE ESTIMATE  </a></li>
+            </ul>
+
+            <div id="info-section-address">
+              <img src="static/images/armoredRange-logo-06.png" alt="armored range logo">
+              <p>2901 W Coast Highway, Ste 200</p>
+              <p>Newport Beach <span> CA 92663<span> </p>
+                <p>United States</p>
+              <p>Main: <span><b>1 (888)-888-1008</b><span></p>
+            </div>
           </div>
         </div>
-      </div>
+      <!--- </div> --->
 
       <div class="share-copyright-section">
         <ul>    <!--- 1-row-4-columns --->
           <li class="left"> FOLLOW ARMORED RANGE </li>
-          <li class="left"> <a href="#"> FACEBOOK </a> </li>
           <li class="left"> <a href="#"> INSTAGRAM </a> </li>
           <li class="left"> <a href="#"> YOUTUBE </a> </li>
         </ul>
@@ -84,8 +90,7 @@
       </div>
     </footer>   <!--- end footer section --->
 
-    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
     </script>
-    <script type="text/javascript" src="static/js/modernizr.custom.46884.js"></script>
   </body>
 </html>

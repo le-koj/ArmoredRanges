@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>armoredrange</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta name="keywords" content="armored, container, range, military, gso">
+    <meta name="description" content="affordable armored container ranges">
+    <meta name="author" content="Le koj">
+    <link rel="icon" type="image/png" href="" sizes="">
+    <link rel="icon" type="image/png" href="" sizes="">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="" href="static/css/standard.css">
+    <link rel="stylesheet" type="text/css" media="" href="">
+    <link rel="stylesheet" type="text/css" media="" href="">
+
+  </head>
+  <body class="galleryPage">
+    <div class="nav-bar"> <!--- 2-rows-1-column --->
+      <a id="logo-bar" href="index.html"> <img src="static/images/armoredRange-logo-06-01.png" alt="armored-range-logo"> </a> <!--- row-1 --->
+      <ul id="menu-bar"> <!--- row-2 --->
+        <li id="scroll-top" class="left"> <a href="#">^</a> </li>                            <!--- column-1 --->
+      </ul>
+    </div>  <!--- end .nav-bar --->
+
+    <!--- GALLERY CONTENT --->
+    <div class="gallery">
+    </div>
+
+    <!--- PREVIEW --->
+    <div class="preview" >
+      <a id="exit">&#10060;</a>
+      <img class="previewImage" src="">
+
+      <!-- Next and previous buttons -->
+      <div class="prev-wrapper preview-nav"><a class="prev" >&#10094;</a></div>
+      <div class="next-wrapper preview-nav"><a class="next" >&#10095;</a></div>
+    </div>
+
+    <footer>    <!--- 3-row-1-column --->
+      <!--- <div class="xtra-info-section">  ---> <!-- 2-rows-1-column --->
+
+        <div id="footer-scroll-top"> <a href="#">^</a> </div>
+
+        <div id="info-section">   <!--- 1-row-2-column --->
+
+          <div class="info-section-wrapper">
+            <ul id="info-section-about">    <!--- 1-column-5-rows --->
+              <li id="heading"> ABOUT ARMORED RANGES </li>
+              <li> <a href="#"> COMPANY </a> </li>
+              <li> <a href="#"> GALLERY </a> </li>
+              <li> <a href="build.html"> CONTACT </a> </li>
+              <li> <a href="#"> GET YOUR FREE ESTIMATE  </a></li>
+            </ul>
+
+            <div id="info-section-address">
+              <img src="static/images/armoredRange-logo-06.png" alt="armored range logo">
+              <p>2901 W Coast Highway, Ste 200</p>
+              <p>Newport Beach <span> CA 92663<span> </p>
+                <p>United States</p>
+              <p>Main: <span><b>1 (888)-888-1008</b><span></p>
+            </div>
+          </div>
+        </div>
+      <!--- </div> --->
+
+      <div class="share-copyright-section">
+        <ul>    <!--- 1-row-4-columns --->
+          <li class="left"> FOLLOW ARMORED RANGE </li>
+          <li class="left"> <a href="#"> INSTAGRAM </a> </li>
+          <li class="left"> <a href="#"> YOUTUBE </a> </li>
+        </ul>
+
+        <p id="copyright"> &copy; 2018 GSO INTERNATIONAL </p>
+      </div>
+    </footer>   <!--- end footer section --->
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script>
+    $(document).ready(function(){
+
+        var images = ["static/images/walls.jpg", "static/images/white-mountain-cover.jpg", "static/images/container-benz-4.jpg" ,
+                      "static/images/black-shine.jpg", "static/images/container-on-glass.jpg", "static/images/gallery-image-10.jpg", "static/images/gallery-image-2.jpg",
+                      "static/images/inside-container-2.png", "static/images/controls-2.png", "static/images/gallery-image-3.png",
+                      "static/images/gallery-image-7.jpg", "static/images/gallery-image-4.jpg", "static/images/gallery-image-5.jpg",
+                      "static/images/shooter-in-range.png" , "static/images/gallery-image-9-1.png", "static/images/gallery-image-9.png",
+                      "static/images/gallery-image-11.png", "static/images/gallery-image-12.png", "static/images/gallery-image-13.jpg",
+                      "static/images/loading-container.png", "static/images/gallery-image-1.png", "static/images/gallery-image-14.png",
+                     "static/images/raw-material-1.jpg", "static/images/raw-material-2.jpg", "static/images/raw-material-3.jpg",
+                     "static/images/raw-material-4.jpg", "static/images/raw-material-5.jpg",
+                     "static/images/construction-1.png","static/images/construction-2.png", "static/images/construction-3.png",
+                     "static/images/construction-4.jpg", "static/images/construction-5.png", "static/images/camp-1.png",
+                     "static/images/camp-2.png", "static/images/camp-3.png", "static/images/camp-4.png",
+                     "static/images/camp-5.png", "static/images/camp-6.png", "static/images/camp-7.png"];
+
+        var indexOfImage;
+
+        let arrayLength = images.length;
+        console.log("image length is " + String(arrayLength));
+
+
+        // add image contents to gallery
+        for (var i = 0; i < images.length; ++i) {
+          var figure = $('<div class="figure" ></div>'),
+              imageTag = $('<img class="pop" src="" data-index="" >'),
+              image = images[i],
+              index = i+1;
+
+          // add image source
+          // add image index
+          $(imageTag)
+            .attr("src", image)
+            .attr("data-index", index)
+            .appendTo(figure);
+
+          // add figure element to gallery
+          $(".gallery").append(figure);
+
+        };
+
+        // click event response for images
+        $(".figure img").click(function() {
+            var imageSource = $(this).attr('src');
+            indexOfImage = parseInt($(this).attr('data-index'));
+            console.log("clicked image index is " + String(indexOfImage));
+
+            $(".previewImage").attr("src",imageSource);
+            $(".preview").fadeIn();
+          }
+        );
+
+          // control interface for image preview element
+          function switchImage(offset) {
+            switch (offset) {
+              case -1:
+                getPreviousImage();
+                break;
+              case 1:
+                getNextImage();
+                break;
+              default:
+                console.log("no value found");
+            }   //****** end switch ****
+          }
+
+          // go to previous image
+          function getPreviousImage() {
+            console.log("initial index is " + String(indexOfImage));
+            switch (indexOfImage) {
+              case 1:
+                $(".previewImage").attr("src",images[arrayLength-1]).fadeIn("slow");
+                indexOfImage = parseInt(images.length);
+
+                console.log("current index is " + String(indexOfImage));
+                break;
+              default:
+                indexOfImage -= 2;  // adjust indexOfImage value for calculation
+                $(".previewImage").attr("src",images[indexOfImage]).fadeIn("slow");
+                indexOfImage += 1;  // adjust indexOfImage value for new image
+
+                console.log("current index is " + String(indexOfImage) + "--- array index is " + String(indexOfImage-1));
+
+            }     //***** end switch ****
+          } // ------- END getPreviousImage Method ------ //
+
+          // go to next image
+          function getNextImage() {
+            console.log("initial index is " + String(indexOfImage));
+            switch (indexOfImage) {
+              case arrayLength:
+                $(".previewImage").attr("src",images[0]).fadeIn("slow");
+                indexOfImage = 1;
+                console.log("current index is " + String(indexOfImage));
+                break;
+              default:
+                $(".previewImage").attr("src",images[indexOfImage]).fadeIn("slow");
+                indexOfImage += 1;    // adjust indexOfImage value
+
+                console.log("current index is " + String(indexOfImage) + "--- array index is " + String(indexOfImage-1));
+
+            }     //***** end switch ****
+          } // ------- END getNextImage Method ------ //
+
+
+          $(".prev-wrapper").click(function() {
+            $(".previewImage").hide();
+            switchImage(-1);
+          });
+
+          $(".next-wrapper").click(function() {
+            $(".previewImage").hide();
+            switchImage(1);
+          });
+
+          $("#exit").click(function() {
+            $(".preview").fadeOut();
+          });
+
+
+    });
+
+    </script>
+  </body>
+</html>

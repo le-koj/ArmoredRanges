@@ -12,56 +12,81 @@
     <meta name="author" content="Le koj">
     <link rel="icon" type="image/png" href="" sizes="">
     <link rel="icon" type="image/png" href="" sizes="">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" media="" href="static/css/standard.css">
     <link rel="stylesheet" type="text/css" media="" href="">
     <link rel="stylesheet" type="text/css" media="" href="">
 
   </head>
 
-  <body>
+  <body class="override">
     <div class="nav-bar"> <!--- 2-rows-1-column --->
-      <div id="logo-bar"> <!--- <img src="static/images/armoredRange-logo-06-01.png" alt="armored-range-logo"> ---> </div> <!--- row-1 --->
+      <a id="logo-bar" href="index.html"> <img src="static/images/armoredRange-logo-06-01.png" alt="armored-range-logo"> </a> <!--- row-1 --->
       <ul id="menu-bar"> <!--- row-2 --->
         <li id="scroll-top" class="left"> <a href="#">^</a> </li>                            <!--- column-1 --->
         <li id="container-range-tab" class="left"> <a href="container.html">CONTAINER RANGE</a> </li>     <!--- column-2 --->
         <li id="training-range-tab" class="left"> <a href="training.html">TRAINING RANGE </a> </li>       <!--- column-3 --->
         <li id="training-range-tab" class="left"> <a href="#">CUSTOM RANGE </a> </li>       <!--- column-4 --->
+        <li id="training-range-tab" class="right"> <a href="gallery.html">IMAGES </a> </li>       <!--- column-4 --->
         <li id="about-tab" class="right"> <a href="about.html">ABOUT US</a>  </li>                      <!--- column-4 ---->
       </ul>
     </div>  <!--- end .nav-bar --->
 
-    <div class="opening-article">
-      <div class="slider">
-        <div class="figure">
-          <img src="static/images/inside-container.jpg" alt="">
+    <div id="carousel" class="carousel slide" data-ride="carousel">
+
+      <!-- Indicators -->
+      <ul class="carousel-indicators">
+        <li data-target="#carousel" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel" data-slide-to="1"></li>
+        <li data-target="#carousel" data-slide-to="2"></li>
+        <li data-target="#carousel" data-slide-to="3"></li>
+        <li data-target="#carousel" data-slide-to="4"></li>
+        <li data-target="#carousel" data-slide-to="5"></li>
+      </ul>
+
+      <!--- the slide-show --->
+      <div class="carousel-inner">
+
+        <div class="carousel-item active">
+          <img src="static/images/white-mountain-cover.jpg" alt="">
           <p class="figcaption"></p>
         </div>
 
-        <div class="figure">
-          <img src="static/images/benz-container.jpg" alt="">
+        <div class="carousel-item">
+          <img src="static/images/shooter-in-range-5.jpg" alt="">
           <p class="figcaption"></p>
         </div>
 
-        <div class="figure">
-          <img src="static/images/training-range-1.jpg" alt="">
+        <div class="carousel-item">
+          <img src="static/images/shooter-in-range.jpg" alt="">
           <p class="figcaption"></p>
         </div>
 
-        <div class="figure">
-          <img src="static/images/training-range-2.jpg" alt="">
+        <div class="carousel-item">
+          <img src="static/images/walls.jpg" alt="">
           <p class="figcaption"></p>
         </div>
 
-        <div class="figure">
-          <img src="static/images/coming-soon-image.png" alt="">
+        <div class="carousel-item">
+          <img src="static/images/inside-conantainer-1.jpg" alt="">
           <p class="figcaption"></p>
         </div>
 
-        <div class="figure">
-          <img src="static/images/coming-soon-image.png" alt="">
+
+        <div class="carousel-item">
+          <img src="static/images/container-benz-5.jpg" alt="">
           <p class="figcaption"></p>
         </div>
       </div>
+
+      <!--- 6 radio controls --->
+      <input type="radio" name="images" class="sliderRadio" id="i1">
+      <input type="radio" name="images" class="sliderRadio" id="i2">
+      <input type="radio" name="images" class="sliderRadio" id="i3">
+      <input type="radio" name="images" class="sliderRadio" id="i4">
+      <input type="radio" name="images" class="sliderRadio" id="i5">
+      <input type="radio" name="images" class="sliderRadio" id="i6">
+
     </div> <!--- end .opening-article --->
 
     <div class="product-section">
@@ -72,7 +97,7 @@
           <p><img src="static/images/armoredRange-name-02.png" alt=""></p>
         </div>
         <div class="product-box" id="product-2">
-          <a href="container.html"><img class="product-image" src="static/images/training-range.png" alt="training-range-image"></a>
+          <a href="training.html"><img class="product-image" src="static/images/training-range.png" alt="training-range-image"></a>
           <p><img src="static/images/training-range-name-02.png" alt="training range text"></p>
         </div>
         <div class="product-box" id="product-3">
@@ -104,8 +129,8 @@
             <ul id="info-section-about">    <!--- 1-column-5-rows --->
               <li id="heading"> ABOUT ARMORED RANGES </li>
               <li> <a href="#"> COMPANY </a> </li>
-              <li> <a href="#"> GALLERY </a> </li>
-              <li> <a href="#"> CONTACT </a> </li>
+              <li> <a href="gallery.html"> GALLERY </a> </li>
+              <li> <a href="build.html"> CONTACT </a> </li>
               <li> <a href="#"> GET YOUR FREE ESTIMATE  </a></li>
             </ul>
 
@@ -131,8 +156,8 @@
       </div>
     </footer>   <!--- end footer section --->
 
-    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
     </script>
-    <script type="text/javascript" src="static/js/modernizr.custom.46884.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
   </body>
 </html>

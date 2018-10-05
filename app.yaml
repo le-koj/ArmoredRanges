@@ -22,8 +22,8 @@ handlers:
 - url: .*                       # all other file paths
   script: main.app              # main.py module
 
-- url: /armoredrange/static/images
-  script: main.app
+#- url: /armoredrange/static/images
+#  script: main.app
 
 ##_______frameworks libraries in use_____##
 libraries:

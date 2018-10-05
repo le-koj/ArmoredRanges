@@ -38,6 +38,10 @@ a {
   outline: 0;
 }
 
+a:hover {
+  text-decoration: none;
+}
+
 
   /*** General body settings  ***/
 body {
@@ -83,18 +87,19 @@ body {
     justify-items: start;
   }
 
-/*
+
   #logo-bar img{
     width: 160px;
     float: left;
     margin-left: 15px;
 
     padding-top: 3px;
-  } */
+  }
 
   #menu-bar {
     grid-area: menu-bar;
     width: 100%;
+    height: 100%;
 
     padding-left: 20px;
     padding-right: 30px;
@@ -103,6 +108,8 @@ body {
 
     font-weight: 300;
     line-height: 20px;
+
+    /*border: 1px solid black;*/
   }
 
   #menu-bar .left, #menu-bar a {
@@ -145,14 +152,89 @@ body {
   0% { left: 0%;}
   /*5% {left: 0%}*/
   5% {left: 0%;}
-  20% {left: -100%;}
+  20% {left: -100%;}   /*** image 2 ***/
   25% {left: -100%;}
-  40% { left: -200%;}
+  40% { left: -200%;}   /*** image 3 ***/
   45% {left: -200%;}
-  60% { left: -300%;}
+  60% { left: -300%;}   /*** image 4 ***/
   65% {left: -300%;}
-  90% { left: -400%;}
-  100% { left: -500%;}
+  90% { left: -400%;}     /*** image 5 ***/
+  100% { left: -500%;}    /*** image 6 ***/
+}
+
+@keyframes slider2 {
+  /*5% {left: 0%}*/
+
+  0%  {left: -100%;}
+  5%  {left: -100%;}
+  20% { left: -200%;}
+  25% {left: -200%;}
+  40% { left: -300%;}
+  45%  { left: -300%;}
+  60% { left: -400%;}
+  65%  { left: -500%;}
+  90%  { left: 0%;}
+  100% {left: 0%;}
+}
+
+@keyframes slider3 {
+  /*5% {left: 0%}*/
+
+  0%  { left: -200%;}
+  5% {left: -200%;}
+  20%  { left: -300%;}
+  25% {left: -300%;}
+  40%  { left: -400%;}
+  45%  { left: -500%;}
+  60% { left: 0%;}
+  65%   {left: 0%;}
+  90%   {left: -100%;}
+  100%  {left: -100%;}
+}
+
+@keyframes slider4 {
+  /*5% {left: 0%}*/
+
+  0%  {left: -300%;}
+  5%  {left: -300%;}
+  20% { left: -400%;}
+  25% { left: -500%;}
+  40% { left: 0%;}
+  45% { left: 0%;}
+  60% {left: -100%;}
+  65%  {left: -100%;}
+  90%  { left: -200%;}
+  100% { left: -200%;}
+}
+
+@keyframes slider5 {
+  /*5% {left: 0%}*/
+
+  0% { left: -400%;}
+  5% { left: -500%;}
+  20% { left: 0%;}
+  25% { left: 0%;}
+  40% {left: -100%;}
+  45% {left: -100%;}
+  60% { left: -200%;}
+  65%  { left: -200%;}
+  90%  { left: -300%;}
+  100% { left: -300%;}
+}
+
+@keyframes slider6 {
+  /*5% {left: 0%}*/
+
+  5% { left: -500%;}
+  20% { left: 0%;}
+  25% { left: 0%;}
+  40% {left: -100%;}
+  45% {left: -100%;}
+  60% { left: -200%;}
+  65%  { left: -200%;}
+  90%  { left: -300%;}
+  100% { left: -300%;}
+  0% { left: -400%;}
 }
 
  .opening-article {
@@ -163,6 +245,18 @@ body {
     height: 542px ;/*605px;   /*45vh;*/
 
     overflow: hidden;
+  }
+
+  .carousel {
+    top: 90px;
+    height: 542px ;
+
+    overflow-y: hidden;
+
+  }
+
+  .carousel-indicators li {
+    background: rgba(0, 174, 239, 0.6);
   }
 
   .slider {
@@ -184,12 +278,67 @@ body {
   .figure {
     width: 100%;
     display: inline;
+
+    /*z-index: -1;*/
+  }
+
+  .carousel-inner img {
+    width: 100%;
+    height: auto;
   }
 
   .figure img {
     width: 100%;
     height: auto;
+  }
 
+  .sliderRadio {
+    display: none;
+  }
+
+  .pre .next {
+    width: 20px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 999;
+
+    cursor: pointer;
+
+    background: rgba(255, 255, 255, 0.5);
+
+    border: 3px solid black;
+  }
+
+  .pre {
+    left: 0;
+  }
+
+  .next {
+    right: 0;
+  }
+
+  .slider-nav {
+    position: absolute;
+    z-index: 99;
+
+    width: 100%;
+    height: 11px;
+    bottom: 6%;
+
+    text-align: center;
+  }
+
+  .dots {
+    position: relative;
+    top: -3px;
+    width: 10px;
+    height: 10px;
+    margin-left: 0 5px;
+
+    display: inline-block;
+    background: rgba(0, 174, 239, 0.6);
+    border-radius: 50%;
   }
 
   /*** product section settings  ***/
@@ -600,7 +749,7 @@ body {
     /* set as 1-column-grid */
     grid-template-columns: [start] 100% [end];
 
-    background: #1e1e1e;
+    background: #000 /*#1e1e1e*/;
     color: #fff;
     font-family: sans-serif, verdana, Arial;
   }
@@ -627,6 +776,7 @@ body {
   height: 80%;
   margin: 0 auto;
   /*border: 1px solid red;*/
+
 }
 
 .fs-row-wrapper h1 {
@@ -657,6 +807,12 @@ body {
 
 }
 
+.fs-row-wrapper img {
+  width: 90%;
+  justify-self: center;
+  align-self: center;
+}
+
 .fs-article .quote {
   margin-top: 10px;
   text-align: left;
@@ -665,37 +821,36 @@ body {
   color: #00AEEF;
 }
 
-.fs-row-1 {
+
+.fs-row-1, .fs-row-3  {
   display: grid;
   height: 100%;
   grid-template-columns: [start] 30% [middle] 70% [end];
   grid-template-rows: [start] 100% [end];
 
+  grid-column-gap: 5px;
+
+
 }
 
-.fs-row-2 {
+.fs-row-1 .fs-article, .fs-row-3 .fs-article {
+  display: grid;
+  grid-template-rows: auto;
+  justify-items: end;
+}
+
+.fs-row-2, .fs-row-4 {
   display: grid;
   height: 100%;
   grid-template-columns: [start] 70% [middle] 30% [end];
   grid-template-rows: [start] 100% [end];
 
-}
-
-.fs-row-3 {
-  display: grid;
-  height: 100%;
-  grid-template-columns: [start] 30% [middle] 70% [end];
-  grid-template-rows: [start] 100% [end];
+  grid-column-gap: 5px;
 
 }
 
-.fs-row-4 {
-  display: grid;
-  height: 100%;
-  grid-template-columns: [start] 70% [middle] 30% [end];
-  grid-template-rows: [start] 100% [end];
 
-}
+
 
 .fs-row-wrapper div.fs-article, img {
   /*border: 1px solid #fff;*/
@@ -704,13 +859,21 @@ body {
 
 .gallery-section {
   position: relative;
-  top: 90px;
-  height: 850px;
+  /*top: 90px;*/
+  height: auto;
+}
+
+.gallery-section img {
+  width: 100%;
+  height: auto;
+
+  margin: 0 auto;
+
 }
 
 .specs-section {
   position: relative;
-  top: 90px;
+  /*top: 90px;*/
   height: 500px;
 
   background-color: #000;
@@ -938,9 +1101,6 @@ body {
 
   }
 
-  .train.gallery-section {
-
-  }
 
   .train.specs-section {
     height: 900px;
@@ -951,11 +1111,321 @@ body {
   /************** END TRAINING.HTML *****/
 
 
+  /********** GALLERY CSS *******/
+
+  .gallery {
+    position: relative;
+    top: 100px;
+    width: 85%;
+    max-width: 2000px;;
+    min-width: 1000px;
+    height: auto;
+
+    margin: 0 auto;
+    margin-bottom: 20px;
+
+    padding: 10px;
+
+    /*-- set as grid  --*/
+    display: grid;
+
+    /* set as 3-column grid */
+    grid-template-columns: [start] repeat(3, 1fr) [end];
+
+    grid-auto-flow: row;
+
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+  }
+
+  .pop {
+    padding-bottom: 30px;
+    background: radial-gradient(closest-side at 50% 95%, rgba(0,0,0,0.8) 0%,rgba(0,0,0,0) 90%);
+  }
+
+  .gallery .figure:hover {
+    transition: all .3s ease-in-out;
+    transform: scale(1.1);
+  }
+
+  .preview {
+    display: none;
+    position: fixed;
+    top: 90px;
+
+    z-index: 9;
+
+    height: 100vh;
+    width: 100%;
+
+    background: rgba(0, 174, 239, 0.7);
+  }
+
+  a#exit {
+    position: absolute;
+    top: 10px;
+    z-index: 999;
+    right: 20px;
+    border-radius: 50% 50% 50% 50%;
+    width: 30px;
+    height: 30px;
+
+    cursor: default;
+
+    padding-top: 6px;
+
+    text-align: center;
+    font-size: 12px;
+
+    box-shadow: -1px 1px 5px #191919;
+    /*border: 1px solid black;*/
+  }
+
+  .preview img {
+    position: relative;
+    top: 90px;
+    width: 95%;
+    height: auto;
+
+    padding: 10px;
+
+    margin: 0 auto;
+
+  }
+
+  .prev-wrapper {
+    position: absolute;
+    top: 0;
+    height: calc(100vh - 90px);
+    width: 40px;
+    left: 0;
+
+    display: grid;
+    grid-template-columns: [start] 100% [end];
+    grid-template-rows: [start] 100% [end];
+
+    grid-template-areas: "prev";
+
+    align-items: center;
+
+    /*background: rgba(0, 174, 239, 0.4);*/
+
+    /*border: 1px solid black;*/
+  }
+
+  .containerPage .prev-wrapper, .trainingPage .prev-wrapper {
+    height: 100%;
+  }
+
+
+
+  /* Position the "prev button" to the left */
+  .prev {
+    grid-area: prev;
+    border-radius: 0 5px 5px 0;
+
+    font-size: 30px;
+    color: #fff;
+
+    cursor: pointer;
+
+    padding-bottom: 5px;
+
+    background: rgba(0, 174, 239, 0.4);
+  }
+
+  .next-wrapper {
+    position: absolute;
+    top: 0;
+    height: calc(100vh - 90px);
+    width: 40px;
+    right: 0;
+
+    display: grid;
+    grid-template-columns: [start] 100% [end];
+    grid-template-rows: [start] 100% [end];
+
+    grid-template-areas: "next";
+
+    align-items: center;
+
+    /*background: rgba(0, 174, 239, 0.4);*/
+  }
+
+  .containerPage .next-wrapper, .trainingPage .next-wrapper {
+    height: 100%;
+  }
+
+    /* Position the "next button" to the right */
+    .next {
+      grid-area: next;
+      border-radius: 3px 0 0 3px;
+
+      font-size: 30px;
+      color: #fff;
+
+      cursor: pointer;
+      /*border: 1px solid red;*/
+
+      padding-bottom: 5px;
+
+      background: rgba(0, 174, 239, 0.4);
+    }
+
+
+
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover, .next:hover {
+      background-color: rgba(0,0,0,0.8);
+    }
+
+
+    /************* BUILD.HTML CSS ***********************/
+
+    #message-box {
+      position: relative;
+      top: 20vh;
+
+      width: 600px;
+      height: auto;
+
+      margin: 0 auto;
+      margin-bottom: 10px;
+      padding: 10px;
+
+      text-align: left;
+
+      box-shadow: 0px 0px 5px 0px #888888;
+      border-radius: 5px;
+      /*border: 1px solid black;*/
+
+    }
+
+    #message-box h3 {
+      font-size: 25px;
+      font-family: sans-serif;
+
+      margin: 5px;
+
+    }
+
+    #message-box p {
+      line-height: 16px;
+      font-size: 14px;
+      font-family: sans-serif;
+      color: #323232;
+
+      margin: 5px;
+    }
+
+    form {
+      position: relative;
+      top: 20vh;
+
+      width: 600px;
+      margin: 0 auto;
+
+      padding: 20px;
+
+      font-family: sans-serif;
+
+      box-shadow: 0px 0px 5px 0px #888888;
+      border-radius: 5px;
+
+      /*border: 1px solid black;*/
+
+    }
+
+    .row-1 {
+      width: 99%;
+      display: grid;
+      grid-template-columns: [start] 20% [two] 40% [three] 40% [end];
+      grid-column-gap: 5px;
+
+      margin-bottom: 10px;
+
+      /*border: 1px solid black;*/
+    }
+
+    .row-1 input {
+      height: 25px;
+      border-style: solid;
+      border-width: thin;
+      border-radius: 5px;
+
+      padding-left: 5px;
+      color: #c0c0c0;
+
+
+    }
+
+    label {
+      justify-self: start;
+    }
+
+    .row-2 {
+      width: 99%;
+      display: grid;
+      grid-template-columns: [start] 20% [two] 80% [end];
+      grid-column-gap: 5px;
+
+      margin-bottom: 10px;
+
+      /*border: 1px solid black;*/
+    }
+
+     .row-2 input {
+      width: 50%;
+      height: 25px;
+      border-style: solid;
+      border-width: thin;
+      border-radius: 5px;
+
+      padding-left: 5px;
+
+    }
+
+    .row-3 {
+      width: 99%;
+      display: grid;
+      grid-template-columns: [start] 20% [two] 80% [end];
+      grid-column-gap: 5px;
+
+      margin-bottom: 10px;
+
+      /*border: 1px solid black;*/
+    }
+
+    .row-3 textarea {
+     width: 90%;
+     height: 100px;
+     border-style: solid;
+     border-width: thin;
+     border-radius: 5px;
+
+     padding-left: 5px;
+
+   }
+
+   #submit_button {
+     padding: 1px;
+
+     background-color: #fff;
+   }
+
+   #submit_button:hover {
+     background: #00AEEF;
+     color: #fff;
+   }
+
+    /************* END BUILD.HTML ***********************/
+
+
 
     /*** footer settings  ***/
   footer {
     position: relative;
-    top: 90px;
+    /*top: 90px;*/
     width: 100%;
     height: 339px;
 
@@ -971,6 +1441,15 @@ body {
     grid-template-areas: "footer-scroll-top"
                          "info-section"
                          "share-copyright-section";
+  }
+
+  .galleryPage footer {
+    top: 90px;
+  }
+
+  .buildPage footer {
+    position: absolute;
+    bottom: 0px;
   }
 
   .xtra-info-section {

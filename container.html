@@ -9,18 +9,18 @@
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
     <meta name="keywords" content="armored, container, range, military, gso">
     <meta name="description" content="affordable armored container ranges">
-    <meta http-equiv="refresh" content="60">
     <meta name="author" content="Le koj">
     <link rel="icon" type="image/png" href="" sizes="">
     <link rel="icon" type="image/png" href="" sizes="">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" media="" href="static/css/standard.css">
     <link rel="stylesheet" type="text/css" media="" href="">
     <link rel="stylesheet" type="text/css" media="" href="">
   </head>
 
-  <body>
+  <body class="containerPage">
     <div class="nav-bar"> <!--- 2-rows-1-column --->
-      <div id="logo-bar"><img src="" alt=""></div> <!--- row-1 --->
+      <a id="logo-bar" href="index.html"> <img src="static/images/armoredRange-logo-06-01.png" alt="armored-range-logo"> </a> <!--- row-1 --->
       <ul id="menu-bar"> <!--- row-2 --->
         <li id="scroll-top" class="left"> <a href="#">^</a> </li>                            <!--- column-1 --->
         <li class="left" id="features-tab"> <a href="#"> FEATURES </a> </li>     <!--- column-2 --->
@@ -31,47 +31,63 @@
       </ul>
     </div>  <!--- end .nav-bar --->
 
-    <div class="opening-article">
-      <div class="slider">
-        <div class="figure">
-          <img src="static/images/inside-container.jpg" alt="">
-          <p class="figcaption"></p>
-        </div>
+    <div id="carousel" class="carousel slide" data-ride="carousel">
 
-        <div class="figure">
-          <img src="static/images/benz-container.jpg" alt="">
-          <p class="figcaption"></p>
-        </div>
+          <!-- Indicators -->
+          <ul class="carousel-indicators">
+            <li data-target="#carousel" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel" data-slide-to="1"></li>
+            <li data-target="#carousel" data-slide-to="2"></li>
+            <li data-target="#carousel" data-slide-to="3"></li>
+            <li data-target="#carousel" data-slide-to="4"></li>
+            <li data-target="#carousel" data-slide-to="5"></li>
+          </ul>
 
-        <div class="figure">
-          <img src="static/images/training-range-1.jpg" alt="">
-          <p class="figcaption"></p>
-        </div>
+          <!--- the slide-show --->
+          <div class="carousel-inner">
 
-        <div class="figure">
-          <img src="static/images/training-range-2.jpg" alt="">
-          <p class="figcaption"></p>
-        </div>
+            <div class="carousel-item active">
+              <img src="static/images/container-cover-photo.jpg" alt="">
+              <p class="figcaption"></p>
+            </div>
 
-        <div class="figure">
-          <img src="static/images/coming-soon-image.png" alt="">
-          <p class="figcaption"></p>
-        </div>
+            <div class="carousel-item">
+              <img src="static/images/open-container.jpg" alt="">
+              <p class="figcaption"></p>
+            </div>
 
-        <div class="figure">
-          <img src="static/images/coming-soon-image.png" alt="">
-          <p class="figcaption"></p>
-        </div>
-      </div>
-    </div> <!--- end .opening-article --->
-    <!--<div class="video-section">
-      <video class="bg-video" src="#"  autoplay="" loop="" width="320" height="240">
-         <source src="movie.mp4" type="video/mp4">
-         <source src="movie.ogg" type="video/ogg">
-         Your browser does not support the video tag.
-      </video>
-      <img class="video-play-button" src="" alt="">
-    </div>--->  <!--- end .video-section --->
+            <div class="carousel-item">
+              <img src="static/images/inside-conantainer-1.jpg" alt="">
+              <p class="figcaption"></p>
+            </div>
+
+            <div class="carousel-item">
+              <img src="static/images/shooter-in-range-3.jpg" alt="">
+              <p class="figcaption"></p>
+            </div>
+
+
+            <div class="carousel-item">
+              <img src="static/images/loading-container.jpg" alt="">
+              <p class="figcaption"></p>
+            </div>
+
+            <div class="carousel-item">
+              <img src="static/images/container-on-truck.jpg" alt="">
+              <p class="figcaption"></p>
+            </div>
+
+          </div>
+
+          <!--- 6 radio controls --->
+          <input type="radio" name="images" class="sliderRadio" id="i1">
+          <input type="radio" name="images" class="sliderRadio" id="i2">
+          <input type="radio" name="images" class="sliderRadio" id="i3">
+          <input type="radio" name="images" class="sliderRadio" id="i4">
+          <input type="radio" name="images" class="sliderRadio" id="i5">
+          <input type="radio" name="images" class="sliderRadio" id="i6">
+
+        </div> <!--- end .opening-article --->
 
     <div class="container-section-2">   <!--- 1-row-4-columns --->
 
@@ -109,7 +125,7 @@
       <div class="fs-wrapper">
         <div class="fs-row-wrapper">
           <div class="fs-row-1">     <!--- 1st article --->
-            <img src="" alt="">      <!-- article image --->
+            <img src="static/images/rubber-2.png" alt="">      <!-- article image --->
             <div class="fs-article">
               <h1>SHOCK 3.O INTERNAL BYPASS</h1>                <!-- article statement -->
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
@@ -126,8 +142,8 @@
         </div>
 
         <div class="fs-row-wrapper">
-        <div class="fs-row-2">     <!--- 2nd article --->
-            <div class="fs-article">
+        <div class="fs-row-2">     <!--- 2nd article ---> <!--- 2-column grid --->
+            <div class="fs-article">  <!--- col-1 --->
               <h1>SHOCK 3.O INTERNAL BYPASS</h1>                <!-- article statement -->
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
                 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -139,13 +155,13 @@
              </p>                  <!-- article quote -->
              <div class="quote">"...WITH 20" OF TRAVEL"</div>
             </div>
-            <img src="" alt="">
+            <img src="static/images/plates-1.png" alt=""> <!--- col-2 --->
           </div>
         </div>
 
         <div class="fs-row-wrapper">
           <div class="fs-row-3">     <!--- 3rd article --->
-            <img src="" alt="">
+            <img src="static/images/rubber-1.png" alt="">
             <div class="fs-article">
               <h1>SHOCK 3.O INTERNAL BYPASS</h1>                <!-- article statement -->
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
@@ -175,14 +191,18 @@
            </p>                  <!-- article quote -->
            <div class="quote">"...WITH 20" OF TRAVEL"</div>
           </div>
-          <img src="" alt="">
+          <img src="static/images/diamond_plates.png" alt="">
         </div>
         </div>
 
     </div>    <!--- end .features-section --->
 
     <div class="gallery-section">   <!--- carousel of images --->
+      <img class="galleryImage" src="static/images/container-benz-4.jpg">
 
+      <!-- Next and previous buttons -->
+      <div class="prev-wrapper preview-nav"><a class="prev" >&#10094;</a></div>
+      <div class="next-wrapper preview-nav"><a class="next" >&#10095;</a></div>
     </div>    <!--- end .gallery-section --->
 
     <div class="specs-section">
@@ -206,8 +226,8 @@
             <ul id="info-section-about">    <!--- 1-column-5-rows --->
               <li id="heading"> ABOUT ARMORED RANGES </li>
               <li> <a href="#"> COMPANY </a> </li>
-              <li> <a href="#"> GALLERY </a> </li>
-              <li> <a href="#"> CONTACT </a> </li>
+              <li> <a href="gallery.html"> GALLERY </a> </li>
+              <li> <a href="build.html"> CONTACT </a> </li>
               <li> <a href="#"> GET YOUR FREE ESTIMATE  </a></li>
             </ul>
 
@@ -234,8 +254,95 @@
     </footer>   <!--- end footer section --->
 
 
-    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
     </script>
-    <script type="text/javascript" src="static/js/modernizr.custom.46884.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script>
+    $(document).ready(function(){
+
+        var containerImages = ["static/images/container-benz-4.jpg","static/images/white-mountain-cover.jpg",  "static/images/walls.jpg",
+                      "static/images/black-shine.jpg", "static/images/container-on-glass.jpg", "static/images/gallery-image-10.jpg", "static/images/gallery-image-2.jpg",
+                      "static/images/inside-container-2.png", "static/images/controls-2.png", "static/images/gallery-image-3.png",
+                      "static/images/gallery-image-7.jpg", "static/images/gallery-image-4.jpg", "static/images/gallery-image-5.jpg",
+                      "static/images/shooter-in-range.png" , "static/images/gallery-image-9-1.png", "static/images/gallery-image-9.png",
+                      "static/images/gallery-image-11.png", "static/images/gallery-image-12.png", "static/images/gallery-image-13.jpg",
+                      "static/images/loading-container.png", "static/images/gallery-image-1.png", "static/images/gallery-image-14.png",
+                     "static/images/raw-material-1.jpg", "static/images/raw-material-2.jpg", "static/images/raw-material-3.jpg",
+                     "static/images/raw-material-4.jpg", "static/images/raw-material-5.jpg",
+                     "static/images/construction-1.png","static/images/construction-2.png", "static/images/construction-3.png",
+                     "static/images/construction-4.jpg", "static/images/construction-5.png"];
+
+        var indexOfImage = 1;
+
+        let arrayLength = containerImages.length;
+
+
+          // control interface for image preview element
+          function switchImage(offset) {
+            switch (offset) {
+              case -1:
+                getPreviousImage();
+                break;
+              case 1:
+                getNextImage();
+                break;
+              default:
+                console.log("no value found");
+            }   //****** end switch ****
+          }
+
+          // go to previous image
+          function getPreviousImage() {
+            console.log("initial index is " + String(indexOfImage));
+            switch (indexOfImage) {
+              case 1:
+                $(".gallery-section img").attr("src",containerImages[arrayLength-1]).fadeIn("slow");
+                indexOfImage = parseInt(arrayLength);
+
+                console.log("current index is " + String(indexOfImage));
+                break;
+              default:
+                indexOfImage -= 2;  // adjust indexOfImage value for calculation
+                $(".gallery-section img").attr("src",containerImages[indexOfImage]).fadeIn("slow");
+                indexOfImage += 1;  // adjust indexOfImage value for new image
+
+                console.log("current index is " + String(indexOfImage) + "--- array index is " + String(indexOfImage-1));
+
+            }     //***** end switch ****
+          } // ------- END getPreviousImage Method ------ //
+
+          // go to next image
+          function getNextImage() {
+            console.log("initial index is " + String(indexOfImage));
+            switch (indexOfImage) {
+              case arrayLength:
+                $(".gallery-section img").attr("src",containerImages[0]).fadeIn("slow");
+                indexOfImage = 1;
+                console.log("current index is " + String(indexOfImage));
+                break;
+              default:
+                $(".gallery-section img").attr("src",containerImages[indexOfImage]).fadeIn("slow");
+                indexOfImage += 1;    // adjust indexOfImage value
+
+                console.log("current index is " + String(indexOfImage) + "--- array index is " + String(indexOfImage-1));
+
+            }     //***** end switch ****
+          } // ------- END getNextImage Method ------ //
+
+
+          $(".prev-wrapper").click(function() {
+            $(".gallery-section img").hide();
+            switchImage(-1);
+          });
+
+          $(".next-wrapper").click(function() {
+            $(".gallery-section img").hide();
+            switchImage(1);
+          });
+
+
+    });
+
+    </script>
   </body>
 </html>

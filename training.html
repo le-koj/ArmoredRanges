@@ -9,18 +9,18 @@
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
     <meta name="keywords" content="armored, container, range, military, gso">
     <meta name="description" content="affordable armored container ranges">
-    <meta http-equiv="refresh" content="60">
     <meta name="author" content="Le koj">
     <link rel="icon" type="image/png" href="" sizes="">
     <link rel="icon" type="image/png" href="" sizes="">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" media="" href="static/css/standard.css">
     <link rel="stylesheet" type="text/css" media="" href="">
     <link rel="stylesheet" type="text/css" media="" href="">
   </head>
 
-  <body>
+  <body class="trainingPage">
     <div class="nav-bar"> <!--- 2-rows-1-column --->
-      <div id="logo-bar"><img src="" alt=""></div> <!--- row-1 --->
+      <a id="logo-bar" href="index.html"> <img src="static/images/armoredRange-logo-06-01.png" alt="armored-range-logo"> ---> </a> <!--- row-1 --->
       <ul class="training-nav" id="menu-bar"> <!--- row-2 --->
         <li id="scroll-top" class="left"> <a href="#">^</a> </li>                            <!--- column-1 --->
         <li class="left" id="features-tab"> <a href="#"> FEATURES </a> </li>     <!--- column-2 --->
@@ -31,47 +31,62 @@
       </ul>
     </div>  <!--- end .nav-bar --->
 
-    <div class="opening-article">
-      <div class="slider">
-        <div class="figure">
-          <img src="static/images/inside-container.jpg" alt="">
+    <div id="carousel" class="carousel slide" data-ride="carousel">
+
+      <!-- Indicators -->
+      <ul class="carousel-indicators">
+        <li data-target="#carousel" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel" data-slide-to="1"></li>
+        <li data-target="#carousel" data-slide-to="2"></li>
+        <li data-target="#carousel" data-slide-to="3"></li>
+        <li data-target="#carousel" data-slide-to="4"></li>
+        <li data-target="#carousel" data-slide-to="5"></li>
+      </ul>
+
+      <!--- the slide-show --->
+      <div class="carousel-inner">
+
+        <div class="carousel-item active">
+          <img src="static/images/camp-5-slide.png" alt="">
           <p class="figcaption"></p>
         </div>
 
-        <div class="figure">
-          <img src="static/images/benz-container.jpg" alt="">
+        <div class="carousel-item">
+          <img src="static/images/camp-2-slide.png" alt="">
           <p class="figcaption"></p>
         </div>
 
-        <div class="figure">
-          <img src="static/images/training-range-1.jpg" alt="">
+        <div class="carousel-item">
+          <img src="static/images/camp-7-slide.png" alt="">
           <p class="figcaption"></p>
         </div>
 
-        <div class="figure">
-          <img src="static/images/training-range-2.jpg" alt="">
+        <div class="carousel-item">
+          <img src="static/images/camp-8-slide.png" alt="">
           <p class="figcaption"></p>
         </div>
 
-        <div class="figure">
-          <img src="static/images/coming-soon-image.png" alt="">
+        <div class="carousel-item">
+          <img src="static/images/camp-10-slide.png" alt="">
           <p class="figcaption"></p>
         </div>
 
-        <div class="figure">
-          <img src="static/images/coming-soon-image.png" alt="">
+
+        <div class="carousel-item">
+          <img src="static/images/camp-11-slide.png" alt="">
           <p class="figcaption"></p>
         </div>
       </div>
+
+      <!--- 6 radio controls --->
+      <input type="radio" name="images" class="sliderRadio" id="i1">
+      <input type="radio" name="images" class="sliderRadio" id="i2">
+      <input type="radio" name="images" class="sliderRadio" id="i3">
+      <input type="radio" name="images" class="sliderRadio" id="i4">
+      <input type="radio" name="images" class="sliderRadio" id="i5">
+      <input type="radio" name="images" class="sliderRadio" id="i6">
+
     </div> <!--- end .opening-article --->
-    <!--<div class="video-section">
-      <video class="bg-video" src="#"  autoplay="" loop="" width="320" height="240">
-         <source src="movie.mp4" type="video/mp4">
-         <source src="movie.ogg" type="video/ogg">
-         Your browser does not support the video tag.
-      </video>
-      <img class="video-play-button" src="" alt="">
-    </div>--->  <!--- end .video-section --->
 
     <div class="container-section-4">    <!--- 1-row-6-columns --->
       <div id="cs4-col-2"> <p> 722 </p> <span>FT LBS TORQUE</span></div>
@@ -178,7 +193,11 @@
     </div>    <!--- end .features-section --->
 
     <div class="train gallery-section">   <!--- carousel of images --->
+      <img class="galleryImage" src="static/images/camp-1.png">
 
+      <!-- Next and previous buttons -->
+      <div class="prev-wrapper preview-nav"><a class="prev" >&#10094;</a></div>
+      <div class="next-wrapper preview-nav"><a class="next" >&#10095;</a></div>
     </div>    <!--- end .gallery-section --->
 
     <div class="train specs-section">
@@ -202,8 +221,8 @@
             <ul id="info-section-about">    <!--- 1-column-5-rows --->
               <li id="heading"> ABOUT ARMORED RANGES </li>
               <li> <a href="#"> COMPANY </a> </li>
-              <li> <a href="#"> GALLERY </a> </li>
-              <li> <a href="#"> CONTACT </a> </li>
+              <li> <a href="gallery.html"> GALLERY </a> </li>
+              <li> <a href="guild.html"> CONTACT </a> </li>
               <li> <a href="#"> GET YOUR FREE ESTIMATE  </a></li>
             </ul>
 
@@ -230,8 +249,88 @@
     </footer>   <!--- end footer section --->
 
 
-    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
     </script>
-    <script type="text/javascript" src="static/js/modernizr.custom.46884.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script>
+    $(document).ready(function(){
+
+        var trainingImages = [ "static/images/camp-1.png",
+                     "static/images/camp-2.png", "static/images/camp-3.png", "static/images/camp-4.png",
+                     "static/images/camp-5.png", "static/images/camp-6.png", "static/images/camp-7.png"];
+
+
+                     var indexOfImage = 1;
+
+                     let arrayLength = trainingImages.length;
+
+
+                       // control interface for image preview element
+                       function switchImage(offset) {
+                         switch (offset) {
+                           case -1:
+                             getPreviousImage();
+                             break;
+                           case 1:
+                             getNextImage();
+                             break;
+                           default:
+                             console.log("no value found");
+                         }   //****** end switch ****
+                       }
+
+                       // go to previous image
+                       function getPreviousImage() {
+                         console.log("initial index is " + String(indexOfImage));
+                         switch (indexOfImage) {
+                           case 1:
+                             $(".gallery-section img").attr("src",trainingImages[arrayLength-1]).fadeIn("slow");
+                             indexOfImage = parseInt(trainingImages);
+
+                             console.log("current index is " + String(indexOfImage));
+                             break;
+                           default:
+                             indexOfImage -= 2;  // adjust indexOfImage value for calculation
+                             $(".gallery-section img").attr("src",trainingImages[indexOfImage]).fadeIn("slow");
+                             indexOfImage += 1;  // adjust indexOfImage value for new image
+
+                             console.log("current index is " + String(indexOfImage) + "--- array index is " + String(indexOfImage-1));
+
+                         }     //***** end switch ****
+                       } // ------- END getPreviousImage Method ------ //
+
+                       // go to next image
+                       function getNextImage() {
+                         console.log("initial index is " + String(indexOfImage));
+                         switch (indexOfImage) {
+                           case arrayLength:
+                             $(".gallery-section img").attr("src",trainingImages[0]).fadeIn("slow");
+                             indexOfImage = 1;
+                             console.log("current index is " + String(indexOfImage));
+                             break;
+                           default:
+                             $(".gallery-section img").attr("src",trainingImages[indexOfImage]).fadeIn("slow");
+                             indexOfImage += 1;    // adjust indexOfImage value
+
+                             console.log("current index is " + String(indexOfImage) + "--- array index is " + String(indexOfImage-1));
+
+                         }     //***** end switch ****
+                       } // ------- END getNextImage Method ------ //
+
+
+                       $(".prev-wrapper").click(function() {
+                         $(".gallery-section img").hide();
+                         switchImage(-1);
+                       });
+
+                       $(".next-wrapper").click(function() {
+                         $(".gallery-section img").hide();
+                         switchImage(1);
+                       });
+
+
+                 });
+
+    </script>
   </body>
 </html>
