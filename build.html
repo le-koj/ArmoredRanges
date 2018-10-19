@@ -19,7 +19,7 @@
 
   <body class="buildPage">
     <div class="nav-bar"> <!--- 2-rows-1-column --->
-      <a id="logo-bar" href="index.html"> <img src="static/images/armoredRange-logo-06-01.png" alt="armored-range-logo"> </a> <!--- row-1 --->
+      <a id="logo-bar" href="index"> <img src="static/images/armoredRange-logo-06-01.png" alt="armored-range-logo"> </a> <!--- row-1 --->
       <ul id="menu-bar"> <!--- row-2 --->
         <li id="scroll-top" class="left"> <a href="#">^</a> </li>                            <!--- column-1 --->
       </ul>
@@ -31,21 +31,21 @@
     </div>
 
     <div id="after_submit"></div>
-    <form id="contact_form" action="#" method="POST" enctype="multipart/form-data">
+    <form id="contact_form" action="/contact" method="POST" enctype="multipart/form-data">
       <div class="row-1">
         <label class="required" for="name">Name</label>
-        <input id="first" class="input" name="name" type="text" value="First" size="30" />
-        <input id="last" class="input" name="name" type="text" value="Last" size="30" />
+        <input id="first" class="input" name="firstName" type="text" value="" placeholder="First" size="30" required/>
+        <input id="last" class="input" name="lastName" type="text" value="" placeholder="Last" size="30" required/>
         <span id="name_validation" class="error_message"></span>
       </div>
       <div class="row-2">
         <label class="required" for="email">Email</label>
-        <input id="email" class="input" name="email" type="text" value="" size="30" />
+        <input id="email" class="input" name="email" type="email" value="" placeholder="armored@example.com" size="30" required/>
         <span id="email_validation" class="error_message"></span>
       </div>
       <div class="row-3">
         <label class="required" for="message">Message</label>
-        <textarea id="message" class="input" name="message" rows="7" cols="30"></textarea>
+        <textarea id="message" class="input" name="message" rows="7" cols="30" required></textarea>
         <span id="message_validation" class="error_message"></span>
       </div>
 
@@ -62,9 +62,8 @@
           <div class="info-section-wrapper">
             <ul id="info-section-about">    <!--- 1-column-5-rows --->
               <li id="heading"> ABOUT ARMORED RANGES </li>
-              <li> <a href="#"> COMPANY </a> </li>
-              <li> <a href="gallery.html"> GALLERY </a> </li>
-              <li> <a href="#"> CONTACT </a> </li>
+              <li> <a href="/armoredrange"> COMPANY </a> </li>
+              <li> <a href="gallery"> GALLERY </a> </li>
               <li> <a href="#"> GET YOUR FREE ESTIMATE  </a></li>
             </ul>
 
@@ -90,7 +89,53 @@
       </div>
     </footer>   <!--- end footer section --->
 
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+    <script>
+    $(document).ready(function(){
+      $('#contact_form').validate({
+        rules: {
+
+          firstName: {
+            required: true,
+            minlength: 2,
+            maxlength: 20
+          },
+          lastName: {
+            required: true,
+            minlength: 2,
+            maxlength: 20
+          },
+          email: {
+            required: true,
+            email: true
+          },
+          message: {
+            required: true,
+            minlength: 10,
+            maxlength: 2000
+          }
+        },   /* end rules object */
+
+        messages: {
+
+          firstName: {
+            required: "please enter your first name",
+            minlength: "your first name must consist of at least 2 characters"
+          },
+          lastName: {
+            required: "please enter your last name",
+            minlength: "your last name must consist of at least 2 characters"
+          },
+          message: {
+            required: "please enter a message",
+            minlength: "your message must consist of at least 10 characters"
+          }
+        }   /* end messages object */
+
+      });
+
+    });
     </script>
   </body>
 </html>

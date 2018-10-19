@@ -16,18 +16,19 @@
     <link rel="stylesheet" type="text/css" media="" href="static/css/standard.css">
     <link rel="stylesheet" type="text/css" media="" href="">
     <link rel="stylesheet" type="text/css" media="" href="">
+
   </head>
 
   <body class="trainingPage">
     <div class="nav-bar"> <!--- 2-rows-1-column --->
-      <a id="logo-bar" href="index.html"> <img src="static/images/armoredRange-logo-06-01.png" alt="armored-range-logo"> ---> </a> <!--- row-1 --->
+      <a id="logo-bar" href="index"> <img src="static/images/armoredRange-logo-06-01.png" alt="armored-range-logo"></a> <!--- row-1 --->
       <ul class="training-nav" id="menu-bar"> <!--- row-2 --->
-        <li id="scroll-top" class="left"> <a href="#">^</a> </li>                            <!--- column-1 --->
-        <li class="left" id="features-tab"> <a href="#"> FEATURES </a> </li>     <!--- column-2 --->
-        <li class="left" id="gallery-tab"> <a href="#"> GALLERY </a> </li>       <!--- column-3 --->
-        <li class="left" id="specs-tab"> <a href="#"> SPECIFICATIONS </a>  </li>   <!--- column-6 ---->
-        <li class="left" id="about-tab"> <a href="about.html"> ABOUT US </a>  </li>    <!--- column-8 ---->
-        <li class="right" id="build-tab"> <a href="build.html"> BUILD & PRICE </a>  </li>   <!--- column-9 ---->
+        <li id="scroll-top" class="left"> <a href="#carousel">^</a> </li>                            <!--- column-1 --->
+        <li class="left" id="features-tab"> <a href="#train-features-section"> FEATURES </a> </li>     <!--- column-2 --->
+        <li class="left" id="gallery-tab"> <a href="#train-gallery-section"> GALLERY </a> </li>       <!--- column-3 --->
+        <li class="left" id="specs-tab"> <a href="#specs-section"> SPECIFICATIONS </a>  </li>   <!--- column-6 ---->
+        <li class="left" id="about-tab"> <a href="/armoredrange"> ABOUT US </a>  </li>    <!--- column-8 ---->
+        <li class="right" id="build-tab"> <a href="#"> BUILD & PRICE </a>  </li>   <!--- column-9 ---->
       </ul>
     </div>  <!--- end .nav-bar --->
 
@@ -97,21 +98,21 @@
 
     <div class="train container-section-3">    <!--- 1-row-6-columns --->
       <div class="cs3-link-wrapper">
-        <a href="#"><h2>FEATURES</h2></a>
-        <a href="#"><h2>GALLERY</h2></a>
-        <a href="#"><h2>SPECIFICATIONS</h2></a>
+        <a href="#train-features-section"><h2>FEATURES</h2></a>
+        <a href="#train-gallery-section"><h2>GALLERY</h2></a>
+        <a href="#specs-section"><h2>SPECIFICATIONS</h2></a>
       </div>
     </div>   <!--- end .container-section-3 --->
 
 
 
-    <div class="train features-section">     <!--- 4-rows-1-column --->
+    <div class="train features-section" id="train-features-section">     <!--- 4-rows-1-column --->
         <div class="train fs-wrapper">
           <h2>FEATURES</h2>
 
           <div class="tfs row-2">
 
-            <div class="train fs-col-1">     <!--- 1st article --->
+            <div class="train fs-col-1 fs-col">     <!--- 1st article --->
               <img src="" alt="">      <!-- article image --->
               <h1>SHOCK 3.O INTERNAL BYPASS</h1>                <!-- article statement -->
               <div class="train fs-article">
@@ -122,9 +123,7 @@
               </div>
             </div>
 
-
-
-          <div class="fs-col-2">     <!--- 2nd article --->
+          <div class="fs-col-2 fs-col" >     <!--- 2nd article --->
                 <img src="" alt="">      <!-- article image --->
                 <h1>SHOCK 3.O INTERNAL BYPASS</h1>                <!-- article statement -->
                 <div class="train fs-article">
@@ -135,9 +134,7 @@
                 </div>
           </div>
 
-
-
-            <div class="fs-col-3">     <!--- 3rd article --->
+            <div class="fs-col-3 fs-col">     <!--- 3rd article --->
               <img src="" alt="">      <!-- article image --->
               <h1>SHOCK 3.O INTERNAL BYPASS</h1>                <!-- article statement -->
               <div class="train fs-article">
@@ -152,7 +149,7 @@
 
         <div class="tfs row-3">
 
-          <div class="fs-col-4">     <!--- 4th article --->
+          <div class="fs-col-4 fs-col">     <!--- 4th article --->
             <img src="" alt="">      <!-- article image --->
             <h1>SHOCK 3.O INTERNAL BYPASS</h1>                <!-- article statement -->
             <div class="train fs-article">
@@ -165,7 +162,7 @@
 
 
 
-        <div class="fs-col-5">     <!--- 2nd article --->
+        <div class="fs-col-5 fs-col">     <!--- 2nd article --->
           <img src="" alt="">      <!-- article image --->
           <h1>SHOCK 3.O INTERNAL BYPASS</h1>                <!-- article statement -->
           <div class="train fs-article">
@@ -178,7 +175,7 @@
 
 
 
-        <div class="fs-col-6">     <!--- 4th article --->
+        <div class="fs-col-6 fs-col">     <!--- 4th article --->
             <img src="" alt="">      <!-- article image --->
             <h1>SHOCK 3.O INTERNAL BYPASS</h1>                <!-- article statement -->
             <div class="train fs-article">
@@ -190,9 +187,10 @@
       </div>
 
      </div> <!--- end tfs-row-3 --->
+   </div>
     </div>    <!--- end .features-section --->
 
-    <div class="train gallery-section">   <!--- carousel of images --->
+    <div class="train gallery-section" id="train-gallery-section">   <!--- carousel of images --->
       <img class="galleryImage" src="static/images/camp-1.png">
 
       <!-- Next and previous buttons -->
@@ -200,9 +198,77 @@
       <div class="next-wrapper preview-nav"><a class="next" >&#10095;</a></div>
     </div>    <!--- end .gallery-section --->
 
-    <div class="train specs-section">
+      <div class="specs-section" id="specs-section">
+        <h1>SPECIFICATIONS</h1>
 
-    </div>
+        <div class="specs-row-wrapper">
+
+          <div class="specification-box">
+            <span class="plus-sign">+</span>
+            <p>	All impact plates are certified AR500 steel </p>
+          </div>
+
+         <div class="specification-box">
+          <span class="plus-sign">+</span>
+          <p>	All frame components are 304 SS (no rust, no corrosion painting) </p>
+         </div>
+
+         <div class="specification-box">
+          <span class="plus-sign">+</span>
+          <p>	No welding of AR500 steel, therefore no risk of heat affected zones or weld cracks </p>
+         </div>
+
+         <div class="specification-box">
+          <span class="plus-sign">+</span>
+          <p>	All impact plates are neoprene or silicone rubber mounted to flex and absorb bullet energy </p>
+         </div>
+
+         <div class="specification-box">
+          <span class="plus-sign">+</span>
+          <p>	Entrance to deceleration chamber is set at 54″, which lessens the amount of lead dust put
+            into the shooting area as the bullet impact is closer to the mouth of the chamber
+          </p>
+         </div>
+
+         <div class="specification-box">
+          <span class="plus-sign">+</span>
+          <p>	Large deceleration chamber: 30 inches in diameter, which keeps the bullet more intact,
+            minimizing lead dust
+          </p>
+         </div>
+
+         <div class="specification-box">
+          <span class="plus-sign">+</span>
+          <p>	Bullets entering the deceleration chamber safely spin until they lose energy and
+            are deposited into sealed collection pails
+          </p>
+         </div>
+
+         <div class="specification-box">
+          <span class="plus-sign">+</span>
+          <p>	Cantilevered upper ramp is self-supported-no need for special anchoring or concrete footings </p>
+         </div>
+
+         <div class="specification-box">
+          <span class="plus-sign">+</span>
+          <p>	8-foot-high shooting area/expandable to a 10 foot or more height </p>
+         </div>
+
+         <div class="specification-box">
+          <span class="plus-sign">+</span>
+          <p>	No need for overhead super structure for upper ramp support. Input ramps set at 12-degree
+              angle from center line
+          </p>
+         </div>
+
+         <div class="specification-box">
+          <span class="plus-sign">+</span>
+          <p>	Upper support system tested to support additional loads up to 4,206 pounds (snow, ice, sand, etc.) </p>
+         </div>
+
+       </div> <!--- END SPECS-ROW-WRAPPER --->
+
+      </div>
 
     <div class="popup-window">
       <div class="content-container">
@@ -210,20 +276,61 @@
       </div>
     </div>    <!--- end .popup-window --->
 
+
+    <!--- PREVIEW --->
+    <div class="preview pdf">
+
+    <a id="exit">&#10060;</a>
+    <div id="pdf_wrapper"></div>
+
+    <form id="estimate_form" action="/estimate" method="POST" enctype="multipart/form-data">
+      <div class="row-1">
+        <label class="required" for="name">Name</label>
+        <input id="first" class="input" name="firstName" type="text" value="" placeholder="First" size="30" required/>
+        <input id="last" class="input" name="lastName" type="text" value="" placeholder="Last" size="30" required/>
+        <span id="name_validation" class="error_message"></span>
+      </div>
+      <div class="row-2">
+        <label class="required" for="email">Email</label>
+        <input id="email" class="input" name="email" type="email" value="" placeholder="armored@example.com" size="30" required/>
+        <span id="email_validation" class="error_message"></span>
+      </div>
+      <div class="row-3">
+        <label class="required" for="telephone">Telephone</label>
+        <input id="telephone" class="input" name="telephone" type="number" value="" size="30" required/>
+        <span id="email_validation" class="error_message"></span>
+      </div>
+      <div class="row-3">
+        <label class="required" for="country">country</label>
+        <input id="country" class="input" name="country" type="text" value="" placeholder="U.S.A" size="30" required/>
+        <span id="email_validation" class="error_message"></span>
+      </div>
+      <div class="row-4">
+        <label class="required" for="message">Message</label>
+        <textarea id="message" class="input" name="message" rows="7" cols="30" placeholder="please specify your request here" required></textarea>
+        <span id="message_validation" class="error_message"></span>
+      </div>
+
+      <input class="button-text estimate-button" id="submit_button" type="submit" value="Request" />
+    </form>
+
+    </div>
+
+
     <footer>    <!--- 3-row-1-column --->
       <!--- <div class="xtra-info-section">  ---> <!-- 2-rows-1-column --->
 
-        <div id="footer-scroll-top"> <a href="#">^</a> </div>
+        <div id="footer-scroll-top"> <a href="#carousel">^</a> </div>
 
         <div id="info-section">   <!--- 1-row-2-column --->
 
           <div class="info-section-wrapper">
             <ul id="info-section-about">    <!--- 1-column-5-rows --->
               <li id="heading"> ABOUT ARMORED RANGES </li>
-              <li> <a href="#"> COMPANY </a> </li>
-              <li> <a href="gallery.html"> GALLERY </a> </li>
-              <li> <a href="guild.html"> CONTACT </a> </li>
-              <li> <a href="#"> GET YOUR FREE ESTIMATE  </a></li>
+              <li> <a href="armoredrange"> COMPANY </a> </li>
+              <li> <a href="gallery"> GALLERY </a> </li>
+              <li> <a href="build"> CONTACT </a> </li>
+              <li id="estimate"> <a href="#"> GET YOUR FREE ESTIMATE  </a></li>
             </ul>
 
             <div id="info-section-address">
@@ -252,6 +359,7 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
     </script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
     <script>
     $(document).ready(function(){
 
@@ -327,6 +435,75 @@
                          $(".gallery-section img").hide();
                          switchImage(1);
                        });
+
+                       // click event response for images
+                       $("#estimate, #build-tab").click(function() {
+                           $(".preview").css("display","grid").fadeIn();
+                         });
+
+                       $("#exit").click(function() {
+                         $(".preview").fadeOut();
+                        });
+
+
+                       /***** form validation ***/
+                       $('#estimate_form').validate({
+                         rules: {
+
+                           firstName: {
+                             required: true,
+                             minlength: 2,
+                             maxlength: 20
+                           },
+                           lastName: {
+                             required: true,
+                             minlength: 2,
+                             maxlength: 20
+                           },
+                           email: {
+                             required: true,
+                             email: true
+                           },
+                           telephone: {
+                             required: true,
+                             minlength: 10,
+                             maxlength: 15,
+                             number: true
+                           },
+                           country: {
+                             required: true
+                           },
+                           message: {
+                             required: true,
+                             minlength: 10,
+                             maxlength: 2000
+                           }
+                         },   /* end rules object */
+
+                         messages: {
+
+                           firstName: {
+                             required: "please enter your first name",
+                             minlength: "your first name must consist of at least 2 characters"
+                           },
+                           lastName: {
+                             required: "please enter your last name",
+                             minlength: "your last name must consist of at least 2 characters"
+                           },
+                           telephone: {
+                             minlength: "your phone number must consist of at least 10 characters",
+
+                           },
+                           country: {
+                             required: "please enter a country"
+                           },
+                           message: {
+                             required: "please enter a message",
+                             minlength: "your message must consist of at least 10 characters"
+                           }
+                         }   /* end messages object */
+
+                       });    /***** end form validation ***/
 
 
                  });

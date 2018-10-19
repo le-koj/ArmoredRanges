@@ -21,14 +21,14 @@
 
   <body class="override">
     <div class="nav-bar"> <!--- 2-rows-1-column --->
-      <a id="logo-bar" href="index.html"> <img src="static/images/armoredRange-logo-06-01.png" alt="armored-range-logo"> </a> <!--- row-1 --->
+      <a id="logo-bar" href="index"> <img src="static/images/armoredRange-logo-06-01.png" alt="armored-range-logo"> </a> <!--- row-1 --->
       <ul id="menu-bar"> <!--- row-2 --->
         <li id="scroll-top" class="left"> <a href="#">^</a> </li>                            <!--- column-1 --->
-        <li id="container-range-tab" class="left"> <a href="container.html">CONTAINER RANGE</a> </li>     <!--- column-2 --->
-        <li id="training-range-tab" class="left"> <a href="training.html">TRAINING RANGE </a> </li>       <!--- column-3 --->
-        <li id="training-range-tab" class="left"> <a href="#">CUSTOM RANGE </a> </li>       <!--- column-4 --->
-        <li id="training-range-tab" class="right"> <a href="gallery.html">IMAGES </a> </li>       <!--- column-4 --->
-        <li id="about-tab" class="right"> <a href="about.html">ABOUT US</a>  </li>                      <!--- column-4 ---->
+        <li id="container-range-tab" class="left"> <a href="/container">CONTAINER RANGE</a> </li>     <!--- column-2 --->
+        <li id="training-range-tab" class="left"> <a href="/training">TRAINING RANGE </a> </li>       <!--- column-3 --->
+        <li id="custom-range-tab" class="left" hidden> <a href="#">CUSTOM RANGE </a> </li>       <!--- column-4 --->
+        <li id="images-range-tab" class="right"> <a href="/gallery">IMAGES </a> </li>       <!--- column-4 --->
+        <li id="about-tab" class="right"> <a href="/armoredrange">ABOUT US</a>  </li>                      <!--- column-4 ---->
       </ul>
     </div>  <!--- end .nav-bar --->
 
@@ -93,11 +93,11 @@
       <div class="section-header">PRODUCTS</div>
       <div id="product-table">
         <div class="product-box" id="product-1">
-          <a href="container.html"><img class="product-image" src="static/images/product-1.png" alt=""></a>
+          <a href="container"><img class="product-image" src="static/images/product-1.png" alt=""></a>
           <p><img src="static/images/armoredRange-name-02.png" alt=""></p>
         </div>
         <div class="product-box" id="product-2">
-          <a href="training.html"><img class="product-image" src="static/images/training-range.png" alt="training-range-image"></a>
+          <a href="training"><img class="product-image" src="static/images/training-range.png" alt="training-range-image"></a>
           <p><img src="static/images/training-range-name-02.png" alt="training range text"></p>
         </div>
         <div class="product-box" id="product-3">
@@ -107,7 +107,7 @@
       </div>
      <div class="section-button">
         <!--a class="button"-->
-        <a class="button-text" href="#"> ABOUT THE PRODUCT NAMES </a>
+        <a class="button-text" href="#" id="products-info"> ABOUT THE PRODUCT NAMES </a>
         <!--/a-->
       </div>
     </div>  <!--- end .product-section --->
@@ -117,6 +117,45 @@
 
       </div>
     </div>    <!--- end .popup-window --->
+
+    <!--- PREVIEW --->
+    <div class="preview pdf">
+
+    <a id="exit">&#10060;</a>
+    <div id="pdf_wrapper"></div>
+
+    <form id="estimate_form" action="/estimate" method="POST" enctype="multipart/form-data">
+      <div class="row-1">
+        <label class="required" for="name">Name</label>
+        <input id="first" class="input" name="firstName" type="text" value="" placeholder="First" size="30" required/>
+        <input id="last" class="input" name="lastName" type="text" value="" placeholder="Last" size="30" required/>
+        <span id="name_validation" class="error_message"></span>
+      </div>
+      <div class="row-2">
+        <label class="required" for="email">Email</label>
+        <input id="email" class="input" name="email" type="email" value="" placeholder="armored@example.com" size="30" required/>
+        <span id="email_validation" class="error_message"></span>
+      </div>
+      <div class="row-3">
+        <label class="required" for="telephone">Telephone</label>
+        <input id="telephone" class="input" name="telephone" type="number" value="" size="30" required/>
+        <span id="email_validation" class="error_message"></span>
+      </div>
+      <div class="row-3">
+        <label class="required" for="country">country</label>
+        <input id="country" class="input" name="country" type="text" value="" placeholder="U.S.A" size="30" required/>
+        <span id="email_validation" class="error_message"></span>
+      </div>
+      <div class="row-4">
+        <label class="required" for="message">Message</label>
+        <textarea id="message" class="input" name="message" rows="7" cols="30" placeholder="please specify your request here" required></textarea>
+        <span id="message_validation" class="error_message"></span>
+      </div>
+
+      <input class="button-text estimate-button" id="submit_button" type="submit" value="Request" />
+    </form>
+
+    </div>
 
     <footer>    <!--- 3-row-1-column --->
       <!--- <div class="xtra-info-section">  ---> <!-- 2-rows-1-column --->
@@ -128,10 +167,10 @@
           <div class="info-section-wrapper">
             <ul id="info-section-about">    <!--- 1-column-5-rows --->
               <li id="heading"> ABOUT ARMORED RANGES </li>
-              <li> <a href="#"> COMPANY </a> </li>
-              <li> <a href="gallery.html"> GALLERY </a> </li>
-              <li> <a href="build.html"> CONTACT </a> </li>
-              <li> <a href="#"> GET YOUR FREE ESTIMATE  </a></li>
+              <li> <a href="armoredrange"> COMPANY </a> </li>
+              <li> <a href="gallery"> GALLERY </a> </li>
+              <li> <a href="build"> CONTACT </a> </li>
+              <li id="estimate"> <a href="#"> GET YOUR FREE ESTIMATE  </a></li>
             </ul>
 
             <div id="info-section-address">
@@ -159,5 +198,80 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
     </script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+    <script>
+    $(document).ready(function(){
+      // click event response for images
+      $("#estimate, #products-info").click(function() {
+          $(".preview").css("display","grid").fadeIn();
+        });
+
+        $("#exit").click(function() {
+          $(".preview").fadeOut();
+        });
+
+
+        /***** form validation ***/
+        $('#estimate_form').validate({
+          rules: {
+
+            firstName: {
+              required: true,
+              minlength: 2,
+              maxlength: 20
+            },
+            lastName: {
+              required: true,
+              minlength: 2,
+              maxlength: 20
+            },
+            email: {
+              required: true,
+              email: true
+            },
+            telephone: {
+              required: true,
+              minlength: 10,
+              maxlength: 15,
+              number: true
+            },
+            country: {
+              required: true
+            },
+            message: {
+              required: true,
+              minlength: 10,
+              maxlength: 2000
+            }
+          },   /* end rules object */
+
+          messages: {
+
+            firstName: {
+              required: "please enter your first name",
+              minlength: "your first name must consist of at least 2 characters"
+            },
+            lastName: {
+              required: "please enter your last name",
+              minlength: "your last name must consist of at least 2 characters"
+            },
+            telephone: {
+              minlength: "your phone number must consist of at least 10 characters",
+
+            },
+            country: {
+              required: "please enter a country"
+            },
+            message: {
+              required: "please enter a message",
+              minlength: "your message must consist of at least 10 characters"
+            }
+          }   /* end messages object */
+
+        });    /***** end form validation ***/
+
+      });
+
+    </script>
   </body>
 </html>

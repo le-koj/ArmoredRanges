@@ -8,15 +8,19 @@
 ###          app.                           ###
 ###############################################
 
-import webapp2, os, jinja2, model
-from google.appengine.api import app_identity
+import webapp2, cgi, os, jinja2
+from google.appengine.api import app_identity, mail
+import sys
+
+reload(sys)
+sys.setdefaultencoding('utf8')
 
 # setup template directory
 template_dir = os.path.join(os.path.dirname(__file__))
 
 # jinja environment instance to load html templates
 jinja_env = jinja2.Environment(loader=jinja2.FileSystemLoader(template_dir),
-                               autoescape=True))
+                               autoescape=True)
 
 
 ############_____ ROOT APP CONTROL OBJECT ___##########
@@ -25,7 +29,7 @@ class MainHandler(webapp2.RequestHandler):
 
     #_____ method to respond to request _____#
     def get(self):
-        process_get_method("index.html")    # generate and send html page
+        self.process_get_method("index.html")    # generate and send html page
 
     #_____ method to finalize template for response _____#
     def renderTemplate(self, template_name, context=None):
@@ -59,7 +63,7 @@ class ContainerHandler(MainHandler):
 
     #_____ method to respond to request _____#
     def get(self):
-        process_get_method("container.html")    # generate and send html page
+        self.process_get_method("container.html")    # generate and send html page
 
 
 
@@ -69,7 +73,17 @@ class TrainingHandler(MainHandler):
 
     #_____ method to respond to request _____#
     def get(self):
-        process_get_method("training.html")    # generate and send html page
+        self.process_get_method("training.html")    # generate and send html page
+
+
+
+############_____ ABOUT PAGE CONTROL OBJECT ___##########
+class AboutHandler(MainHandler):
+    """object to handle training.html response"""
+
+    #_____ method to respond to request _____#
+    def get(self):
+        self.process_get_method("armoredrange.html")    # generate and send html page
 
 
 
@@ -79,19 +93,47 @@ class BuildHandler(MainHandler):
 
     #_____ method to respond to request _____#
     def get(self):
-        process_get_method("build.html")    # generate and send html page
+        self.process_get_method("build.html")    # generate and send html page
 
-
+    #_____ method to process post request _____#
     def post(self):
 
-        """
-        guestbook_name = self.request.get('guestbook_name',
-                                                  DEFAULT_GUESTBOOK_NAME)
-        greeting = Greeting(parent=guestbook_key(guestbook_name))
+        information_list = ['firstName', 'lastName', 'email', 'message' ]
 
-        greeting.content = self.request.get('content')
-        greeting.put()  """
-        pass 
+        sender_address = cgi.escape(self.request.get('email'))
+        email = 'mitchkojelegance@gmail.com'
+        subject = cgi.escape(self.request.get('firstName')) + " " + cgi.escape(self.request.get('lastName'))
+        body = cgi.escape(self.request.get('message'))
+
+        mail.send_mail(sender=sender_address,
+                  to=email,
+                  subject=subject,
+                  body=body)
+
+        self.process_get_method('response.html')
+
+
+
+############_____ BUILD PAGE CONTROL OBJECT ___##########
+class EstimateHandler(MainHandler):
+    """object to handle estimate requests"""
+
+    #_____ method to process estimate request _____#
+    def post(self):
+        sender_address = cgi.escape(self.request.get('email'))
+        email = 'mitchkojelegance@gmail.com'
+        telephone = cgi.escape(self.request.get('telephone'))
+        country = cgi.escape(self.request.get('country'))
+        subject = cgi.escape(self.request.get('firstName')) + " " + cgi.escape(self.request.get('lastName'))
+        body = cgi.escape(self.request.get('message')) + '\n' + country + '\n' + str(telephone) + '\n'
+
+        mail.send_mail(sender=sender_address,
+                  to=email,
+                  subject=subject,
+                  body=body)
+
+        self.process_get_method('response.html')
+
 
 
 
@@ -101,7 +143,7 @@ class GalleryHandler(MainHandler):
 
     #_____ method to respond to request _____#
     def get(self):
-        process_get_method("gallery.html")    # generate and send html page
+        self.process_get_method("gallery.html")    # generate and send html page
 
 
 
@@ -116,5 +158,8 @@ app = webapp2.WSGIApplication([
     (r'/container', ContainerHandler),
     (r'/training', TrainingHandler),
     (r'/build', BuildHandler),
+    (r'/contact', BuildHandler),
+    (r'/estimate', EstimateHandler),
+    (r'/armoredrange', AboutHandler),
     (r'/gallery', GalleryHandler),
     ], debug=True)

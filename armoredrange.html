@@ -1,0 +1,248 @@
+<!--- Landing Page --->
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>armoredrange</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta name="keywords" content="armored, container, range, military, gso">
+    <meta name="description" content="affordable armored container ranges">
+    <meta name="author" content="Le koj">
+    <link rel="icon" type="image/png" href="" sizes="">
+    <link rel="icon" type="image/png" href="" sizes="">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="" href="static/css/standard.css">
+    <link rel="stylesheet" type="text/css" media="" href="">
+    <link rel="stylesheet" type="text/css" media="" href="">
+
+  </head>
+
+  <body class="aboutPage">
+    <div class="nav-bar"> <!--- 2-rows-1-column --->
+      <a id="logo-bar" href="index"> <img src="static/images/armoredRange-logo-06-01.png" alt="armored-range-logo"> </a> <!--- row-1 --->
+      <ul id="menu-bar"> <!--- row-2 --->
+        <li id="scroll-top" class="left"> <a href="#">^</a> </li>                            <!--- column-1 --->
+        <li id="images-range-tab" class="right"> <a href="/gallery">IMAGES </a> </li>       <!--- column-4 --->
+      </ul>
+    </div>  <!--- end .nav-bar --->
+
+    <div class="banner">
+      <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+      </h3>
+  </div>
+
+    <div class="quick-facts">
+        <div id="facts-col-1"> ARMORED RANGE FACTS: </div>
+        <ul>    <!--- 1-row-3-columns --->
+          <li class="fact-0 fact-1">  FOUNDED <span class="numbers"> 2018</span> </li>
+          <li class="fact-0 fact-2">  PRODUCTS <span class="numbers"> 3+ </span> </li>
+          <li class="fact-0 fact-3"> CONTRACTED RANGES <span class="numbers"> 50+ </span> </li>
+        </ul>
+    </div>
+
+      <div class="values-wrapper"> <!--- 2-row-grid --->
+
+        <h1 id="values-heading">OUR VALUES</h1>
+
+        <div class="values-col">
+
+            <div class="value val-col-1">    <!--- col-1 --->
+              <img src="" alt="">      <!-- article image --->
+              <h1>SIMPLE</h1>                <!-- article statement -->
+              <div class="value val-article">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                  exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+               </p>                  <!-- article quote -->
+              </div>
+            </div>
+
+
+          <div class="value val-col-2">     <!--- col-2 --->
+                <img src="" alt="">      <!-- article image --->
+                <h1>SECURITY</h1>                <!-- article statement -->
+                <div class="value val-article">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                 </p>                  <!-- article quote -->
+                </div>
+          </div>
+
+
+            <div class="value val-col-3">     <!--- col-3 --->
+              <img src="" alt="">      <!-- article image --->
+              <h1>ARMORED</h1>                <!-- article statement -->
+              <div class="value val-article">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                  exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+               </p>                  <!-- article quote -->
+              </div>
+            </div>
+
+        </div>    <!--- end values --->
+      </div>
+
+
+      <!--- PREVIEW --->
+      <div class="preview pdf">
+
+      <a id="exit">&#10060;</a>
+      <div id="pdf_wrapper"></div>
+
+      <form id="estimate_form" action="/estimate" method="POST" enctype="multipart/form-data">
+        <div class="row-1">
+          <label class="required" for="name">Name</label>
+          <input id="first" class="input" name="firstName" type="text" value="" placeholder="First" size="30" required/>
+          <input id="last" class="input" name="lastName" type="text" value="" placeholder="Last" size="30" required/>
+          <span id="name_validation" class="error_message"></span>
+        </div>
+        <div class="row-2">
+          <label class="required" for="email">Email</label>
+          <input id="email" class="input" name="email" type="email" value="" placeholder="armored@example.com" size="30" required/>
+          <span id="email_validation" class="error_message"></span>
+        </div>
+        <div class="row-3">
+          <label class="required" for="telephone">Telephone</label>
+          <input id="telephone" class="input" name="telephone" type="number" value="" size="30" required/>
+          <span id="email_validation" class="error_message"></span>
+        </div>
+        <div class="row-3">
+          <label class="required" for="country">country</label>
+          <input id="country" class="input" name="country" type="text" value="" placeholder="U.S.A" size="30" required/>
+          <span id="email_validation" class="error_message"></span>
+        </div>
+        <div class="row-4">
+          <label class="required" for="message">Message</label>
+          <textarea id="message" class="input" name="message" rows="7" cols="30" placeholder="please specify your request here" required></textarea>
+          <span id="message_validation" class="error_message"></span>
+        </div>
+
+        <input class="button-text estimate-button" id="submit_button" type="submit" value="Request" />
+      </form>
+
+      </div>
+
+    <footer>    <!--- 3-row-1-column --->
+      <!--- <div class="xtra-info-section">  ---> <!-- 2-rows-1-column --->
+
+        <div id="footer-scroll-top"> <a href="#">^</a> </div>
+
+        <div id="info-section">   <!--- 1-row-2-column --->
+
+          <div class="info-section-wrapper">
+            <ul id="info-section-about">    <!--- 1-column-5-rows --->
+              <li id="heading"> ABOUT ARMORED RANGES </li>
+              <li> <a href="gallery"> GALLERY </a> </li>
+              <li> <a href="build"> CONTACT </a> </li>
+              <li id="estimate"> <a href="#"> GET YOUR FREE ESTIMATE  </a></li>
+            </ul>
+
+            <div id="info-section-address">
+              <img src="static/images/armoredRange-logo-06.png" alt="armored range logo">
+              <p>2901 W Coast Highway, Ste 200</p>
+              <p>Newport Beach <span> CA 92663<span> </p>
+                <p>United States</p>
+              <p>Main: <span><b>1 (888)-888-1008</b><span></p>
+            </div>
+          </div>
+        </div>
+      <!--- </div> --->
+
+      <div class="share-copyright-section">
+        <ul>    <!--- 1-row-4-columns --->
+          <li class="left"> FOLLOW ARMORED RANGE </li>
+          <li class="left"> <a href="#"> INSTAGRAM </a> </li>
+          <li class="left"> <a href="#"> YOUTUBE </a> </li>
+        </ul>
+
+        <p id="copyright"> &copy; 2018 GSO INTERNATIONAL </p>
+      </div>
+    </footer>   <!--- end footer section --->
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+    <script>
+    $(document).ready(function(){
+      // click event response for images
+      $("#estimate").click(function() {
+          $(".preview").css("display","grid").fadeIn();
+        });
+
+        $("#exit").click(function() {
+          $(".preview").fadeOut();
+        });
+
+
+        /***** form validation ***/
+        $('#estimate_form').validate({
+          rules: {
+
+            firstName: {
+              required: true,
+              minlength: 2,
+              maxlength: 20
+            },
+            lastName: {
+              required: true,
+              minlength: 2,
+              maxlength: 20
+            },
+            email: {
+              required: true,
+              email: true
+            },
+            telephone: {
+              required: true,
+              minlength: 10,
+              maxlength: 15,
+              number: true
+            },
+            country: {
+              required: true
+            },
+            message: {
+              required: true,
+              minlength: 10,
+              maxlength: 2000
+            }
+          },   /* end rules object */
+
+          messages: {
+
+            firstName: {
+              required: "please enter your first name",
+              minlength: "your first name must consist of at least 2 characters"
+            },
+            lastName: {
+              required: "please enter your last name",
+              minlength: "your last name must consist of at least 2 characters"
+            },
+            telephone: {
+              minlength: "your phone number must consist of at least 10 characters",
+
+            },
+            country: {
+              required: "please enter a country"
+            },
+            message: {
+              required: "please enter a message",
+              minlength: "your message must consist of at least 10 characters"
+            }
+          }   /* end messages object */
+
+        });    /***** end form validation ***/
+
+      });
+
+    </script>
+
+  </body>
+</html>

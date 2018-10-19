@@ -42,6 +42,10 @@ a:hover {
   text-decoration: none;
 }
 
+.containerPage, .aboutPage, .trainingPage, .galleryPage {
+  scroll-behavior: smooth;
+}
+
 
   /*** General body settings  ***/
 body {
@@ -146,96 +150,9 @@ body {
     background-color: #337ab7;
   }
 
+
     /*** opening article settings  ***/
 
-@keyframes slidy {
-  0% { left: 0%;}
-  /*5% {left: 0%}*/
-  5% {left: 0%;}
-  20% {left: -100%;}   /*** image 2 ***/
-  25% {left: -100%;}
-  40% { left: -200%;}   /*** image 3 ***/
-  45% {left: -200%;}
-  60% { left: -300%;}   /*** image 4 ***/
-  65% {left: -300%;}
-  90% { left: -400%;}     /*** image 5 ***/
-  100% { left: -500%;}    /*** image 6 ***/
-}
-
-@keyframes slider2 {
-  /*5% {left: 0%}*/
-
-  0%  {left: -100%;}
-  5%  {left: -100%;}
-  20% { left: -200%;}
-  25% {left: -200%;}
-  40% { left: -300%;}
-  45%  { left: -300%;}
-  60% { left: -400%;}
-  65%  { left: -500%;}
-  90%  { left: 0%;}
-  100% {left: 0%;}
-}
-
-@keyframes slider3 {
-  /*5% {left: 0%}*/
-
-  0%  { left: -200%;}
-  5% {left: -200%;}
-  20%  { left: -300%;}
-  25% {left: -300%;}
-  40%  { left: -400%;}
-  45%  { left: -500%;}
-  60% { left: 0%;}
-  65%   {left: 0%;}
-  90%   {left: -100%;}
-  100%  {left: -100%;}
-}
-
-@keyframes slider4 {
-  /*5% {left: 0%}*/
-
-  0%  {left: -300%;}
-  5%  {left: -300%;}
-  20% { left: -400%;}
-  25% { left: -500%;}
-  40% { left: 0%;}
-  45% { left: 0%;}
-  60% {left: -100%;}
-  65%  {left: -100%;}
-  90%  { left: -200%;}
-  100% { left: -200%;}
-}
-
-@keyframes slider5 {
-  /*5% {left: 0%}*/
-
-  0% { left: -400%;}
-  5% { left: -500%;}
-  20% { left: 0%;}
-  25% { left: 0%;}
-  40% {left: -100%;}
-  45% {left: -100%;}
-  60% { left: -200%;}
-  65%  { left: -200%;}
-  90%  { left: -300%;}
-  100% { left: -300%;}
-}
-
-@keyframes slider6 {
-  /*5% {left: 0%}*/
-
-  5% { left: -500%;}
-  20% { left: 0%;}
-  25% { left: 0%;}
-  40% {left: -100%;}
-  45% {left: -100%;}
-  60% { left: -200%;}
-  65%  { left: -200%;}
-  90%  { left: -300%;}
-  100% { left: -300%;}
-  0% { left: -400%;}
-}
 
  .opening-article {
     position: relative;
@@ -482,6 +399,12 @@ body {
   .button-text:hover {
     color: #fff;
     background: #00AEEF;
+  }
+
+  .override .button-text {
+    width: auto;
+    padding-left: 6px;
+    padding-right: 6px;
   }
 
 
@@ -874,9 +797,61 @@ body {
 .specs-section {
   position: relative;
   /*top: 90px;*/
-  height: 500px;
+  height: auto;
 
-  background-color: #000;
+  display: grid;
+  grid-template-columns: [start] 100% [end];
+  grid-template-rows: [start] 20% [middle] 80% [end];
+
+  background-color: #00AEEF;
+}
+
+.specs-section h1 {
+  align-self: center;
+  font-size: 50px;
+  font-weight: bold
+}
+
+.specs-row-wrapper {
+    display: grid;
+    grid-template-columns: [start] 100% [end];
+    grid-auto-flow: row;
+
+    background-color: #00AEEF;
+}
+
+.specification-box {
+  display: grid;
+  grid-template-columns: [start] 10% [middle] 90% [end];
+  grid-template-rows: auto;
+
+  color: #fff;
+  font-size: 16px;
+  letter-spacing: .3px;
+
+  background: #1c1c1c;
+
+  box-shadow: 2px 0px 5px 0px #000;
+
+}
+
+.plus-sign {
+  justify-self: center;
+  align-self: center;
+
+  color: #eaeaea;
+
+  margin-bottom: 5px;
+}
+
+.specification-box p {
+  justify-self: start;
+  align-self: center;
+
+  color: #999696;
+
+  margin-top: 10px;
+
 }
 
   /****************   END CONTAINER.HTML   ******/
@@ -909,6 +884,7 @@ body {
   .train.fs-wrapper {
     width: 1170px;
     min-width: 1000px;
+    height: auto;
 
     margin: 0 auto;
     grid-template-rows: [start] 10% [row-1-2] 45% [row-2-3] 45% [end];
@@ -952,141 +928,42 @@ body {
   }
 
 
-  div .fs-col-1 {
+  div .fs-col {
     display: grid;
     width: 100%;
-    height: 95%;
+    height: auto;
 
-    padding: 50px;
-    grid-template-rows: [start] 40% [col-1-2] 10% [col-2-3] 40% [end];
+    padding: 5px;
+
+    grid-template-rows: [start] 40% [col-1-2] 20% [col-2-3] 40% [end];
     grid-template-columns: [start] 100% [end];
 
-    grid-row-gap: 20px;
+    grid-template-areas: " img "
+                         " heading "
+                         " paragraph ";
+
+    grid-row-gap: 10px;
 
     box-shadow: #000 9px 5px 9px 0px;
+
 
     /*border: 1px solid red;*/
 
   }
 
-  div .fs-col-2 {
-    display: grid;
-    width: 100%;
-    height: 95%;
+  .fs-col img {
+    grid-area: img;
+  }
 
-    padding: 50px;
-
-    grid-template-rows: [start] 40% [col-1-2] 10% [col-2-3] 40% [end];
-    grid-template-columns: [start] 100% [end];
-
-    grid-row-gap: 20px;
-
-    box-shadow: #000 9px 5px 9px 0px;
-
-
+  .fs-col h1 {
+    grid-area: heading;
 
   }
 
-
-
-  div .fs-col-3 {
-      display: grid;
-      width: 100%;
-      height: 95%;
-
-      padding: 50px;
-
-      grid-template-rows: [start] 40% [col-1-2] 10% [col-2-3] 40% [end];
-      grid-template-columns: [start] 100% [end];
-
-      grid-row-gap: 20px;
-
-      box-shadow: #000 9px 5px 9px 0px;
-
-
-    }
-
-    div .fs-col-4 {
-      display: grid;
-      width: 100%;
-      height: 95%;
-
-      padding: 50px;
-
-      grid-template-rows: [start] 40% [col-1-2] 10% [col-2-3] 40% [end];
-      grid-template-columns: [start] 100% [end];
-
-      grid-row-gap: 20px;
-
-      box-shadow: #000 9px 5px 9px 0px;
-
-
-
-    }
-
-    div .fs-col-5 {
-      display: grid;
-      width: 100%;
-      height: 95%;
-
-      padding: 50px;
-
-      grid-template-rows: [start] 40% [col-1-2] 10% [col-2-3] 40% [end];
-      grid-template-columns: [start] 100% [end];
-
-      grid-row-gap: 20px;
-
-      box-shadow: #000 9px 5px 9px 0px;
-
-
-    }
-
-    div .fs-col-6 {
-      display: grid;
-      width: 100%;
-      height: 95%;
-
-      padding: 50px;
-
-      grid-template-rows: [start] 40% [col-1-2] 10% [col-2-3] 40% [end];
-      grid-template-columns: [start] 100% [end];
-
-      grid-row-gap: 20px;
-
-      box-shadow: #000 9px 5px 9px 0px;
-
-
-
-    }
-
-  .tfs .fs-row-wrapper h1 {
-    width: 80%;
-    font-size: 40px;
-    line-height: 60px;
-
+  .fs-col p {
+    grid-area: paragraph;
     padding: 5px;
-  }
-
-
-  .train.fs-wrapper p {
-    width: 80%;
-    line-height: 20px;
-    font-size: 15px;
-
-    margin: 0 auto;
-    margin-top: 5px;
-    padding: 5px;
-    color: #4d4d4d;
-
-
-
-  }
-
-  .tfs .fs-row-wrapper span {
-    display: block;
-    margin-top: 10px;
-    color: #a5a5a5;
-
+    color: #999696;
   }
 
   .tfs .fs-article .quote {
@@ -1101,10 +978,13 @@ body {
 
   }
 
+  .trainingPage .specs-section {
+    background: #BA906D;
+  }
 
-  .train.specs-section {
-    height: 900px;
-    background-color: #BA906D;
+  .trainingPage .specs-section h1 {
+    margin-top: 10px;
+    color: #fff;
   }
 
 
@@ -1320,10 +1200,8 @@ body {
 
     form {
       position: relative;
-      top: 20vh;
 
       width: 600px;
-      margin: 0 auto;
 
       padding: 20px;
 
@@ -1336,11 +1214,20 @@ body {
 
     }
 
+    .buildPage form {
+      top: 20vh;
+      margin: 0 auto;
+    }
+
     .row-1 {
       width: 99%;
       display: grid;
       grid-template-columns: [start] 20% [two] 40% [three] 40% [end];
+      grid-template-rows: [start] auto [end];
+      grid-template-areas: "col-1 col-2 col-3"
+                           "label-1 label-2 label-3";
       grid-column-gap: 5px;
+
 
       margin-bottom: 10px;
 
@@ -1354,24 +1241,44 @@ body {
       border-radius: 5px;
 
       padding-left: 5px;
-      color: #c0c0c0;
-
 
     }
 
     label {
       justify-self: start;
+      color: #00AEEF;
+    }
+
+    .error {
+      color: #ff0000;
+      text-align: left;
+      font-size: 12px;
+    }
+
+    #first-error {
+      grid-area: label-2;
+    }
+
+    #last-error {
+      grid-area: label-3;
     }
 
     .row-2 {
       width: 99%;
       display: grid;
       grid-template-columns: [start] 20% [two] 80% [end];
+      grid-template-rows: [start] auto [end];
+      grid-template-areas: "col-1 col-2"
+                           "label-1 label-2";
       grid-column-gap: 5px;
 
       margin-bottom: 10px;
 
       /*border: 1px solid black;*/
+    }
+
+    #email-error {
+      grid-area: label-2;
     }
 
      .row-2 input {
@@ -1389,11 +1296,18 @@ body {
       width: 99%;
       display: grid;
       grid-template-columns: [start] 20% [two] 80% [end];
+      grid-template-rows: [start] auto [end];
+      grid-template-areas: "col-1 col-2"
+                           "label-1 label-2";
       grid-column-gap: 5px;
 
       margin-bottom: 10px;
 
       /*border: 1px solid black;*/
+    }
+
+    #telephone-error {
+      grid-area: label-2;
     }
 
     .row-3 textarea {
@@ -1422,6 +1336,419 @@ body {
 
 
 
+    /************ RESPONSE.HTML ************************/
+
+    .responsePage {
+      background: rgba(0, 0, 0, 0.1);
+    }
+
+    .logo-Box {
+      position: relative;
+      top: 100px;
+      width: 80%;
+
+      margin: 0px auto;
+
+      /*border: 1px solid black;*/
+    }
+
+    .logo-Box img {
+      width: 60%;
+      padding-top: 50px;
+      /*border: 1px solid red;*/
+    }
+
+    #response-1 {
+      position: relative;
+      top: 130px;
+      width: 600px;
+      margin: 0 auto;
+
+      text-align: center;
+      font-size: 30px;
+      font-style: italic;
+      font-weight: bold;
+      letter-spacing: 1px;
+      font-family: sans-serif;
+      color: #00AEEF;
+
+      /*border: 1px solid black;*/
+    }
+
+    #response-2 {
+      position: relative;
+      top: 130px;
+      width: 600px;
+      margin: 0 auto;
+      text-align: center;
+      font-family: sans-serif;
+      /*border: 1px solid black;*/
+    }
+
+    /************ END RESPONSE.HTML ********************/
+
+
+    /************ ESTIMATE PREVIEW ************************/
+    .preview.pdf {
+      height: 92vh;
+      grid-template-columns: [start] 60% [middle] 40% [end];
+      grid-template-areas: "pdf request";
+      overflow-y: scroll;
+      /*border: 1px solid black;*/
+    }
+
+    .trainingPage .pdf {
+      background: rgba(186, 144, 109, 0.7);
+    }
+
+    #pdf_wrapper{
+      grid-area: pdf;
+      width: 95%;
+      height: 90vh;
+      margin-left: 10px;
+
+      align-self: center;
+      background: rgba(0, 0, 0, 0.5);
+      box-shadow: 0px 0px 5px 0px #888888;
+      border-radius: 5px;
+      /*border: 5px solid black;*/
+
+    }
+
+    #estimate_form {
+      position: static;
+      grid-area: request;
+
+      align-self: center;
+      justify-self: center;
+
+      margin-right: 15px;
+
+      background: rgba(0, 0, 0, 0.5);
+
+      /*border: 1px solid black;*/
+    }
+
+    #estimate_form.row-3 {
+      width: 99%;
+      display: grid;
+      grid-template-columns: [start] 20% [two] 80% [end];
+      grid-column-gap: 5px;
+
+      margin-bottom: 10px;
+
+      /*border: 1px solid black;*/
+    }
+
+    #telephone {width: 50%;
+    height: 25px;
+    border-style: solid;
+    border-width: thin;
+
+    border-radius: 5px;
+
+    padding-left: 5px;
+      border-radius: 5px;
+    }
+
+    input[type='number']::-webkit-inner-spin-button,
+    input[type='number']::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    input[type='number']{
+      -moz-appearance: textfield;
+      margin: 0;
+    }
+
+
+
+    #country {
+      width: 50%;
+      height: 25px;
+      border-style: solid;
+      border-width: thin;
+
+      border-radius: 5px;
+
+      padding-left: 5px;
+      border-radius: 5px;
+    }
+
+    .row-4 {
+      width: 99%;
+      display: grid;
+      grid-template-columns: [start] 20% [two] 80% [end];
+      grid-template-rows: [start] auto [end];
+      grid-template-areas: "col-1 col-2"
+                           "label-1 label-2";
+      grid-column-gap: 5px;
+
+      margin-bottom: 10px;
+
+      /*border: 1px solid black;*/
+    }
+
+    #message-error, #country-error {
+      grid-area: label-2;
+    }
+
+
+
+    .row-4 #message {
+     width: 90%;
+     height: 200px;
+     border-style: solid;
+     border-width: thin;
+     border-radius: 5px;
+
+     padding-left: 5px;
+
+   }
+
+   #submit_button.button-text.estimate-button {
+     padding: 1px;
+     font-size: 20px;
+
+   }
+
+   #submit_button.button-text.estimate-button:hover {
+     background: #39ff14;
+     color: #fff;
+     border-style: none;
+   }
+    /************ END ESTIMATE PREVIEW ********************/
+
+
+    /************ ABOUT US PAGE ************************/
+
+    .aboutPage {
+      background-color: #c0c0c0;
+    }
+
+    .banner {
+      position: relative;
+      top: 90px;
+      height: 500px;
+      width: 100%;
+      background: url("/static/images/walls.jpg") ;
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      text-align: center;
+      color: #00AEEF;
+
+      display: grid;
+      grid-template-columns: [start] 100% [end];
+      grid-template-rows: [start] 100% [end];
+
+      justify-items: center;
+      align-items: center;
+
+      /*border: 1px solid red;*/
+    }
+
+    .banner h3 {
+      width: 70%;
+
+      font-size: 32px;
+      font-weight: 300;
+      line-height: 1.3em;
+    }
+
+    .quick-facts {
+      position: relative;
+      top: 30px;
+      height: 100px;
+
+      width: 70%;
+      max-width: 1220px;
+      min-width: 1000px;
+
+      margin: 0 auto;
+
+      background: rgba(0,0,0,.8) ;
+      color: #fff;
+
+      /*-- set as grid  --*/
+      display: grid;
+
+      /*-- set as 12-column grid  --*/
+      grid-template-columns:  [start] 30% [middle] 70% [end];
+
+      /* set grid area */
+      grid-template-areas: "header ul";
+
+      /*border: 1px solid red;*/
+    }
+
+    #facts-col-1 {
+      grid-area: header;
+      justify-self: center;
+      align-self: center;
+
+      letter-spacing: 2px;
+      font-weight: bold;
+
+      padding-left: 20px;
+    }
+
+    .quick-facts ul {
+      grid-area: ul;
+      justify-self: center;
+      align-self: center;
+
+      letter-spacing: 2px;
+      text-align: left;
+      color: #999696;
+
+      display: grid;
+      grid-auto-columns: auto;
+      grid-auto-flow: column;
+      grid-template-rows: [start] 100% [end];
+      grid-column-gap: 5px;
+
+    }
+
+    .quick-facts ul li {
+      border-left: 1.5px dashed #00AEEF;
+      padding-left: 20px;
+    }
+
+    .numbers {
+      color: #eaeaea;
+    }
+
+    .quick-facts ul li {
+      margin-left: 20px;
+    }
+
+    .numbers {
+      display: block;
+    }
+
+    .values-wrapper {
+      position: relative;
+      top: 90px;
+      height: auto;
+      width: auto;
+
+      display: grid;
+      grid-template-rows: [start] 20% [middle] 80% [end];
+      grid-row-gap: 10px;
+
+      /*border: 1px solid red;*/
+
+    }
+
+
+    .values-wrapper {
+      position: relative;
+      top: 40px;
+      height: auto;
+
+      /* set as grid */
+      display: grid;
+
+      /* set as 1-row-grid */
+      grid-template-rows: [start] 100% [end];
+
+      /* set as 1-column-grid */
+      grid-auto-columns: auto;
+
+      color: #fff;
+      font-family: sans-serif, verdana, Arial;
+    }
+
+    #values-heading {
+      justify-self: center;
+      text-align: left;
+      font-size: 50px;
+      font-weight: bold;
+      color: #00AEEF;
+
+      padding-top: 30px;
+
+      /*border: 1px solid #fff;*/
+    }
+
+    .values-col {
+      display: grid;
+      width: 80%;
+      max-width: 1215px;
+      height: auto;
+
+      margin: 0 auto;
+      padding: 10px;
+
+      display: grid;
+      grid-template-columns: [start] repeat(3, 1fr) [end];
+      grid-column-gap: 20px;
+
+      /*border: 1px solid red;*/
+    }
+
+    .val-col-1, .val-col-2, .val-col-3  {
+      display: grid;
+      width: 100%;
+      height: auto;
+
+      padding: 50px;
+      grid-template-rows: [start] 40% [col-1-2] 10% [col-2-3] 40% [end];
+      grid-template-columns: [start] 100% [end];
+
+      grid-template-areas: " img "
+                           " heading "
+                           " paragragh ";
+
+      grid-row-gap: 20px;
+
+      background: rgba(0,0,0,.5) ;
+
+      box-shadow: #8d8d8d 2px 2px 2px 0px;
+
+      /*border: 1px solid red;*/
+    }
+
+    .val-col-1 img {
+      grid-area: img;
+      height: 100px;
+      width: 100%;
+
+    }
+
+    .val-col-1 h1 {
+      grid-area: heading;
+      height: auto;
+      width: 100%;
+
+      /*border: 1px solid blue;*/
+    }
+
+    .val-col-1 val-article {
+      grid-area: paragragh;
+      width: 100%;
+
+    }
+
+    .value h1 {
+      letter-spacing: 3px;
+      text-shadow: 1.5px 1.5px #000;
+    }
+
+    .value p {
+      font-size: 14px;
+      letter-spacing: 1.5px;
+      text-align: left;
+      color: #c2c0c0;
+    }
+
+    /************ END ABOUT US PAGE *********************/
+
+
+
+
     /*** footer settings  ***/
   footer {
     position: relative;
@@ -1443,6 +1770,11 @@ body {
                          "share-copyright-section";
   }
 
+  .override footer {
+    position: relative;
+    top: 90px;
+  }
+
   .galleryPage footer {
     top: 90px;
   }
@@ -1450,6 +1782,16 @@ body {
   .buildPage footer {
     position: absolute;
     bottom: 0px;
+  }
+
+  .responsePage footer {
+    position: absolute;
+    bottom: 0px;
+  }
+
+  .aboutPage footer {
+    position: relative;
+    top: 90px;
   }
 
   .xtra-info-section {
