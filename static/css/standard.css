@@ -847,6 +847,7 @@ body {
 .specification-box p {
   justify-self: start;
   align-self: center;
+  text-align: left;
 
   color: #999696;
 
@@ -1032,10 +1033,11 @@ body {
     display: none;
     position: fixed;
     top: 90px;
+    bottom: 0px;
 
     z-index: 9;
 
-    height: 100vh;
+    /*height: 100vh;*/
     width: 100%;
 
     background: rgba(0, 174, 239, 0.7);
@@ -1198,6 +1200,10 @@ body {
       margin: 5px;
     }
 
+    #form-wrapper {
+      height: 55vh;
+    }
+
     form {
       position: relative;
 
@@ -1342,6 +1348,10 @@ body {
       background: rgba(0, 0, 0, 0.1);
     }
 
+    .page-wrapper {
+      height: 63vh;
+    }
+
     .logo-Box {
       position: relative;
       top: 100px;
@@ -1390,11 +1400,12 @@ body {
 
     /************ ESTIMATE PREVIEW ************************/
     .preview.pdf {
-      height: 92vh;
+      /*height: 92vh;*/
       grid-template-columns: [start] 60% [middle] 40% [end];
       grid-template-areas: "pdf request";
+
       overflow-y: scroll;
-      /*border: 1px solid black;*/
+      border: 1px solid black;
     }
 
     .trainingPage .pdf {
@@ -1416,11 +1427,14 @@ body {
     }
 
     #estimate_form {
-      position: static;
       grid-area: request;
 
       align-self: center;
       justify-self: center;
+
+      width: 98%;
+      min-width: 466px;
+      max-width: 585px;
 
       margin-right: 15px;
 
@@ -1780,13 +1794,13 @@ body {
   }
 
   .buildPage footer {
-    position: absolute;
-    bottom: 0px;
+    position: relative;
+    top: 90px;
   }
 
   .responsePage footer {
-    position: absolute;
-    bottom: 0px;
+    position: relative;
+    top: 90px;
   }
 
   .aboutPage footer {

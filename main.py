@@ -100,10 +100,10 @@ class BuildHandler(MainHandler):
 
         information_list = ['firstName', 'lastName', 'email', 'message' ]
 
-        sender_address = cgi.escape(self.request.get('email'))
+        sender_address = 'mitchkojelegance@gmail.com'
         email = 'mitchkojelegance@gmail.com'
         subject = cgi.escape(self.request.get('firstName')) + " " + cgi.escape(self.request.get('lastName'))
-        body = cgi.escape(self.request.get('message'))
+        body = cgi.escape(self.request.get('email')) + "\n" + cgi.escape(self.request.get('message')) 
 
         mail.send_mail(sender=sender_address,
                   to=email,
@@ -162,4 +162,4 @@ app = webapp2.WSGIApplication([
     (r'/estimate', EstimateHandler),
     (r'/armoredrange', AboutHandler),
     (r'/gallery', GalleryHandler),
-    ], debug=True)
+    ], debug=False)
