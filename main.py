@@ -103,7 +103,7 @@ class BuildHandler(MainHandler):
         sender_address = 'mitchkojelegance@gmail.com'
         email = 'mitchkojelegance@gmail.com'
         subject = cgi.escape(self.request.get('firstName')) + " " + cgi.escape(self.request.get('lastName'))
-        body = cgi.escape(self.request.get('email')) + "\n" + cgi.escape(self.request.get('message')) 
+        body = cgi.escape(self.request.get('email')) + "\n" + cgi.escape(self.request.get('message'))
 
         mail.send_mail(sender=sender_address,
                   to=email,
@@ -120,12 +120,12 @@ class EstimateHandler(MainHandler):
 
     #_____ method to process estimate request _____#
     def post(self):
-        sender_address = cgi.escape(self.request.get('email'))
+        sender_address = 'mitchkojelegance@gmail.com'
         email = 'mitchkojelegance@gmail.com'
         telephone = cgi.escape(self.request.get('telephone'))
         country = cgi.escape(self.request.get('country'))
         subject = cgi.escape(self.request.get('firstName')) + " " + cgi.escape(self.request.get('lastName'))
-        body = cgi.escape(self.request.get('message')) + '\n' + country + '\n' + str(telephone) + '\n'
+        body = cgi.escape(self.request.get('message')) + '\n' + country + '\n' + str(telephone) + '\n' + cgi.escape(self.request.get('email'))  + '\n'
 
         mail.send_mail(sender=sender_address,
                   to=email,
