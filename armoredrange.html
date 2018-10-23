@@ -13,19 +13,30 @@
     <link rel="icon" type="image/png" href="" sizes="">
     <link rel="icon" type="image/png" href="" sizes="">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" media="" href="static/css/standard.css">
-    <link rel="stylesheet" type="text/css" media="" href="">
+    <link rel="stylesheet" type="text/css" media="screen and (min-width:421px)" href="static/css/standard.css">
+    <link rel="stylesheet" type="text/css" media="screen and (max-width:420px)" href="static/css/small.css">
     <link rel="stylesheet" type="text/css" media="" href="">
 
   </head>
 
   <body class="aboutPage">
     <div class="nav-bar"> <!--- 2-rows-1-column --->
-      <a id="logo-bar" href="index"> <img src="static/images/armoredRange-logo-06-01.png" alt="armored-range-logo"> </a> <!--- row-1 --->
-      <ul id="menu-bar"> <!--- row-2 --->
-        <li id="scroll-top" class="left"> <a href="#">^</a> </li>                            <!--- column-1 --->
-        <li id="images-range-tab" class="right"> <a href="/gallery">IMAGES </a> </li>       <!--- column-4 --->
-      </ul>
+      <div id="logo-bar" >
+        <a id="homelink" href="index"><img src="static/images/armoredRange-logo-06-01.png" alt="armored-range-logo"></a>
+        <div class="mini-button">
+          <span class="mini-bar"></span>
+          <span class="mini-bar"></span>
+          <span class="mini-bar"></span>
+
+        </div>
+      </div> <!--- row-1 --->
+
+      <div id="menu-bar-wrapper">
+        <ul id="menu-bar"> <!--- row-2 --->
+          <li id="scroll-top" class="left"> <a href="#">^</a> </li>                            <!--- column-1 --->
+          <li id="images-range-tab" class="right"> <a href="/gallery">IMAGES </a> </li>       <!--- column-4 --->
+        </ul>
+    </div>
     </div>  <!--- end .nav-bar --->
 
     <div class="banner">
@@ -171,6 +182,13 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
     <script>
     $(document).ready(function(){
+
+      var viewport = $(".nav-bar").css("width");
+      viewport = viewport.slice(0, -2);
+      if (viewport < 421) {
+        $("#menu-bar").hide();
+      }
+      
       // click event response for images
       $("#estimate").click(function() {
           $(".preview").css("display","grid").fadeIn();
@@ -180,6 +198,9 @@
           $(".preview").fadeOut();
         });
 
+        $(".mini-button").click(function() {
+          $("#menu-bar").slideToggle("slow");
+        });
 
         /***** form validation ***/
         $('#estimate_form').validate({

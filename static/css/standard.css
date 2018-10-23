@@ -83,7 +83,7 @@ body {
 
     /*-- set grid areas  --*/
    grid-template-areas: "logo-bar"
-                         "menu-bar";
+                         "menu-bar-wrapper";
   }
 
   #logo-bar {
@@ -92,7 +92,13 @@ body {
   }
 
 
-  #logo-bar img{
+  #logo-bar #homelink{
+    grid-area: logo;
+    width: 100;
+
+  }
+
+  #logo-bar img {
     width: 160px;
     float: left;
     margin-left: 15px;
@@ -100,10 +106,24 @@ body {
     padding-top: 3px;
   }
 
+  .mini-button {
+    display: none
+  }
+
+  #menu-bar-wrapper {
+    grid-area: menu-bar-wrapper;
+    width: 100%;
+    height: 100%;
+
+    display: grid;
+    grid-template-columns: [start] 100% [end];
+    grid-template-areas: "menu-bar";
+  }
+
   #menu-bar {
     grid-area: menu-bar;
     width: 100%;
-    height: 100%;
+    
 
     padding-left: 20px;
     padding-right: 30px;

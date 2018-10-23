@@ -13,23 +13,34 @@
     <link rel="icon" type="image/png" href="" sizes="">
     <link rel="icon" type="image/png" href="" sizes="">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" media="" href="static/css/standard.css">
-    <link rel="stylesheet" type="text/css" media="" href="">
+    <link rel="stylesheet" type="text/css" media="screen and (min-width:421px)" href="static/css/standard.css">
+    <link rel="stylesheet" type="text/css" media="screen and (max-width:420px)" href="static/css/small.css">
     <link rel="stylesheet" type="text/css" media="" href="">
 
   </head>
 
   <body class="containerPage">
     <div class="nav-bar"> <!--- 2-rows-1-column --->
-      <a id="logo-bar" href="index"> <img src="static/images/armoredRange-logo-06-01.png" alt="armored-range-logo"> </a> <!--- row-1 --->
-      <ul id="menu-bar"> <!--- row-2 --->
-        <li id="scroll-top" class="left"> <a href="#carousel">^</a> </li>                            <!--- column-1 --->
-        <li class="left" id="features-tab"> <a href="#features-section"> FEATURES </a> </li>     <!--- column-2 --->
-        <li class="left" id="gallery-tab"> <a href="#gallery-section"> GALLERY </a> </li>       <!--- column-3 --->
-        <li class="left" id="specs-tab"> <a href="#specs-section"> MAINTENANCE </a>  </li>   <!--- column-6 ---->
-        <li class="left" id="about-tab"> <a href="/armoredrange"> ABOUT US </a>  </li>    <!--- column-8 ---->
-        <li class="right" id="build-tab"> <a href="#"> BUILD & PRICE </a>  </li>   <!--- column-9 ---->
-      </ul>
+      <div id="logo-bar" >
+        <a id="homelink" href="index"><img src="static/images/armoredRange-logo-06-01.png" alt="armored-range-logo"></a>
+        <div class="mini-button">
+          <span class="mini-bar"></span>
+          <span class="mini-bar"></span>
+          <span class="mini-bar"></span>
+
+        </div>
+      </div> <!--- row-1 --->
+
+      <div id="menu-bar-wrapper">
+        <ul id="menu-bar"> <!--- row-2 --->
+          <li id="scroll-top" class="left"> <a href="#carousel">^</a> </li>                            <!--- column-1 --->
+          <li class="left" id="features-tab"> <a href="#features-section"> FEATURES </a> </li>     <!--- column-2 --->
+          <li class="left" id="gallery-tab"> <a href="#gallery-section"> GALLERY </a> </li>       <!--- column-3 --->
+          <li class="left" id="specs-tab"> <a href="#specs-section"> MAINTENANCE </a>  </li>   <!--- column-6 ---->
+          <li class="left" id="about-tab"> <a href="/armoredrange"> ABOUT US </a>  </li>    <!--- column-8 ---->
+          <li class="right" id="build-tab"> <a href="#"> BUILD & PRICE </a>  </li>   <!--- column-9 ---->
+        </ul>
+    </div>
     </div>  <!--- end .nav-bar --->
 
     <div id="carousel" class="carousel slide" data-ride="carousel">
@@ -115,7 +126,7 @@
       </div>
     </div>   <!--- end .container-section-3 --->
 
-    <!--- <div class="container-section-4" >     
+    <!--- <div class="container-section-4" >
       <div id="cs4-col-2"> <p> 722 </p> <span>FT LBS TORQUE</span></div>
       <div id="cs4-col-3"> <p>590</p> <span>HP</span></div>
       <div id="cs4-col-4"> <p>150</p> <span>MILE RANGE</span></div>
@@ -371,6 +382,12 @@
     <script>
     $(document).ready(function(){
 
+      var viewport = $(".nav-bar").css("width");
+      viewport = viewport.slice(0, -2);
+      if (viewport < 421) {
+        $("#menu-bar").hide();
+      }
+
         var containerImages = ["static/images/container-benz-4.jpg","static/images/white-mountain-cover.jpg",  "static/images/walls.jpg",
                       "static/images/black-shine.jpg", "static/images/container-on-glass.jpg", "static/images/gallery-image-10.jpg", "static/images/gallery-image-2.jpg",
                       "static/images/inside-container-2.png", "static/images/controls-2.png", "static/images/gallery-image-3.png",
@@ -458,6 +475,10 @@
 
           $("#exit").click(function() {
             $(".preview").fadeOut();
+          });
+
+          $(".mini-button").click(function() {
+            $("#menu-bar").slideToggle("slow");
           });
 
 

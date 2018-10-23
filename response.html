@@ -12,17 +12,22 @@
     <meta name="author" content="Le koj">
     <link rel="icon" type="image/png" href="" sizes="">
     <link rel="icon" type="image/png" href="" sizes="">
-    <link rel="stylesheet" type="text/css" media="" href="static/css/standard.css">
-    <link rel="stylesheet" type="text/css" media="" href="">
+    <link rel="stylesheet" type="text/css" media="screen and (min-width:421px)" href="static/css/standard.css">
+    <link rel="stylesheet" type="text/css" media="screen and (max-width:420px)" href="static/css/small.css">
     <link rel="stylesheet" type="text/css" media="" href="">
   </head>
 
   <body class="responsePage">
     <div class="nav-bar"> <!--- 2-rows-1-column --->
-      <a id="logo-bar" href="index"> <img src="static/images/armoredRange-logo-06-01.png" alt="armored-range-logo"> </a> <!--- row-1 --->
-      <ul id="menu-bar"> <!--- row-2 --->
-        <li id="scroll-top" class="left"> <a href="#">^</a> </li>                            <!--- column-1 --->
-      </ul>
+      <div id="logo-bar" >
+        <a id="homelink" href="index"><img src="static/images/armoredRange-logo-06-01.png" alt="armored-range-logo"></a>
+      </div> <!--- row-1 --->
+
+      <div id="menu-bar-wrapper">
+        <ul id="menu-bar"> <!--- row-2 --->
+          <li id="scroll-top" class="left"> <a href="#">^</a> </li>                            <!--- column-1 --->
+        </ul>
+    </div>
     </div>  <!--- end .nav-bar --->
 
     <div class="page-wrapper">

@@ -13,24 +13,38 @@
     <link rel="icon" type="image/png" href="" sizes="">
     <link rel="icon" type="image/png" href="" sizes="">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" media="" href="static/css/standard.css">
-    <link rel="stylesheet" type="text/css" media="" href="">
+    <link rel="stylesheet" type="text/css" media="screen and (min-width:421px)" href="static/css/standard.css">
+    <link rel="stylesheet" type="text/css" media="screen and (max-width:420px)" href="static/css/small.css">
     <link rel="stylesheet" type="text/css" media="" href="">
 
   </head>
 
   <body class="override">
     <div class="nav-bar"> <!--- 2-rows-1-column --->
-      <a id="logo-bar" href="index"> <img src="static/images/armoredRange-logo-06-01.png" alt="armored-range-logo"> </a> <!--- row-1 --->
-      <ul id="menu-bar"> <!--- row-2 --->
-        <li id="scroll-top" class="left"> <a href="#">^</a> </li>                            <!--- column-1 --->
-        <li id="container-range-tab" class="left"> <a href="/container">CONTAINER RANGE</a> </li>     <!--- column-2 --->
-        <li id="training-range-tab" class="left"> <a href="/training">TRAINING RANGE </a> </li>       <!--- column-3 --->
-        <li id="custom-range-tab" class="left" hidden> <a href="#">CUSTOM RANGE </a> </li>       <!--- column-4 --->
-        <li id="images-range-tab" class="right"> <a href="/gallery">IMAGES </a> </li>       <!--- column-4 --->
-        <li id="about-tab" class="right"> <a href="/armoredrange">ABOUT US</a>  </li>                      <!--- column-4 ---->
-      </ul>
+      <div id="logo-bar" >
+        <a id="homelink" href="index"><img src="static/images/armoredRange-logo-06-01.png" alt="armored-range-logo"></a>
+        <div class="mini-button">
+          <span class="mini-bar"></span>
+          <span class="mini-bar"></span>
+          <span class="mini-bar"></span>
+
+        </div>
+      </div> <!--- row-1 --->
+
+      <div id="menu-bar-wrapper">
+        <ul id="menu-bar" > <!--- row-2 --->
+          <li id="scroll-top" class="left"> <a href="#">^</a> </li>                            <!--- column-1 --->
+          <li id="container-range-tab" class="left"> <a href="/container">CONTAINER RANGE</a> </li>     <!--- column-2 --->
+          <li id="training-range-tab" class="left"> <a href="/training">TRAINING RANGE </a> </li>       <!--- column-3 --->
+          <li id="custom-range-tab" class="left" hidden> <a href="#">CUSTOM RANGE </a> </li>       <!--- column-4 --->
+          <li id="images-range-tab" class="right"> <a href="/gallery">IMAGES </a> </li>       <!--- column-4 --->
+          <li id="about-tab" class="right"> <a href="/armoredrange">ABOUT US</a>  </li>                      <!--- column-4 ---->
+        </ul>
+      </div>
+
     </div>  <!--- end .nav-bar --->
+
+
 
     <div id="carousel" class="carousel slide" data-ride="carousel">
 
@@ -201,6 +215,14 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
     <script>
     $(document).ready(function(){
+
+      var viewport = $(".nav-bar").css("width");
+      viewport = viewport.slice(0, -2);
+      if (viewport < 421) {
+        $("#menu-bar").hide();
+      }
+
+
       // click event response for images
       $("#estimate, #products-info").click(function() {
           $(".preview").css("display","grid").fadeIn();
@@ -208,6 +230,10 @@
 
         $("#exit").click(function() {
           $(".preview").fadeOut();
+        });
+
+        $(".mini-button").click(function() {
+          $("#menu-bar").slideToggle("slow");
         });
 
 
