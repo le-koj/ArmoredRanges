@@ -235,7 +235,7 @@ body {
 
   .carousel {
     top: 90px;
-    height: 542px ;
+    height: 150px ;
 
     overflow-y: hidden;
 
@@ -332,10 +332,11 @@ body {
   position: relative;
   top: 90px;
   /*background-color: #000;*/
-  width: 1170px;
-  height: 400px; /*35vh;*/
+  width: 100%;
+  height: auto; /*35vh;*/
 
   margin: 0 auto; /* center box */
+  padding-bottom: 10px;
 
   /*-- set as grid  --*/
   display: grid;
@@ -348,6 +349,8 @@ body {
                        "product-table"
                        "section-button";
 
+  grid-row-gap: 10px;
+
   /*border: 3px solid black;*/
 
 }
@@ -357,6 +360,8 @@ body {
     align-self: center;
     justify-self: start;
     width: auto;
+
+    padding-left: 10px;
 
     font-style: italic;
     font-size: 2em;
@@ -375,31 +380,38 @@ body {
     display: grid;
 
     /* set as 12-column grid */
-    grid-template-columns: [start] repeat(3, 1fr) [end];
+    grid-template-rows: [start] repeat(3, 1fr) [end];
 
     /* set grid area */
-    grid-template-areas: "product-1 product-2 product-3";
+    grid-template-areas: "product-1"
+                         "product-2"
+                         "product-3";
 
-    grid-column-gap: 10px;
+    grid-row-gap: 10px;
 
     /*border: 1px solid black;*/
   }
 
   .product-box {
     display: block;
-    width: 100%;
-    height: 100%;
-
+    width: 90%;
+    height: auto;
+    justify-self: center;
+    align-self: center;
     /* set as grid */
     display: grid;
 
     /* set as 2-row grid */
     grid-template-rows: [start] 70% [last] 30% [end];
 
+    border-radius: 0 5px 5px 0;
+
   }
 
   #product-1 {
     grid-area: product-1;
+
+
   }
 
   .product-box img {
@@ -413,23 +425,35 @@ body {
     background: #ececec;
   }
 
+  .product-image {
+    box-shadow: 0px 0px 5px #000000;
+    border-radius: 2px 2px 0px 0;
+
+  }
+
   #product-2 {
     grid-area: product-2;
+
+
+    /*border: 1px solid #000;*/
   }
 
   #product-3 {
     grid-area: product-3;
+
+    /*border: 1px solid blue;*/
   }
 
   .product-section .section-button {
     grid-area: section-button;
     width: 100%;
 
+
     /*-- set as grid  --*/
     display: grid;
 
     /*-- set as 12-column grid  --*/
-    grid-template-columns:  [start] repeat(1, 1fr) [end];
+    grid-template-columns:  [start] 100% [end];
 
    /* set grid area */
    grid-template-areas: "button-text";
@@ -437,6 +461,9 @@ body {
    justify-items: center;
    align-items: center;
 
+   padding: 5px;
+
+   /*border: 1px solid blue;*/
   }
 
   /*...
@@ -450,13 +477,14 @@ body {
     grid-area: button-text;
 
     width: 250px;
-    height: 49px;
+    height: auto;
 
     font-size: 1.2em;
     font-weight: 600;
     color: #00AEEF;
 
-    padding-top: 10px;
+    padding-top: 4px;  /* to push the text to the box center */
+    padding-bottom: 2px;
 
     border: 2px solid #00AEEF;
     -webkit-border-radius: .2em .2em .2em .2em / .2em .2em .2em .2em;
@@ -485,9 +513,9 @@ body {
     position: relative;
     top: 90px;
 
-    width: 1170px;
-    min-width: 1000px;
-    height: 230px;
+    width: 100%;
+    /*min-width: 1000px;*/
+    height: auto;
 
     margin: 0 auto;
 
@@ -497,10 +525,11 @@ body {
     display: grid;
 
     /* set as 2-column grid */
-    grid-template-columns: [start] 75% [middle] 25% [end];
+    grid-template-rows: [start] 75% [middle] 25% [end];
 
     /* set grid area */
-    grid-template-areas: "cs2-col-1-wrapper cs2-col-2";
+    grid-template-areas: "cs2-col-1-wrapper"
+                         "cs2-col-2";
 
 
     /*border: 1px solid #000;*/
@@ -510,7 +539,7 @@ body {
     grid-area: cs2-col-1-wrapper;
     align-self: center;
     width: 100%;
-    height: 80%;
+    height: auto;
     /*height: 210px;*/
 
     text-align: left;
@@ -525,12 +554,12 @@ body {
     grid-template-areas: "cs2-col-1-r1"
                          "cs2-col-1-r2";
 
-    grid-row-gap: 10px;
+    /*grid-row-gap: 5px;*/
 
     border-style: solid;
     border-width: 2px;
 
-    border-image: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(0,174,239,0.8) 50%, rgba(255,255,255,0) 100%) 0 20 0 0 !important;
+    border-image: linear-gradient(to left, rgba(255,255,255,0) 0%, rgba(0,174,239,0.8) 50%, rgba(255,255,255,0) 100%) 0 0 20 0 !important;
 
     /*border: 1px solid #000;*/
 
@@ -538,43 +567,47 @@ body {
 
   #cs2-col-1-r1 {
     grid-area: cs2-col-1-r1;
-    align-self: end;
-    width: 50%;
+    align-self: center;
+    justify-self: center;
+    width: 90%;
 
     /*border: 1px solid red;*/
   }
 
   #cs2-col-1-r2 {
     grid-area: cs2-col-1-r2;
-    align-self: start;
-    justify-self: start;
+    align-self: center;
+    justify-self: center;
     width: 90%;
 
-    line-height: 1.5;
-    font-size: 16px;
+    line-height: 18px;
+    font-size: 1em;
     font-weight: 500;
     font-family: sans-serif, verdana, Arial;
     color: #000;
+    text-align: justify;
 
-    padding-left: 5px;
+    padding: 5px;
 
     /*border: 1px solid red;*/
   }
 
   .cs2-col-2 {
     grid-area: cs2-col-2;
-    align-self: center;
+    align-self: start;
     justify-self: end;
     width: 100%;
-    height: 80%;
+    height: auto;
 
     padding: 10px;
+
+    padding-bottom: 20px;
+    margin-bottom: 20px;
 
     border-style: solid;
     border-width: 2px;
 
-    border-image: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(0,174,239,0.8) 50%, rgba(255,255,255,0) 100%) 0 20 0 0 !important;
-
+    border-image: linear-gradient(to left, rgba(255,255,255,0) 0%, rgba(0,174,239,0.8) 50%, rgba(255,255,255,0) 100%) 0 0 20 0 !important;
 
 
   }
@@ -599,7 +632,7 @@ body {
   .container-section-3 {
     position: relative;
     top: 90px;
-    height: 70px;
+    height: auto;
     background: #1e1e1e;
 
     /* set as grid */
@@ -615,16 +648,16 @@ body {
   }
 
   .cs3-link-wrapper {
-    width: 1170px;
-    min-width: 1000px;
+    width: 100%;
 
-    margin: 0 auto;
+    margin: 0px auto;
+    margin-bottom: 0px;
 
     /* set as grid */
     display: grid;
 
     /* set as 3-column grid */
-    grid-template-columns: [start] repeat(3, 1fr) [end];
+    grid-template-row: [start] repeat(3, 1fr) [end];
 
     /*border: 1px solid #fff;*/
   }
@@ -642,9 +675,11 @@ body {
     font-size: 1.5em;
     color: #6d6d6d;
 
-    border-left: 2px solid #4c4c4c;
+    padding-top: 7px;
 
-    border-right: 2px solid #4c4c4c;
+    /*border-top: 2px solid #4c4c4c;*/
+
+    border-bottom: 2px solid #4c4c4c;
 
     /*border: 1px solid blue;*/
   }
@@ -656,81 +691,11 @@ body {
   }
 
 
-  .container-section-4 {
-    position: relative;
-    top: 90px;
-
-    width: 1170px;;
-    min-width: 1000px;
-    height: 230px;
-
-    margin: 0 auto;
-
-    background: #fff;
-
-    /* set as grid */
-    display: grid;
-
-    /* set as 2-column grid */
-    grid-template-columns: [start] repeat(4,1fr) [end];
-
-    align-items: center;
-
-    /*border: 1px solid #fff;*/
-  }
-
-  .container-section-4 div {
-    display: grid;
-    grid-template-columns: [start] 75% [middle] 25% [end];
-    grid-template-areas: "number span";
-
-    border-style: solid;
-    border-width: 2px;
-
-    border-image: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(0,174,239,0.8) 50%, rgba(255,255,255,0) 100%) 0 20 0 0 !important;
-    /*border: 1px solid #000;*/
-  }
-
-  #cs4-col-2 {
-    border-image: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(0,174,239,0.8) 50%, rgba(255,255,255,0) 100%) 0 20 0 20 !important;
-  }
-
-
-  .container-section-4 div p {
-    grid-area: number;
-
-    font-size: 70px;
-    font-weight: bold;
-    font-style: italic;
-    text-align: right;
-
-
-    /*border: 1px solid red;*/
-  }
-
-  .container-section-4 div span {
-    grid-area: span;
-    align-self: end;
-
-    font-size: 14px;
-    font-style: italic;
-    font-weight: 500;
-    text-align: left;
-    color:#00AEEF;
-
-    padding-bottom: 16px;
-
-    /*border: 1px solid red;*/
-  }
-
-  #cs4-col-4 span {
-    width: 90%;
-  }
-
   .features-section {
     position: relative;
     top: 90px;
-    height: 2000px;
+    height: auto;
+    width: 100%;
 
     /* set as grid */
     display: grid;
@@ -747,8 +712,13 @@ body {
   }
 
 .fs-wrapper {
-  width: 100%;
-  height: 100%;
+  width: 90%;
+  height: auto;
+
+  margin: 0px auto;
+
+  margin-bottom: 50px;
+  margin-top: 50px;
 
   /* set as grid */
   display: grid;
@@ -764,25 +734,34 @@ body {
 }
 
 .fs-row-wrapper {
-  width: 1140px;
-  height: 80%;
+  width: 100%;
+  height: auto;
   margin: 0 auto;
+  margin-bottom: 5px;
+  padding-bottom: 20px;
+
+  border-bottom: 2px solid #2f2f2f;
+
   /*border: 1px solid red;*/
+
 
 }
 
 .fs-row-wrapper h1 {
-  width: 80%;
-  font-size: 60px;
+  width: 100%;
+  font-size: 3em;
   text-align: left;
-  line-height: 60px;
+  line-height: 45px;
+
+  align-self: center;
+  justify-self: center;
 
   padding: 5px;
 }
 
 .fs-row-wrapper p {
   width: 80%;
-  text-align: left;
+  text-align: justify;
   line-height: 25px;
   font-size: 15px;
 
@@ -800,7 +779,7 @@ body {
 }
 
 .fs-row-wrapper img {
-  width: 90%;
+  width: 100%;
   justify-self: center;
   align-self: center;
 }
@@ -816,38 +795,55 @@ body {
 
 .fs-row-1, .fs-row-3  {
   display: grid;
-  height: 100%;
-  grid-template-columns: [start] 30% [middle] 70% [end];
-  grid-template-rows: [start] 100% [end];
+  width: 100%;
+  height: auto;
+  grid-template-rows: [start] 30% [middle] 70% [end];
 
-  grid-column-gap: 5px;
+  justify-items: start;
+  align-items: center;
 
+  grid-row-gap: 30px;
+
+  /*border: 1px solid #fff;*/
 
 }
 
 .fs-row-1 .fs-article, .fs-row-3 .fs-article {
   display: grid;
   grid-template-rows: auto;
-  justify-items: end;
+
+  justify-items: start;
+  align-items: center;
+
+  padding-left: 10px;
+
 }
 
 .fs-row-2, .fs-row-4 {
   display: grid;
-  height: 100%;
-  grid-template-columns: [start] 70% [middle] 30% [end];
-  grid-template-rows: [start] 100% [end];
+  width: 100%;
+  height: auto;
+  grid-template-rows: [start] 30% [middle] 70% [end];
 
-  grid-column-gap: 5px;
+  grid-template-areas: "picture"
+                       "context";
 
+  grid-row-gap: 30px;
+
+  justify-items: start;
+  align-items: center;
+
+}
+
+.fs-row-2 .fs-article, .fs-row-4 .fs-article {
+  grid-area: context;
+}
+
+.fs-row-2 img, .fs-row-4 img {
+  grid-area: picture;
 }
 
 
-
-
-.fs-row-wrapper div.fs-article, img {
-  /*border: 1px solid #fff;*/
-
-}
 
 .gallery-section {
   position: relative;
@@ -870,15 +866,17 @@ body {
 
   display: grid;
   grid-template-columns: [start] 100% [end];
-  grid-template-rows: [start] 20% [middle] 80% [end];
+  grid-template-rows: [start] 10% [middle] 80% [end];
 
   background-color: #00AEEF;
+
+  margin-bottom: 65px;
 }
 
 .specs-section h1 {
   align-self: center;
-  font-size: 50px;
-  font-weight: bold
+  font-size: 2.6em;
+  font-weight: bold;
 }
 
 .specs-row-wrapper {
@@ -917,10 +915,13 @@ body {
   justify-self: start;
   align-self: center;
   text-align: left;
+  font-size: .8em;
+
 
   color: #999696;
 
-  margin-top: 10px;
+  margin-top: 15px;
+  padding: 5px;
 
 }
 
@@ -1829,7 +1830,7 @@ body {
     position: relative;
     /*top: 90px;*/
     width: 100%;
-    height: 339px;
+    height: auto;
 
     background-color: #484242;
 
@@ -1869,21 +1870,6 @@ body {
     top: 90px;
   }
 
-  .xtra-info-section {
-    grid-area: xtra-info-section;
-
-    /*-- set as grid  --*/
-    display: grid;
-
-    /*-- set as 2-row grid  --*/
-    grid-template-rows:  [start] 15% [row-1-2] 85% [end];
-
-    /*-- set grid areas  --*/
-    /*grid-template-areas: "footer-scroll-top"
-                         "info-section";*/
-
-  }
-
   #footer-scroll-top {
     grid-area: footer-scroll-top;
     justify-items: center;
@@ -1891,6 +1877,8 @@ body {
 
     width: 100%;
     height: 100%;
+
+    margin-top: 20px;
 
     font-size: 25px;
     font-weight: bolder;
@@ -1926,40 +1914,39 @@ body {
   .info-section-wrapper {
     grid-area: info-section-wrapper;
     justify-items: center;
-    align-items: center
+    align-items: center;
 
-    width: 25%;
-    min-width: 600px;
-    height: 95%;
-
-    margin: 0 auto;
+    width: 100%;
+    min-width: 320px;
+    height: auto;
 
     /*-- set as grid  --*/
     display: grid;
 
     /*-- set as 2-column grid  --*/
-    grid-template-columns:  [start] repeat(2, 1fr) [end];
+    grid-template-rows:  [start] repeat(2, 1fr) [end];
 
     /* set grid area */
-    grid-template-areas: "info-section-about info-section-address";
+    grid-template-areas: "info-section-about"
+                         "info-section-address";
 
-    /*border: 1px solid black;*/
+    /*border: 1px solid red;*/
   }
 
   #info-section-about {
     grid-area: info-section-about;
     width: 100%;
-    height: 100%;
+    height: auto;
 
     padding: 10px;   /*-- 2x unit padding */
-    text-align: left;
+    text-align: center;
 
     /*border: 1px solid #fff;*/
   }
 
   #info-section-about li{
     display: block;
-    margin: 10px;  /*-- 2x unit margin */
+    margin: 5px;  /*-- 2x unit margin */
 
     color: #fff;
   }
@@ -1980,12 +1967,13 @@ body {
   #info-section-address {
     grid-area: info-section-address;
     width: 100%;
-    height: 100%;
+    height: auto;
 
     margin: 0px 0px 0px 0px;   /*-- 2x unit margin */
-    padding-left: 20px;
+    padding-top: 20px;
+    margin-bottom: 10px;
 
-    border-left: 1.5px dashed #342d2e;
+    border-top: 1.5px dashed #342d2e;
 
     /*border: 1px solid #f2ff22;*/
   }
@@ -2027,21 +2015,27 @@ body {
     display: grid;
 
     /*-- set as 12-column grid  --*/
-    grid-template-columns:  [start] repeat(2, 1fr) [end];
+    grid-template-rows:  [start] 70% [middle] 30% [end];
+    grid-column-gap: 2px;
 
     /* set grid area */
-    grid-template-areas: "ul copyright";
+    grid-template-areas: "ul"
+                         "copyright";
+
+
 
     /*border: 1px solid #e4f4d4;*/
   }
 
   .share-copyright-section ul {
     grid-area: ul;
-    justify-self: end;
     align-self: center;
 
-    width: 70%;
-    min-width: 525px;
+    font-size: .75em;
+
+    padding-top: 10px;
+
+    width: 100%;
 
     /*border: 1px solid #f2ff22;*/
 
@@ -2049,13 +2043,18 @@ body {
 
   .share-copyright-section li {
     display: inline;
-    float: none;
-
-    margin: 20px;
-
+    float: left;
     color: #706c6c;
 
     /*border: 1px solid #f2ffff;*/
+  }
+
+  .share-copyright-section .title {
+    margin-left: 7px;
+  }
+
+  .social {
+    margin-left: 20px;
   }
 
 .share-copyright-section a {
@@ -2071,10 +2070,11 @@ body {
 
     align-self: center;
 
-    width: 60%;
-    min-width: 450px;
+    width: 100%;
 
     color: #706c6c;
+
+    font-size: .7em;
 
     /*border: 1px solid #f2ffff;*/
   }

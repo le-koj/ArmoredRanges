@@ -1823,21 +1823,6 @@ body {
     top: 90px;
   }
 
-  .xtra-info-section {
-    grid-area: xtra-info-section;
-
-    /*-- set as grid  --*/
-    display: grid;
-
-    /*-- set as 2-row grid  --*/
-    grid-template-rows:  [start] 15% [row-1-2] 85% [end];
-
-    /*-- set grid areas  --*/
-    /*grid-template-areas: "footer-scroll-top"
-                         "info-section";*/
-
-  }
-
   #footer-scroll-top {
     grid-area: footer-scroll-top;
     justify-items: center;
