@@ -123,7 +123,7 @@ body {
   #menu-bar {
     grid-area: menu-bar;
     width: 100%;
-    
+
 
     padding-left: 20px;
     padding-right: 30px;
@@ -818,6 +818,7 @@ body {
   position: relative;
   /*top: 90px;*/
   height: auto;
+  margin-bottom: 85px;
 
   display: grid;
   grid-template-columns: [start] 100% [end];
@@ -1004,7 +1005,7 @@ body {
   }
 
   .trainingPage .specs-section h1 {
-    margin-top: 10px;
+    margin-top: 20px;
     color: #fff;
   }
 
@@ -1586,9 +1587,15 @@ body {
     .banner h3 {
       width: 70%;
 
-      font-size: 32px;
+      font-size: 25px;
       font-weight: 300;
       line-height: 1.3em;
+    }
+
+    #company-name {
+      color: #fff;
+      font-size: 30px;
+      font-weight: bolder;
     }
 
     .quick-facts {
@@ -1596,75 +1603,39 @@ body {
       top: 30px;
       height: 100px;
 
-      width: 70%;
-      max-width: 1220px;
-      min-width: 1000px;
+      width: 50%;
+      max-width: 1200px;
+      min-width: 900px;
 
       margin: 0 auto;
 
       background: rgba(0,0,0,.8) ;
       color: #fff;
 
-      /*-- set as grid  --*/
       display: grid;
+      grid-template-columns: [start] 100% [end];
+      grid-template-rows: [start] 100% [end];
 
-      /*-- set as 12-column grid  --*/
-      grid-template-columns:  [start] 30% [middle] 70% [end];
+      grid-template-areas: "facts";
 
-      /* set grid area */
-      grid-template-areas: "header ul";
+      justify-items: center;
 
       /*border: 1px solid red;*/
     }
 
-    #facts-col-1 {
-      grid-area: header;
+    #fact {
+      grid-area: facts;
       justify-self: center;
       align-self: center;
 
-      letter-spacing: 2px;
-      font-weight: bold;
-
-      padding-left: 20px;
-    }
-
-    .quick-facts ul {
-      grid-area: ul;
-      justify-self: center;
-      align-self: center;
-
-      letter-spacing: 2px;
-      text-align: left;
-      color: #999696;
-
-      display: grid;
-      grid-auto-columns: auto;
-      grid-auto-flow: column;
-      grid-template-rows: [start] 100% [end];
-      grid-column-gap: 5px;
-
-    }
-
-    .quick-facts ul li {
-      border-left: 1.5px dashed #00AEEF;
-      padding-left: 20px;
-    }
-
-    .numbers {
-      color: #eaeaea;
-    }
-
-    .quick-facts ul li {
-      margin-left: 20px;
-    }
-
-    .numbers {
-      display: block;
+      font-size: 25px;
+      font-style: italic;
+      font-weight: lighter;
     }
 
     .values-wrapper {
       position: relative;
-      top: 90px;
+      top: 40px;
       height: auto;
       width: auto;
 
@@ -1672,28 +1643,13 @@ body {
       grid-template-rows: [start] 20% [middle] 80% [end];
       grid-row-gap: 10px;
 
+      color: #fff;
+      font-family: sans-serif, verdana, Arial;
+
       /*border: 1px solid red;*/
 
     }
 
-
-    .values-wrapper {
-      position: relative;
-      top: 40px;
-      height: auto;
-
-      /* set as grid */
-      display: grid;
-
-      /* set as 1-row-grid */
-      grid-template-rows: [start] 100% [end];
-
-      /* set as 1-column-grid */
-      grid-auto-columns: auto;
-
-      color: #fff;
-      font-family: sans-serif, verdana, Arial;
-    }
 
     #values-heading {
       justify-self: center;
@@ -1709,74 +1665,113 @@ body {
 
     .values-col {
       display: grid;
-      width: 80%;
-      max-width: 1215px;
+      width: 65%;
+      max-width: 1200px;
       height: auto;
 
       margin: 0 auto;
       padding: 10px;
 
       display: grid;
-      grid-template-columns: [start] repeat(3, 1fr) [end];
-      grid-column-gap: 20px;
-
-      /*border: 1px solid red;*/
-    }
-
-    .val-col-1, .val-col-2, .val-col-3  {
-      display: grid;
-      width: 100%;
-      height: auto;
-
-      padding: 50px;
-      grid-template-rows: [start] 40% [col-1-2] 10% [col-2-3] 40% [end];
       grid-template-columns: [start] 100% [end];
-
-      grid-template-areas: " img "
-                           " heading "
-                           " paragragh ";
-
-      grid-row-gap: 20px;
+      grid-column-gap: 20px;
 
       background: rgba(0,0,0,.5) ;
 
       box-shadow: #8d8d8d 2px 2px 2px 0px;
 
-      /*border: 1px solid red;*/
-    }
-
-    .val-col-1 img {
-      grid-area: img;
-      height: 100px;
-      width: 100%;
-
-    }
-
-    .val-col-1 h1 {
-      grid-area: heading;
-      height: auto;
-      width: 100%;
-
       /*border: 1px solid blue;*/
     }
 
-    .val-col-1 val-article {
-      grid-area: paragragh;
-      width: 100%;
-
-    }
-
-    .value h1 {
-      letter-spacing: 3px;
-      text-shadow: 1.5px 1.5px #000;
-    }
-
-    .value p {
-      font-size: 14px;
+    .values-col p {
+      font-size: 16px;
       letter-spacing: 1.5px;
-      text-align: left;
+      text-align: justify;
       color: #c2c0c0;
     }
+
+    #expertise {
+      position: relative;
+      top: 80px;
+
+      width: 100%;
+      height: auto;
+
+      padding: 10px;
+      margin-bottom: 20px;
+
+      display: grid;
+      grid-template-rows: [start] 20% [col-2] 20% [col-3] 60% [end];
+      grid-row-gap: 10px;
+
+      background: #EBEBEB;
+
+      /*border: 1px solid blue;*/
+
+    }
+
+    #expertise h3 {
+      justify-self: start;
+      margin-left: 10%;
+      margin-top: 5px;
+      font-size: 25px;
+      font-style: italic;
+      letter-spacing: 1px;
+      font-weight: bold;
+      color: #00AEEF;
+      text-transform: uppercase;
+    }
+
+    #expertise p {
+      justify-self: center;
+
+      font-size: 25px;
+      font-weight: 300;
+      color: #342D2E;
+      text-transform: capitalize;
+
+      font-family: "Bebas Neue";
+    }
+
+    #expertise h4 {
+      justify-self: center;
+      font-size: 18px;
+      font-weight: normal;
+      color: #A5A5A5;
+      text-transform: capitalize;
+
+      font-family: "Bebas Neue";
+    }
+
+    #promise {
+      position: relative;
+      top: 100px;
+
+      color: #000;
+      font-size: 20px;
+
+      margin: 0px auto;
+
+      text-shadow: 1.5px 1.5px #c0c0c0;
+    }
+
+    #promise-quote {
+      position: relative;
+      top: 100px;
+
+      color: #342D2E;
+      font-size: 16px;
+      font-style: italic;
+      letter-spacing: 1px;
+
+      margin: 0px auto;
+      margin-top: 1px;
+      margin-bottom: 50px;
+
+      text-shadow: 1.5px 1.5px #c0c0c0;
+    }
+
+
 
     /************ END ABOUT US PAGE *********************/
 
