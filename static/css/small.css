@@ -947,107 +947,206 @@ body {
     color: #000;
   }
 
-  .train.features-section {
-    height: 1500px;
+  #train-features-section {
+    width: 100%;
+    height: auto;
+
+    margin-bottom: 90px;
+
     background-color: #202020;
+
   }
 
-  .train.fs-wrapper {
-    width: 1170px;
-    min-width: 1000px;
+  #train-features-section .fs-wrapper {
+    width: 90%;
     height: auto;
 
-    margin: 0 auto;
-    grid-template-rows: [start] 10% [row-1-2] 45% [row-2-3] 45% [end];
+    margin: 0px auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+
+    padding: 10px;
+
+    display: grid;
+
+    grid-template-rows: auto;
+    grid-auto-flow: row;
+    grid-template-areas: "feature-row-1"
+                         "feature-row-2"
+                         "feature-row-3";
+
+   grid-row-gap: 5px;
+
+   /*border: 1px solid green;*/
+
   }
 
-  .train.fs-wrapper h2 {
-    justify-self: start;
-    font-size: 85px;
+  /***** row-1 *****/
+  #train-features-section h2 {
+    grid-area: feature-row-1;
+    width: 100%;
+
+    align-self: center;
+    justify-self: center;
+
+    padding-top: 6px;
+    padding-left: 20px;
+
     text-align: left;
+    font-size: 3em;
+    font-weight: 400;
 
-    padding-top: 30px;
-
-    /*border: 1px solid #fff;*/
+    /*border: 1px solid white;*/
   }
 
-  .tfs.row-2 {
-
+  /***** row-2 *****/
+  #train-features-section .row-2 {
+    grid-area: feature-row-2;
     width: 100%;
-    height: 100%;
 
-    margin: 0 auto;
+    align-self: center;
+    justify-self: center;
 
     display: grid;
-    grid-template-columns: [start] repeat(3, 1fr) [end];
 
-
-    /*border: 1px solid red;*/
-  }
-
-  .tfs.row-3 {
-
-    width: 100%;
-    height: 100%;
-
-    margin: 0 auto;
-
-    display: grid;
-    grid-template-columns: [start] repeat(3, 1fr) [end];
-
-    /*border: 1px solid red;*/
-  }
-
-
-  div .fs-col {
-    display: grid;
-    width: 100%;
-    height: auto;
-
-    padding: 5px;
-
-    grid-template-rows: [start] 40% [col-1-2] 20% [col-2-3] 40% [end];
-    grid-template-columns: [start] 100% [end];
-
-    grid-template-areas: " img "
-                         " heading "
-                         " paragraph ";
+    /* 3-row-grid */
+    grid-template-rows: auto;
+    grid-template-columns: [start] 100%  [end];
+    grid-auto-flow: row;
+    grid-template-areas: "fs-row-1"
+                         "fs-row-2"
+                         "fs-row-3";
 
     grid-row-gap: 10px;
 
-    box-shadow: #000 9px 5px 9px 0px;
-
-
     /*border: 1px solid red;*/
 
   }
 
-  .fs-col img {
-    grid-area: img;
+  /***** row-3 *****/
+  #train-features-section .row-3 {
+    grid-area: feature-row-3;
+    width: 100%;
+
+    align-self: center;
+    justify-self: center;
+
+    display: grid;
+
+    /* 3-row-grid */
+    grid-template-rows: auto;
+    grid-template-columns: [start] 100%  [end];
+    grid-auto-flow: row;
+    grid-template-areas: "fs-row-4"
+                         "fs-row-5"
+                         "fs-row-6";
+
+    grid-row-gap: 10px;
+
   }
 
-  .fs-col h1 {
-    grid-area: heading;
+  #train-features-section .fs-col-1 {
+    grid-area: fs-row-1;
+    align-self: center;
+    justify-self: center;
 
+    margin-left: 7px;
+
+    width: 100%;
+
+    /*border: 1px solid blue;*/
+  }
+
+  #train-features-section .fs-col-2 {
+    grid-area: fs-row-2;
+    align-self: center;
+    justify-self: center;
+
+    width: 100%;
+
+
+  }
+
+  #train-features-section .fs-col-3 {
+    grid-area: fs-row-3;
+    align-self: center;
+    justify-self: center;
+
+    width: 100%;
+
+
+  }
+
+  #train-features-section .fs-col-4 {
+    grid-area: fs-row-4;
+    align-self: center;
+    justify-self: center;
+
+    width: 100%;
+
+  }
+
+  #train-features-section .fs-col-5 {
+    grid-area: fs-row-5;
+    align-self: center;
+    justify-self: center;
+
+    width: 100%;
+
+  }
+
+  #train-features-section .fs-col-6 {
+    grid-area: fs-row-6;
+    align-self: center;
+    justify-self: center;
+
+    width: 100%;
+    /*border: 1px solid red;*/
+  }
+
+
+  /* grid layout for inner elements */
+  .training-features {
+    display: grid;
+    grid-template-rows: auto;
+    grid-auto-flow: row;
+    grid-row-gap: 5px;
+
+    align-items: center;
+    justify-items: center;
+
+    box-shadow: #000 0px 5px 9px 5px;
+
+  }
+
+  .fs-col img{
+    width: 90%;
+    height: 100px;
+
+    margin: 0px auto;
+  }
+
+  .fs-col h1{
+    align-self: center;
+    justify-self: center;
+    width: 100%;
+    color: #fff;
+
+    margin: 0px auto;
+    /*border: 1px solid yellow;*/
   }
 
   .fs-col p {
-    grid-area: paragraph;
     padding: 5px;
     color: #999696;
   }
 
-  .tfs .fs-article .quote {
-    margin-top: 10px;
-    font-size: 20px;
-    font-style: italic;
-    color: #00AEEF;
-  }
 
-  .fs-row-wrapper div.fs-article, img {
-    /*border: 1px solid #fff;*/
 
-  }
+
+
+
+
 
   .trainingPage .specs-section {
     background: #BA906D;

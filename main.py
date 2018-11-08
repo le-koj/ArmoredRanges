@@ -162,4 +162,5 @@ app = webapp2.WSGIApplication([
     (r'/estimate', EstimateHandler),
     (r'/armoredrange', AboutHandler),
     (r'/gallery', GalleryHandler),
+    (r'/custom', BuildHandler),
     ], debug=False)
