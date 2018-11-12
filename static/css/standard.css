@@ -1013,6 +1013,168 @@ body {
   /************** END TRAINING.HTML *****/
 
 
+
+  /************** CUSTOM.HTML CSS *********/
+  .customPage {
+    background: #c0c0c0;
+  }
+
+  .customPage .page-wrapper{
+    position: relative;
+    top: 4vh;
+    width: 100%;
+    height: auto;
+
+    display: grid;
+    grid-template-columns: [start] 100% [end];
+    grid-template-rows: [start] 100% [end];
+
+    grid-template-areas: "banner";
+  }
+
+  .customPage .page-wrapper img {
+    grid-area: banner;
+    width: 100%;
+  }
+
+  .customPage .page-wrapper .title-wrapper {
+    grid-area: banner;
+
+    align-self: start;
+    justify-self: end;
+
+    width: auto;  /* variable width of rectangle */
+    height: auto;  /* variable height of rectangle */
+
+    margin-top: 15vh;
+    padding-left: 10px;
+
+
+    background: rgba(0, 0, 0, 0.25);     /* faded black background*/
+    border-radius: 2em 2em 2em 2em / 2em 0 0 2em;
+  }
+
+  .title-wrapper h1 {
+    color: #00AEEF;
+    font-size: 4em;
+    letter-spacing: 10px;
+  }
+
+  .title-wrapper h3 {
+    color: #c7b38d;
+    font-size: 1.5em;
+    letter-spacing: 21px;
+    padding-left: 15px;
+    margin-bottom: 17px;
+  }
+
+  .features-in-custom {
+    grid-area: banner;
+    align-self: end;
+    justify-self: end;
+
+    width: 75%;
+    height: auto;
+
+    margin: 0 auto;
+    margin-bottom: 30px;
+
+    display: grid;
+    grid-template-columns: [start] 100% [end];
+    grid-template-rows: auto;
+    grid-auto-flow: row;
+
+    grid-template-areas: "paragraph"
+                         "list";
+
+    grid-row-gap: 10px;
+
+    box-shadow: 1px 0px 5px 0px #000;
+
+    background: rgba(0, 0, 0, 0.6);     /* faded black background*/
+
+  }
+
+  .features-in-custom p {
+    grid-area: paragraph;
+
+    align-self: center;
+    justify-self: center;
+    width: 80%;
+
+    text-align: justify;
+    color: #fff;
+    letter-spacing: 1px;
+    font-size: 1.5em;
+
+    font-weight: 300;
+    text-transform: capitalize;
+    font-family: "Bebas Neue";
+
+    padding: 10px;
+
+
+  }
+
+  .features-in-custom .list-wrapper {
+    grid-area: list;
+
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: [start] 50% [middle] 50% [end];
+    grid-template-rows: auto;
+
+    grid-template-areas: "list-left list-right";
+
+
+  }
+
+  .list-wrapper .list-left {
+    grid-area: list-left;
+
+    width: 100%;
+
+    text-align: left;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #00aeef;
+
+    padding: 10px;
+
+    border-style: solid;
+    border-width: 2px;
+    border-image: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(0,174,239,0.8) 50%, rgba(255,255,255,0) 100%) 0 20 0 0 !important;
+  }
+
+  .list-wrapper .list-right {
+    grid-area: list-right;
+
+    width: 100%;
+
+    padding: 10px;
+    margin-left: 5px;
+
+    text-transform: uppercase;
+    text-align: left;
+    letter-spacing: 1px;
+    font-size: 1.2em;
+    color: #00aeef;
+
+  }
+
+  .list-wrapper span {
+    margin-right: 10px;
+  }
+
+  .list-wrapper li {
+    margin: 5px;
+  }
+
+  /************** END CUSTOM.HTML CSS *******/
+
+
   /********** GALLERY CSS *******/
 
   .gallery {

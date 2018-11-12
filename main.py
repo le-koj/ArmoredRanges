@@ -75,6 +75,14 @@ class TrainingHandler(MainHandler):
     def get(self):
         self.process_get_method("training.html")    # generate and send html page
 
+############_____ CUSTOM PAGE CONTROL OBJECT ___##########
+class CustomHandler(MainHandler):
+    """object to handle CUSTOM.html response"""
+
+    #_____ method to respond to request _____#
+    def get(self):
+        self.process_get_method("custom.html")    # generate and send html page
+
 
 
 ############_____ ABOUT PAGE CONTROL OBJECT ___##########
@@ -162,5 +170,5 @@ app = webapp2.WSGIApplication([
     (r'/estimate', EstimateHandler),
     (r'/armoredrange', AboutHandler),
     (r'/gallery', GalleryHandler),
-    (r'/custom', BuildHandler),
+    (r'/custom', CustomHandler),
     ], debug=False)
