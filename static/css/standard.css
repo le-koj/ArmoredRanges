@@ -94,7 +94,7 @@ body {
 
   #logo-bar #homelink{
     grid-area: logo;
-    width: 100;
+    width: 100%;
 
   }
 
@@ -283,7 +283,8 @@ body {
   position: relative;
   top: 90px;
   /*background-color: #000;*/
-  width: 1170px;
+  width: 80%;
+  max-width: 1170px;
   height: 400px; /*35vh;*/
 
   margin: 0 auto; /* center box */
@@ -436,7 +437,8 @@ body {
     position: relative;
     top: 90px;
 
-    width: 1170px;
+    width: 80%;
+    max-width: 1170px;
     min-width: 1000px;
     height: 230px;
 
@@ -566,7 +568,8 @@ body {
   }
 
   .cs3-link-wrapper {
-    width: 1170px;
+    width: 80%;
+    max-width: 1170px;
     min-width: 1000px;
 
     margin: 0 auto;
@@ -772,6 +775,10 @@ body {
   color: #00AEEF;
 }
 
+span.sub-title {
+  color: #00AEEF;
+}
+
 
 .fs-row-1, .fs-row-3  {
   display: grid;
@@ -907,14 +914,16 @@ body {
   }
 
   .train.features-section {
-    height: 1500px;
+    height: auto;
+    min-height: 1700px;
     background-color: #202020;
   }
 
   .train.fs-wrapper {
-    width: 1170px;
+    width: 80%;
+    max-width: 1170px;
     min-width: 1000px;
-    height: auto;
+    height: 100%;
 
     margin: 0 auto;
     grid-template-rows: [start] 10% [row-1-2] 45% [row-2-3] 45% [end];
@@ -965,7 +974,7 @@ body {
 
     padding: 5px;
 
-    grid-template-rows: [start] 40% [col-1-2] 20% [col-2-3] 40% [end];
+    grid-template-rows: [start] 40% [col-1-2] 30% [col-2-3] 30% [end];
     grid-template-columns: [start] 100% [end];
 
     grid-template-areas: " img "
@@ -983,6 +992,9 @@ body {
 
   .fs-col img {
     grid-area: img;
+    width: 90%;
+    align-self: center;
+    justify-self: center;
   }
 
   .fs-col h1 {
@@ -1086,6 +1098,7 @@ body {
 
     margin: 0 auto;
     margin-bottom: 30px;
+    margin-top: 30px;
 
     display: grid;
     grid-template-columns: [start] 100% [end];
