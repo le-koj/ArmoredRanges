@@ -22,7 +22,7 @@
   <body class="trainingPage">
     <div class="nav-bar"> <!--- 2-rows-1-column --->
       <div id="logo-bar" >
-        <a id="homelink" href="index"><img src="static/images/armoredRange-logo-06-01.png" alt="armored-range-logo"></a>
+        <a id="homelink" href="index"><img src="static/images/armoredRange-logo-06-02.png" alt="armored-range-logo"></a>
         <div class="mini-button">
           <span class="mini-bar"></span>
           <span class="mini-bar"></span>
@@ -100,6 +100,24 @@
 
     </div> <!--- end .opening-article --->
 
+    <div class="container-section-2">   <!--- 1-row-4-columns --->
+
+      <div class="cs2-col-1-wrapper">
+          <img id="cs2-col-1-r1" src="static/images/armored-training-title.png" alt="">       <!-- logo -->
+
+          <p id="cs2-col-1-r2"> ARI TRAINING RANGE is considered the most affordable live fire shooting Range that’s
+            available in various lengths and is fully customizable for your budget, style and
+            convenience.
+          </p>    <!-- row-2 -->
+      </div>
+
+      <div class="cs2-col-2">    <!--- column-3 --->
+        <a class="button-text build" href="#"> BUILD & PRICE </a>
+        <p> Starting at $99,000 </p>   <!--- row-2 --->
+      </div>
+
+    </div>  <!--- end .container-section-2 --->
+
     <div class="train container-section-3">    <!--- 1-row-6-columns --->
       <div class="cs3-link-wrapper">
         <a href="#train-features-section"><h2>FEATURES</h2></a>
@@ -117,7 +135,7 @@
           <div class="tfs row-2">
 
             <div class="train fs-col-1 fs-col training-features">     <!--- 1st article --->
-              <img src="static/images/double-unit.png" alt="">      <!-- article image --->
+              <img src="static/images/Picture13.png" alt="">      <!-- article image --->
               <h1>URBAN TRAINING DOUBLE UNIT</h1>                <!-- article statement -->
               <div class="train fs-article">
                 <p>Environment with open view on top. Consist of Four 20 Ft. Containers stackable configured for multiple purposes.
@@ -305,7 +323,7 @@
       </div>
       <div class="row-4">
         <label class="required" for="message">Message</label>
-        <textarea id="message" class="input" name="message" rows="7" cols="30" placeholder="please specify your request here" required></textarea>
+        <textarea id="message" class="input" name="message" rows="7" cols="30" placeholder="submit your requirements here" required></textarea>
         <span id="message_validation" class="error_message"></span>
       </div>
 
@@ -441,7 +459,7 @@
                        });
 
                        // click event response for images
-                       $("#estimate, #build-tab").click(function() {
+                       $("#estimate, #build-tab, .build").click(function() {
                            $(".preview").css("display","grid").fadeIn();
                          });
 
