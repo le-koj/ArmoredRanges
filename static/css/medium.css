@@ -394,6 +394,18 @@ body {
     background: #fff;
   }
 
+  .product-box a {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 100%;
+
+  }
+
+  .product-box a img {
+    align-self: center;
+    justify-self: center;
+  }
+
   .product-box .product-image:hover {
     background: #ececec;
   }

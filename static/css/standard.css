@@ -198,6 +198,27 @@ body {
     background: rgba(0, 174, 239, 0.6);
   }
 
+  .carousel-caption {
+    width: 20%;
+    margin: 0 auto;
+    text-shadow: 3px 3px 2px rgba(150, 150, 150, .5);
+
+
+  }
+
+  .carousel-caption h5{
+    font-size: 2em;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  .carousel-caption small{
+    font-size: 1.4em;
+    font-weight: 400;
+    color: #000;
+
+  }
+
   .slider {
     position: relative;
     width: 600%;
@@ -228,8 +249,8 @@ body {
 
   .carousel-item p {
     position: absolute;
-    top: 40%;
-    right: 4vw;
+    top: 35%;
+    right: 6vw;
     color: #000;
     font-size: 1.3em;
     font-weight: 400;
@@ -387,10 +408,26 @@ body {
   }
 
   .product-box img {
+    align-self: center;
+    justify-self: center;
     width: 100%;
     /*height: 100%;*/
 
     background: #fff;
+
+
+  }
+
+  .product-box a {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 100%;
+
+  }
+
+  .product-box a img {
+    align-self: center;
+    justify-self: center;
   }
 
   .product-box .product-image:hover {

@@ -109,7 +109,7 @@ class BuildHandler(MainHandler):
         information_list = ['firstName', 'lastName', 'email', 'message' ]
 
         sender_address = 'armoredrange5@gmail.com'
-        email = 'armoredrange5@gmail.com'
+        email = 'info@armoredrange.com'
         subject = cgi.escape(self.request.get('firstName')) + " " + cgi.escape(self.request.get('lastName'))
         body = cgi.escape(self.request.get('email')) + "\n" + cgi.escape(self.request.get('message'))
 
@@ -129,7 +129,7 @@ class EstimateHandler(MainHandler):
     #_____ method to process estimate request _____#
     def post(self):
         sender_address = 'armoredrange5@gmail.com'
-        email = 'armoredrange5@gmail.com'
+        email = 'info@armoredrange.com'
         telephone = cgi.escape(self.request.get('telephone'))
         country = cgi.escape(self.request.get('country'))
         subject = cgi.escape(self.request.get('firstName')) + " " + cgi.escape(self.request.get('lastName'))
