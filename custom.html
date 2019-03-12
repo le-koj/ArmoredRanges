@@ -12,7 +12,8 @@
     <meta name="author" content="Le koj">
     <link rel="icon" type="image/png" href="" sizes="">
     <link rel="icon" type="image/png" href="" sizes="">
-    <link rel="stylesheet" type="text/css" media="screen and (min-width:421px)" href="static/css/standard.css">
+    <link rel="stylesheet" type="text/css" media="screen and (min-width:1025px)" href="static/css/standard.css">
+    <link rel="stylesheet" type="text/css" media="screen and (max-width:1024px)" href="static/css/medium.css">
     <link rel="stylesheet" type="text/css" media="screen and (max-width:420px)" href="static/css/small.css">
     <link rel="stylesheet" type="text/css" media="" href="">
   </head>
@@ -21,12 +22,19 @@
     <div class="nav-bar"> <!--- 2-rows-1-column --->
       <div id="logo-bar" >
         <a id="homelink" href="index"><img src="static/images/armoredRange-logo-06-02.png" alt="armored-range-logo"></a>
+
+        <div class="mini-button">
+          <span class="mini-bar"></span>
+          <span class="mini-bar"></span>
+          <span class="mini-bar"></span>
+        </div>
       </div> <!--- row-1 --->
 
       <div id="menu-bar-wrapper">
         <ul id="menu-bar"> <!--- row-2 --->
           <li id="scroll-top" class="left"> <a href="#page-wrapper">^</a> </li>                            <!--- column-1 --->
-          <li class="left" id="gallery-tab"> <a href="#gallery-section"> GALLERY </a> </li>       <!--- column-3 --->
+          <li class="left" id="gallery-tab"> <a href="#service-section"> SERVICES </a> </li>       <!--- column-3 --->
+          <li class="left" id="gallery-tab"> <a href="#capabilities"> CAPABILITIES </a> </li>       <!--- column-3 --->
           <li class="left" id="about-tab"> <a href="/armoredrange"> ABOUT US </a>  </li>    <!--- column-8 ---->
           <li class="right" id="build-tab"> <a href="#"> BUILD & PRICE </a>  </li>   <!--- column-9 ---->
         </ul>
@@ -47,7 +55,7 @@
     </div>
 
 
-          <div class="features-in-custom">
+          <div class="features-in-custom" id="service-section">
             <h2>SERVICES & FEATURES</h2>
 
             <div class="list-wrapper">
@@ -83,7 +91,7 @@
 
     <div id="capabilities">
       <h2>Other Capabilities</h2>
-      <p>ARMORED RANGE INT'L is a world known Military Construction(MILCON) company
+      <p>ARMORED RANGE INT'L is a world known Military Construction (MILCON) company
         that specializes in Military Construction and Training.  Our areas of expertise
         and past performance includes and is not limited to
       </p>

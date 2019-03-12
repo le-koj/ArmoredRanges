@@ -89,64 +89,28 @@ body {
   #logo-bar {
     grid-area: logo-bar;    /*-- place in row-1  --*/
     justify-items: start;
+    align-self: center;
 
-    display: grid;
-    grid-template-columns: [start] repeat(2,1fr) [end];
 
-    grid-template-areas: "logo mini-bar";
-
-    /*border: 1px solid red;*/
   }
 
 
   #logo-bar #homelink{
     grid-area: logo;
-    width: 100;
+    width: 100%;
 
   }
 
   #logo-bar img {
-    height: 5vh;
+    height: 11vh;
+    max-height: 50px;
     float: left;
-    margin-left: 15px;
-
-    padding-top: 3px;
-  }
-
-  .mini-button {
-    width: 30px;
-    height: 25px;
-
-    grid-area: mini-bar;
-    justify-self: end;
-    align-self: center;
-
-    margin-right: 20px;
-
-    display: grid;
-    grid-template-rows: [start] repeat(3, 1fr) [end];
-
-    justify-content: center;
-
-    border-radius: 1.5px;
-
+    margin-left: 20px;
     /*border: 1px solid red;*/
   }
 
-  .mini-button:hover {
-    background: rgba(0, 0, 0, 0.5);
-  }
-
-  .mini-bar {
-    background: #00AEEF;
-
-    width: 25px;
-    margin: 3px;
-    border-radius: 1px;
-  }
-
-  .trainingPage .mini-bar {
-    background: #BA906D;
+  .mini-button {
+    display: none
   }
 
   #menu-bar-wrapper {
@@ -154,34 +118,28 @@ body {
     width: 100%;
     height: 100%;
 
-    background-color: #00AEEF;    /*-- light blue bg-color for menu options --*/
+    display: grid;
+    grid-template-columns: [start] 100% [end];
+    grid-template-areas: "menu-bar";
   }
 
   #menu-bar {
-    position: absolute;
-
-    top: 44px;
-
-    margin: 10px auto;
-
+    grid-area: menu-bar;
     width: 100%;
-    height: auto;
 
-    display: grid;
 
-    grid-template-columns: [start] 100% [end];
-    grid-auto-flow: row;
+    padding-left: 20px;
+    padding-right: 30px;
+
+    background-color: #00AEEF;    /*-- light blue bg-color for menu options --*/
 
     font-weight: 300;
     line-height: 20px;
-
-    background: rgba(0, 0, 0, 0.9);
 
     /*border: 1px solid black;*/
   }
 
   #menu-bar .left, #menu-bar a {
-    /*display: none;*/
     color: #fff;
   }
 
@@ -190,22 +148,16 @@ body {
     padding: 7px;
     padding-left: 10px;
     padding-right: 10px;
-
-    border-bottom: 2px solid #202020;
   }
 
   #menu-bar .right {
-    /*display: none;*/
     height: 100%;
     padding: 7px;
     padding-left: 10px;
     padding-right: 10px;
-
-    border-bottom: 2px solid #202020;
   }
 
   #menu-bar #scroll-top{
-    display: none;
     font-size: 20px;
 
     padding-top: 10px;
@@ -237,7 +189,7 @@ body {
 
   .carousel {
     top: 90px;
-    height: 150px ;
+    height: 542px ;
 
     overflow-y: hidden;
 
@@ -277,25 +229,32 @@ body {
 
   .carousel-item p {
     position: absolute;
-    top: 20%;
-    right: 3.5vw;
+    top: 40%;
+    right: 4vw;
     color: #000;
-    font-size: 1em;
-    font-weight: 500;
-    line-height: 17px;
-    /*text-shadow: 2px 0px 2px rgba(0, 0, 0, .9);*/
+    font-size: 1.3em;
+    font-weight: 400;
+    text-shadow: 2px 0px 2px rgba(150, 150, 150, .5);
 
-    width: 100px;
+    width: 200px;
   }
 
   p #price {
     display: block;
-    font-size: 1em;
+    font-size: 1.6em;
     color: #00AEFF;
     font-weight: 600;
     text-shadow: 3px 3px 2px rgba(150, 150, 150, 1);
 
     background: rgba(255, 255, 255, 0.5);
+  }
+
+  #price-flash {
+    position: absolute;
+    top: 30%;
+    right: 16vw;
+
+    width: 30vh;
   }
 
   .figure img {
@@ -357,11 +316,11 @@ body {
   position: relative;
   top: 90px;
   /*background-color: #000;*/
-  width: 100%;
-  height: auto; /*35vh;*/
+  width: 80%;
+  max-width: 1170px;
+  height: 400px; /*35vh;*/
 
   margin: 0 auto; /* center box */
-  padding-bottom: 10px;
 
   /*-- set as grid  --*/
   display: grid;
@@ -374,8 +333,6 @@ body {
                        "product-table"
                        "section-button";
 
-  grid-row-gap: 10px;
-
   /*border: 3px solid black;*/
 
 }
@@ -385,8 +342,6 @@ body {
     align-self: center;
     justify-self: start;
     width: auto;
-
-    padding-left: 10px;
 
     font-style: italic;
     font-size: 2em;
@@ -405,39 +360,31 @@ body {
     display: grid;
 
     /* set as 12-column grid */
-    grid-template-rows: [start] repeat(3, 1fr) [end];
-    grid-template-columns: 100%;
+    grid-template-columns: [start] repeat(3, 1fr) [end];
 
     /* set grid area */
-    grid-template-areas: "product-1"
-                         "product-2"
-                         "product-3";
+    grid-template-areas: "product-1 product-2 product-3";
 
-    grid-row-gap: 10px;
+    grid-column-gap: 10px;
 
     /*border: 1px solid black;*/
   }
 
   .product-box {
     display: block;
-    width: 90%;
-    height: auto;
-    justify-self: center;
-    align-self: center;
+    width: 100%;
+    height: 100%;
+
     /* set as grid */
     display: grid;
 
     /* set as 2-row grid */
     grid-template-rows: [start] 70% [last] 30% [end];
 
-    border-radius: 0 5px 5px 0;
-
   }
 
   #product-1 {
     grid-area: product-1;
-
-
   }
 
   .product-box img {
@@ -451,35 +398,23 @@ body {
     background: #ececec;
   }
 
-  .product-image {
-    box-shadow: 0px 0px 5px #000000;
-    border-radius: 2px 2px 0px 0;
-
-  }
-
   #product-2 {
     grid-area: product-2;
-
-
-    /*border: 1px solid #000;*/
   }
 
   #product-3 {
     grid-area: product-3;
-
-    /*border: 1px solid blue;*/
   }
 
   .product-section .section-button {
     grid-area: section-button;
     width: 100%;
 
-
     /*-- set as grid  --*/
     display: grid;
 
     /*-- set as 12-column grid  --*/
-    grid-template-columns:  [start] 100% [end];
+    grid-template-columns:  [start] repeat(1, 1fr) [end];
 
    /* set grid area */
    grid-template-areas: "button-text";
@@ -487,9 +422,6 @@ body {
    justify-items: center;
    align-items: center;
 
-   padding: 5px;
-
-   /*border: 1px solid blue;*/
   }
 
   /*...
@@ -503,14 +435,13 @@ body {
     grid-area: button-text;
 
     width: 250px;
-    height: auto;
+    height: 49px;
 
     font-size: 1.2em;
     font-weight: 600;
     color: #00AEEF;
 
-    padding-top: 4px;  /* to push the text to the box center */
-    padding-bottom: 2px;
+    padding-top: 10px;
 
     border: 2px solid #00AEEF;
     -webkit-border-radius: .2em .2em .2em .2em / .2em .2em .2em .2em;
@@ -539,9 +470,8 @@ body {
     position: relative;
     top: 90px;
 
-    width: 100%;
-    /*min-width: 1000px;*/
-    height: auto;
+    width: 98%;
+    height: 230px;
 
     margin: 0 auto;
 
@@ -551,12 +481,10 @@ body {
     display: grid;
 
     /* set as 2-column grid */
-    grid-template-rows: [start] 75% [middle] 25% [end];
-    grid-template-columns: 100%;
+    grid-template-columns: [start] 75% [middle] 25% [end];
 
     /* set grid area */
-    grid-template-areas: "cs2-col-1-wrapper"
-                         "cs2-col-2";
+    grid-template-areas: "cs2-col-1-wrapper cs2-col-2";
 
 
     /*border: 1px solid #000;*/
@@ -566,7 +494,7 @@ body {
     grid-area: cs2-col-1-wrapper;
     align-self: center;
     width: 100%;
-    height: auto;
+    height: 80%;
     /*height: 210px;*/
 
     text-align: left;
@@ -582,12 +510,12 @@ body {
     grid-template-areas: "cs2-col-1-r1"
                          "cs2-col-1-r2";
 
-    /*grid-row-gap: 5px;*/
+    grid-row-gap: 10px;
 
     border-style: solid;
     border-width: 2px;
 
-    border-image: linear-gradient(to left, rgba(255,255,255,0) 0%, rgba(0,174,239,0.8) 50%, rgba(255,255,255,0) 100%) 0 0 20 0 !important;
+    border-image: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(0,174,239,0.8) 50%, rgba(255,255,255,0) 100%) 0 20 0 0 !important;
 
     /*border: 1px solid #000;*/
 
@@ -595,47 +523,43 @@ body {
 
   #cs2-col-1-r1 {
     grid-area: cs2-col-1-r1;
-    align-self: center;
-    justify-self: center;
-    width: 90%;
+    align-self: end;
+    width: 50%;
 
     /*border: 1px solid red;*/
   }
 
   #cs2-col-1-r2 {
     grid-area: cs2-col-1-r2;
-    align-self: center;
-    justify-self: center;
+    align-self: start;
+    justify-self: start;
     width: 90%;
 
-    line-height: 18px;
-    font-size: 1em;
+    line-height: 1.5;
+    font-size: 16px;
     font-weight: 500;
     font-family: sans-serif, verdana, Arial;
     color: #000;
-    text-align: justify;
 
-    padding: 5px;
+    padding-left: 5px;
 
     /*border: 1px solid red;*/
   }
 
   .cs2-col-2 {
     grid-area: cs2-col-2;
-    align-self: start;
+    align-self: center;
     justify-self: end;
     width: 100%;
-    height: auto;
+    height: 80%;
 
     padding: 10px;
-
-    padding-bottom: 20px;
-    margin-bottom: 20px;
 
     border-style: solid;
     border-width: 2px;
 
-    border-image: linear-gradient(to left, rgba(255,255,255,0) 0%, rgba(0,174,239,0.8) 50%, rgba(255,255,255,0) 100%) 0 0 20 0 !important;
+    border-image: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(0,174,239,0.8) 50%, rgba(255,255,255,0) 100%) 0 20 0 0 !important;
+
 
 
   }
@@ -660,7 +584,9 @@ body {
   .container-section-3 {
     position: relative;
     top: 90px;
-    height: auto;
+    width: 100%;
+    height: 70px;
+
     background: #1e1e1e;
 
     /* set as grid */
@@ -672,21 +598,19 @@ body {
     /* set as 1-row-grid */
     grid-template-rows: [start] 100%  [end]
 
-    /*border: 1px solid #000;*/
+    /*border: 1px solid red;*/
   }
 
   .cs3-link-wrapper {
-    width: 100%;
+    width: 90%;
 
-    margin: 0px auto;
-    margin-bottom: 0px;
+    margin: 0 auto;
 
     /* set as grid */
     display: grid;
 
     /* set as 3-column grid */
-    grid-template-row: [start] repeat(3, 1fr) [end];
-    grid-template-columns: 100%;
+    grid-template-columns: [start] repeat(3, 1fr) [end];
 
     /*border: 1px solid #fff;*/
   }
@@ -704,11 +628,9 @@ body {
     font-size: 1.5em;
     color: #6d6d6d;
 
-    padding-top: 7px;
+    border-left: 2px solid #4c4c4c;
 
-    /*border-top: 2px solid #4c4c4c;*/
-
-    border-bottom: 2px solid #4c4c4c;
+    border-right: 2px solid #4c4c4c;
 
     /*border: 1px solid blue;*/
   }
@@ -720,11 +642,81 @@ body {
   }
 
 
+  .container-section-4 {
+    position: relative;
+    top: 90px;
+
+    width: 1170px;;
+    min-width: 1000px;
+    height: 230px;
+
+    margin: 0 auto;
+
+    background: #fff;
+
+    /* set as grid */
+    display: grid;
+
+    /* set as 2-column grid */
+    grid-template-columns: [start] repeat(4,1fr) [end];
+
+    align-items: center;
+
+    /*border: 1px solid #fff;*/
+  }
+
+  .container-section-4 div {
+    display: grid;
+    grid-template-columns: [start] 75% [middle] 25% [end];
+    grid-template-areas: "number span";
+
+    border-style: solid;
+    border-width: 2px;
+
+    border-image: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(0,174,239,0.8) 50%, rgba(255,255,255,0) 100%) 0 20 0 0 !important;
+    /*border: 1px solid #000;*/
+  }
+
+  #cs4-col-2 {
+    border-image: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(0,174,239,0.8) 50%, rgba(255,255,255,0) 100%) 0 20 0 20 !important;
+  }
+
+
+  .container-section-4 div p {
+    grid-area: number;
+
+    font-size: 70px;
+    font-weight: bold;
+    font-style: italic;
+    text-align: right;
+
+
+    /*border: 1px solid red;*/
+  }
+
+  .container-section-4 div span {
+    grid-area: span;
+    align-self: end;
+
+    font-size: 14px;
+    font-style: italic;
+    font-weight: 500;
+    text-align: left;
+    color:#00AEEF;
+
+    padding-bottom: 16px;
+
+    /*border: 1px solid red;*/
+  }
+
+  #cs4-col-4 span {
+    width: 90%;
+  }
+
   .features-section {
     position: relative;
     top: 90px;
     height: auto;
-    width: 100%;
 
     /* set as grid */
     display: grid;
@@ -733,67 +725,58 @@ body {
     grid-template-rows: [start] 100% [end];
 
     /* set as 1-column-grid */
-    grid-template-columns: 100%;
+    grid-template-columns: [start] 100% [end];
 
     background: #000 /*#1e1e1e*/;
     color: #fff;
     font-family: sans-serif, verdana, Arial;
-
-
   }
 
 .fs-wrapper {
-  width: 90%;
+  width: 100%;
   height: auto;
-
-  margin: 0px auto;
-
-  margin-bottom: 50px;
-  margin-top: 50px;
 
   /* set as grid */
   display: grid;
 
   /* set as 4-row-grid */
-  grid-template-rows: [start] repeat(4, 1fr) [end];
-  grid-template-columns: 100%;
+  grid-template-rows: auto;
+  grid-auto-flow: row;
+
+  grid-row-gap: 30px;
 
   justify-items: center;
   align-items: center;
+
+  padding-top: 30px;
+  padding-bottom: 30px;
+
 
   /*border: 1px solid blue;*/
 }
 
 .fs-row-wrapper {
-  width: 100%;
+  width: 75%;
+  max-width: 1140px;
+  min-width: 420px;
   height: auto;
-
   margin: 0 auto;
-  margin-bottom: 5px;
-  padding-bottom: 20px;
-
-  border-bottom: 2px solid #2f2f2f;
-
   /*border: 1px solid red;*/
-
 
 }
 
 .fs-row-wrapper h1 {
-  width: 100%;
-  font-size: 3em;
+  width: 80%;
+  font-size: 60px;
   text-align: left;
-  line-height: 45px;
-
-  align-self: center;
-  justify-self: center;
+  line-height: 60px;
 
   padding: 5px;
 }
 
 .fs-row-wrapper p {
   width: 80%;
-  text-align: justify;
+  text-align: left;
   line-height: 25px;
   font-size: 15px;
 
@@ -811,80 +794,58 @@ body {
 }
 
 .fs-row-wrapper img {
-  width: 80%;
-  margin: 0 auto;
+  width: 90%;
   justify-self: center;
   align-self: center;
-
-  /*border: 1px solid #fff;*/
 }
 
 .fs-article .quote {
-  margin-top: 10px;
+  margin-top: 0;
   text-align: left;
   font-size: 20px;
   font-style: italic;
   color: #00AEEF;
 }
 
+span.sub-title {
+  color: #00AEEF;
+}
+
 
 .fs-row-1, .fs-row-3  {
   display: grid;
-  width: 100%;
   height: auto;
-  grid-template-rows: [start] 30% [middle] 70% [end];
-  grid-template-columns: 100%;
+  grid-template-columns: [start] 30% [middle] 70% [end];
+  grid-template-rows: [start] 100% [end];
 
-  justify-items: start;
-  align-items: center;
+  grid-column-gap: 5px;
 
-  grid-row-gap: 30px;
-
-  /*border: 1px solid #fff;*/
 
 }
 
 .fs-row-1 .fs-article, .fs-row-3 .fs-article {
   display: grid;
   grid-template-rows: auto;
-  grid-template-columns: 100%;
-
-  justify-items: start;
-  align-items: center;
-
-  padding-left: 10px;
-
+  justify-items: end;
 }
 
 .fs-row-2, .fs-row-4 {
   display: grid;
-  width: 100%;
   height: auto;
-  grid-template-rows: [start] 30% [middle] 70% [end];
-  grid-template-columns: 100%;
+  grid-template-columns: [start] 70% [middle] 30% [end];
+  grid-template-rows: [start] 100% [end];
 
-  grid-template-areas: "picture"
-                       "context";
-
-  grid-row-gap: 30px;
-
-  justify-items: start;
-  align-items: center;
-
-}
-
-.fs-row-2 .fs-article, .fs-row-4 .fs-article {
-  grid-area: context;
-}
-
-.fs-row-2 img, .fs-row-4 img {
-  grid-area: picture;
-  align-self: center;
-  justify-self: center;
+  grid-column-gap: 5px;
 
 }
 
 
+
+
+.fs-row-wrapper div.fs-article, img {
+  /*border: 1px solid #fff;*/
+
+}
 
 .gallery-section {
   position: relative;
@@ -904,20 +865,19 @@ body {
   position: relative;
   /*top: 90px;*/
   height: auto;
+  margin-bottom: 85px;
 
   display: grid;
   grid-template-columns: [start] 100% [end];
-  grid-template-rows: [start] 10% [middle] 80% [end];
+  grid-template-rows: [start] 20% [middle] 80% [end];
 
   background-color: #00AEEF;
-
-  margin-bottom: 65px;
 }
 
 .specs-section h1 {
   align-self: center;
-  font-size: 2.6em;
-  font-weight: bold;
+  font-size: 50px;
+  font-weight: bold
 }
 
 .specs-row-wrapper {
@@ -956,13 +916,10 @@ body {
   justify-self: start;
   align-self: center;
   text-align: left;
-  font-size: .8em;
-
 
   color: #999696;
 
-  margin-top: 15px;
-  padding: 5px;
+  margin-top: 10px;
 
 }
 
@@ -971,7 +928,7 @@ body {
 
 
   /*************** TRAINING.HTML *********/
-  .trainingPage #menu-bar-wrapper {
+  ul#menu-bar.training-nav {
     background-color: #BA906D;
   }
 
@@ -988,207 +945,118 @@ body {
     color: #000;
   }
 
-  #train-features-section {
-    width: 100%;
+  .train.features-section {
     height: auto;
-
-    margin-bottom: 90px;
-
+    min-height: 1700px;
     background-color: #202020;
-
   }
 
-  #train-features-section .fs-wrapper {
-    width: 90%;
+  .train.fs-wrapper {
+    width: 98%;
+    height: 100%;
+
+    margin: 0 auto;
+    grid-template-rows: [start] 10% [row-1-2] 45% [row-2-3] 45% [end];
+    grid-template-columns: 100%;
+  }
+
+  .train.fs-wrapper h2 {
+    justify-self: start;
+    font-size: 85px;
+    text-align: left;
+
+    padding-top: 30px;
+
+    /*border: 1px solid #fff;*/
+  }
+
+  .tfs.row-2 {
+
+    width: 100%;
+    height: 100%;
+
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: [start] repeat(3, 1fr) [end];
+
+
+    /*border: 1px solid red;*/
+  }
+
+  .tfs.row-3 {
+
+    width: 100%;
+    height: 100%;
+
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: [start] repeat(3, 1fr) [end];
+
+    /*border: 1px solid red;*/
+  }
+
+
+  div .fs-col {
+    display: grid;
+    width: 100%;
     height: auto;
 
-    margin: 0px auto;
-    margin-top: 5%;
-    margin-bottom: 5%;
+    padding: 5px;
 
-    padding: 10px;
+    grid-template-rows: [start] 40% [col-1-2] 30% [col-2-3] 30% [end];
+    grid-template-columns: [start] 100% [end];
 
-    display: grid;
-
-    grid-template-rows: auto;
-    grid-auto-flow: row;
-    grid-template-areas: "feature-row-1"
-                         "feature-row-2"
-                         "feature-row-3";
-
-   grid-row-gap: 5px;
-
-   /*border: 1px solid green;*/
-
-  }
-
-  /***** row-1 *****/
-  #train-features-section h2 {
-    grid-area: feature-row-1;
-    width: 100%;
-
-    align-self: center;
-    justify-self: center;
-
-    padding-top: 6px;
-    padding-left: 20px;
-
-    text-align: left;
-    font-size: 3em;
-    font-weight: 400;
-
-    /*border: 1px solid white;*/
-  }
-
-  /***** row-2 *****/
-  #train-features-section .row-2 {
-    grid-area: feature-row-2;
-    width: 100%;
-
-    align-self: center;
-    justify-self: center;
-
-    display: grid;
-
-    /* 3-row-grid */
-    grid-template-rows: auto;
-    grid-template-columns: [start] 100%  [end];
-    grid-auto-flow: row;
-    grid-template-areas: "fs-row-1"
-                         "fs-row-2"
-                         "fs-row-3";
+    grid-template-areas: " img "
+                         " heading "
+                         " paragraph ";
 
     grid-row-gap: 10px;
+
+    box-shadow: #000 9px 5px 9px 0px;
+
 
     /*border: 1px solid red;*/
 
   }
 
-  /***** row-3 *****/
-  #train-features-section .row-3 {
-    grid-area: feature-row-3;
-    width: 100%;
-
-    align-self: center;
-    justify-self: center;
-
-    display: grid;
-
-    /* 3-row-grid */
-    grid-template-rows: auto;
-    grid-template-columns: [start] 100%  [end];
-    grid-auto-flow: row;
-    grid-template-areas: "fs-row-4"
-                         "fs-row-5"
-                         "fs-row-6";
-
-    grid-row-gap: 10px;
-
-  }
-
-  #train-features-section .fs-col-1 {
-    grid-area: fs-row-1;
-    align-self: center;
-    justify-self: center;
-
-    margin-left: 7px;
-
-    width: 100%;
-
-    /*border: 1px solid blue;*/
-  }
-
-  #train-features-section .fs-col-2 {
-    grid-area: fs-row-2;
-    align-self: center;
-    justify-self: center;
-
-    width: 100%;
-
-
-  }
-
-  #train-features-section .fs-col-3 {
-    grid-area: fs-row-3;
-    align-self: center;
-    justify-self: center;
-
-    width: 100%;
-
-
-  }
-
-  #train-features-section .fs-col-4 {
-    grid-area: fs-row-4;
-    align-self: center;
-    justify-self: center;
-
-    width: 100%;
-
-  }
-
-  #train-features-section .fs-col-5 {
-    grid-area: fs-row-5;
-    align-self: center;
-    justify-self: center;
-
-    width: 100%;
-
-  }
-
-  #train-features-section .fs-col-6 {
-    grid-area: fs-row-6;
-    align-self: center;
-    justify-self: center;
-
-    width: 100%;
-    /*border: 1px solid red;*/
-  }
-
-
-  /* grid layout for inner elements */
-  .training-features {
-    display: grid;
-    grid-template-rows: auto;
-    grid-auto-flow: row;
-    grid-row-gap: 5px;
-
-    align-items: center;
-    justify-items: center;
-
-    box-shadow: #000 0px 5px 9px 5px;
-
-  }
-
-  .fs-col img{
+  .fs-col img {
+    grid-area: img;
     width: 90%;
-    height: 100px;
-
-    margin: 0px auto;
-  }
-
-  .fs-col h1{
     align-self: center;
     justify-self: center;
-    width: 100%;
-    color: #fff;
+  }
 
-    margin: 0px auto;
-    /*border: 1px solid yellow;*/
+  .fs-col h1 {
+    grid-area: heading;
+
   }
 
   .fs-col p {
+    grid-area: paragraph;
     padding: 5px;
     color: #999696;
   }
 
+  .tfs .fs-article .quote {
+    margin-top: 10px;
+    font-size: 20px;
+    font-style: italic;
+    color: #00AEEF;
+  }
+
+  .fs-row-wrapper div.fs-article, img {
+    /*border: 1px solid #fff;*/
+
+  }
 
   .trainingPage .specs-section {
     background: #BA906D;
   }
 
   .trainingPage .specs-section h1 {
-    margin-top: 10px;
+    margin-top: 20px;
     color: #fff;
   }
 
@@ -1196,13 +1064,338 @@ body {
   /************** END TRAINING.HTML *****/
 
 
+
+  /************** CUSTOM.HTML CSS *********/
+  .customPage {
+    background: #fff;
+  }
+
+  .customPage .page-wrapper{
+    position: relative;
+    top: 90px;
+    width: 100%;
+    height: auto;
+
+    display: grid;
+    grid-template-columns: [start] repeat(2, 1fr) [end];
+    grid-template-rows: [start] 100% [end];
+
+    grid-template-areas: "image-box content-box";
+    background: #000;
+  }
+
+  .customPage .page-wrapper img {
+    grid-area: image-box;
+    width: 100%;
+  }
+
+  .customPage .page-wrapper .title-wrapper {
+    grid-area: content-box;
+
+    align-self: center;
+    justify-self: center;
+
+    width: 90%;  /* variable width of rectangle */
+    max-width: 600px;
+    height: auto;  /* variable height of rectangle */
+
+    display: grid;
+    grid-template-rows: [start] 50% [row-2] 30% [row-3] 20% [end];
+    grid-template-columns: 100%;
+
+    grid-template-areas: "custom-title-logo"
+                         "sub-title"
+                         "description";
+
+    grid-row-gap: 5px;
+
+  }
+
+  #custom-title-logo {
+    grid-area: custom-title-logo;
+    width: 100%;
+    align-self: center;
+    justify-self: center;
+  }
+
+  .title-wrapper h3 {
+    grid-area: sub-title;
+    text-align: left;
+    color: #fff;
+    font-size: 2em;
+    letter-spacing: .22em;
+
+    padding-left: 4px;
+    margin-bottom: 0.3em;
+  }
+
+  .title-wrapper p {
+    grid-area: description;
+    text-align: left;
+    color: #dfc06c;
+    font-size: 1.2em;
+    letter-spacing: 2px;
+
+    padding-left: 10px;
+    margin-bottom: 17px;
+  }
+
+  .features-in-custom {
+    width: 90%;
+    height: auto;
+
+    margin: 0 auto;
+    margin-bottom: 60px;
+    margin-top: 70px;
+
+    display: grid;
+    grid-template-rows: [start] 20% [middle] 80% [end];
+    grid-template-columns: 100%;
+
+    grid-template-areas: "service"
+                         "list";
+    grid-row-gap: 10px;
+
+  }
+
+  .features-in-custom h2 {
+    grid-area: service;
+
+    align-self: center;
+    justify-self: center;
+    width: 100%;
+
+    text-align: left;
+    color: #00AEEF;
+    letter-spacing: 1px;
+    line-height: .9em;
+    font-size: 4em;
+
+    font-weight: bold;
+    text-transform: capitalize;
+    font-family: inherit;
+
+    margin-top: 1em;
+    margin-bottom: .5em;
+  }
+
+  .features-in-custom .list-wrapper {
+    grid-area: list;
+
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: [start] 50% [middle] 50% [end];
+    grid-template-rows: auto;
+
+    grid-template-areas: "list-left list-right";
+
+
+  }
+
+  .list-wrapper .list-left {
+    grid-area: list-left;
+
+    width: 100%;
+
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1em;
+    font-weight: bold;
+    color: #000;
+
+    padding: 5px;
+
+    border-style: solid;
+    border-width: 2px;
+    border-image: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(0,174,239,0.8) 50%, rgba(255,255,255,0) 100%) 0 20 0 20 !important;
+  }
+
+  .list-wrapper .list-right {
+    grid-area: list-right;
+
+    width: 100%;
+
+    padding: 5px;
+    margin-left: 5px;
+
+    text-transform: uppercase;
+    text-align: left;
+    letter-spacing: 1px;
+    font-size: 1em;
+    font-weight: bold;
+    color: #000;
+
+
+  }
+
+  .list-wrapper span {
+    margin-right: 10px;
+    color: #00AEEF;
+  }
+
+  .list-wrapper li {
+    margin: 5px;
+  }
+
+  .custom {
+    width: 100%;
+    height: 10vh;
+    max-height: 100px;
+    min-height: 70px;
+
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 100%;
+
+    background: #252525;
+  }
+
+  .click-here-button {
+    align-self: center;
+    justify-self: center;
+    width: auto;
+    height: auto;
+
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #00AEEF;
+
+    padding: 5px;
+
+    border: 2px solid #00AEEF;
+    -webkit-border-radius: .2em .2em .2em .2em / .2em .2em .2em .2em;
+       -moz-border-radius: .2em .2em .2em .2em / .2em .2em .2em .2em;
+            border-radius: .2em .2em .2em .2em / .2em .2em .2em .2em;
+
+  }
+
+  .click-here-button:hover {
+    color: #fff;
+    background: #00AEEF;
+  }
+
+
+      #capabilities {
+        position: relative;
+
+        width: 100%;
+        height: 100%;
+
+        padding: 10px;
+        padding-bottom: 10px;
+
+        display: grid;
+        grid-template-rows: [start] 20% [col-2] 10% [col-3] 70% [end];
+        grid-row-gap: 5px;
+
+        background: #000;
+
+        /*border: 1px solid blue;*/
+
+      }
+
+      #capabilities h2 {
+        justify-self: center;
+        align-self: center;
+        width: 90%;
+
+        margin: 0 auto;
+        margin-top: 1em;
+        margin-bottom: .5em;
+
+        text-align: left;
+        color: #fff;
+
+        letter-spacing: 1px;
+        line-height: .9em;
+        font-size: 4em;
+
+        font-weight: bold;
+        text-transform: uppercase;
+        font-family: inherit;
+      }
+
+      #capabilities p {
+        justify-self: start;
+        align-self: center;
+        width: 90%;
+
+        margin: 0 auto;
+        padding-left: 10px;
+
+        text-align: left;
+
+        font-size: 16px;
+        font-weight: normal;
+        color: #dfc06c;
+        text-align: left;
+
+        font-family: inherit;
+      }
+
+      .content-wrapper {
+        justify-self: start;
+        align-self: center;
+        width: 100%;
+        height: auto;
+
+        margin: 0 auto;
+
+        margin-top: 40px;
+        margin-bottom: 60px;
+
+        display: grid;
+        grid-template-rows: [start] 20% [col-2] 60% [col-3] 20% [end];
+        grid-template-columns: 100%;
+
+        /*border: 1px solid red;*/
+      }
+
+      .content-wrapper img{
+        align-self: center;
+        justify-self: center;
+        width: 50%;
+        /*border: 1px solid red;*/
+      }
+
+      .content-list {
+        justify-self: start;
+        align-self: center;
+
+        width: 100%;
+      }
+
+      #capabilities h4 {
+        justify-self: center;
+        width: 100%;
+
+        margin-top: 15px;
+        padding: 5px;
+
+
+        letter-spacing: 1px;
+        font-size: 1em;
+        color: #fff;
+        text-transform: uppercase;
+        text-align: left;
+        font-weight: bold;
+        font-family: inherit;
+
+        box-shadow: #171717 0px 2px 2px 2px;
+
+      }
+
+  /************** END CUSTOM.HTML CSS *******/
+
+
   /********** GALLERY CSS *******/
 
   .gallery {
     position: relative;
     top: 100px;
-    width: 90%;
-
+    width: 95%;
     height: auto;
 
     margin: 0 auto;
@@ -1214,7 +1407,7 @@ body {
     display: grid;
 
     /* set as 3-column grid */
-    grid-template-columns: [start] repeat(1, 1fr) [end];
+    grid-template-columns: [start] repeat(3, 1fr) [end];
 
     grid-auto-flow: row;
 
@@ -1238,7 +1431,7 @@ body {
     top: 90px;
     bottom: 0px;
 
-    z-index: 9;
+    z-index: 999;
 
     /*height: 100vh;*/
     width: 100%;
@@ -1364,357 +1557,19 @@ body {
       background-color: rgba(0,0,0,0.8);
     }
 
-    /************* END GALLERY CSS **********************/
-
-
-    /************** CUSTOM.HTML CSS *********/
-    .customPage {
-      background: #fff;
-    }
-
-    .customPage .page-wrapper{
-      position: relative;
-      top: 90px;
-      width: 100%;
-      height: auto;
-
-      display: grid;
-      grid-template-rows: [start] repeat(2, 1fr) [end];
-      grid-template-columns: [start] 100% [end];
-
-      grid-template-areas: "image-box"
-                           "content-box";
-      background: #000;
-    }
-
-    .customPage .page-wrapper img {
-      grid-area: image-box;
-      width: 100%;
-    }
-
-    .customPage .page-wrapper .title-wrapper {
-      grid-area: content-box;
-
-      align-self: center;
-      justify-self: center;
-
-      width: 90%;  /* variable width of rectangle */
-      max-width: 600px;
-      height: auto;  /* variable height of rectangle */
-
-      display: grid;
-      grid-template-rows: [start] 50% [row-2] 30% [row-3] 20% [end];
-      grid-template-columns: 100%;
-
-      grid-template-areas: "custom-title-logo"
-                           "sub-title"
-                           "description";
-
-      grid-row-gap: 5px;
-
-    }
-
-    #custom-title-logo {
-      grid-area: custom-title-logo;
-      width: 100%;
-      align-self: center;
-      justify-self: center;
-    }
-
-    .title-wrapper h3 {
-      grid-area: sub-title;
-      text-align: left;
-      color: #fff;
-      font-size: 2.0em;
-      letter-spacing: .22em;
-
-      padding-left: 4px;
-      margin-bottom: 0.3em;
-    }
-
-    .title-wrapper p {
-      grid-area: description;
-
-      text-align: justify;
-      color: #dfc06c;
-      font-size: 1.2em;
-      letter-spacing: 0.15em;
-
-      padding-left: 4px;
-      margin-bottom: 1.06em;
-    }
-
-    .features-in-custom {
-      width: 100%;
-      height: auto;
-
-      margin: 0 auto;
-      margin-bottom: 5em;
-      margin-top: 5.83em;
-
-      display: grid;
-      grid-template-rows: [start] 20% [middle] 80% [end];
-      grid-template-columns: 100%;
-
-      grid-template-areas: "service"
-                           "list";
-      grid-row-gap: 10px;
-
-    }
-
-    .features-in-custom h2 {
-      grid-area: service;
-
-      align-self: center;
-      justify-self: center;
-      width: 100%;
-
-      text-align: center;
-      color: #00AEEF;
-      letter-spacing: 1px;
-      line-height: .9em;
-      font-size: 4em;
-
-      font-weight: bold;
-      text-transform: capitalize;
-      font-family: inherit;
-
-      margin-top: 1em;
-      margin-bottom: .5em;
-    }
-
-    .features-in-custom .list-wrapper {
-      grid-area: list;
-
-      width: 100%;
-
-      display: grid;
-      grid-template-rows: [start] 50% [middle] 50% [end];
-      grid-template-columns: 100%;
-
-      grid-template-areas: "list-left"
-                           "list-right";
-
-    }
-
-    .list-wrapper .list-left {
-      grid-area: list-left;
-
-      width: 100%;
-
-      text-align: left;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-size: 1em;
-      font-weight: bold;
-      color: #000;
-
-      padding: 10px;
-
-      border-style: solid;
-      border-width: 2px;
-      border-image: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(0,174,239,0.8) 50%, rgba(255,255,255,0) 100%) 20 0 20 0 !important;
-    }
-
-    .list-wrapper .list-right {
-      grid-area: list-right;
-
-      width: 100%;
-
-      padding: 10px;
-
-      text-transform: uppercase;
-      text-align: left;
-      letter-spacing: 1px;
-      font-size: 1em;
-      font-weight: bold;
-      color: #000;
-
-      border-style: solid;
-      border-width: 2px;
-      border-image: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(0,174,239,0.8) 50%, rgba(255,255,255,0) 100%) 0 0 20 0 !important;
-
-    }
-
-    .list-wrapper span {
-      margin-right: 10px;
-      color: #00AEEF;
-    }
-
-    .list-wrapper li {
-      margin: 5px;
-    }
-
-    .custom {
-      width: 100%;
-      height: 10vh;
-      max-height: 100px;
-      min-height: 70px;
-
-      display: grid;
-      grid-template-columns: 100%;
-      grid-template-rows: 100%;
-
-      background: #252525;
-    }
-
-    .click-here-button {
-      align-self: center;
-      justify-self: center;
-      width: auto;
-      height: auto;
-
-      font-size: 1em;
-      font-weight: 600;
-      color: #00AEEF;
-
-      padding: 5px;
-
-      border: 2px solid #00AEEF;
-      -webkit-border-radius: .2em .2em .2em .2em / .2em .2em .2em .2em;
-         -moz-border-radius: .2em .2em .2em .2em / .2em .2em .2em .2em;
-              border-radius: .2em .2em .2em .2em / .2em .2em .2em .2em;
-
-    }
-
-    #subtitle {
-      display: inline-block;
-
-      font-weight: normal;
-      text-align: center;
-    }
-
-    .click-here-button:hover {
-      color: #fff;
-      background: #00AEEF;
-    }
-
-
-        #capabilities {
-          position: relative;
-
-          width: 100%;
-          height: 100%;
-
-          padding-bottom: 10px;
-
-          display: grid;
-          grid-template-rows: [start] 20% [col-2] 10% [col-3] 70% [end];
-          grid-row-gap: 5px;
-
-          background: #000;
-
-          /*border: 1px solid blue;*/
-
-        }
-
-        #capabilities h2 {
-          justify-self: center;
-          align-self: center;
-          width: 100%;
-
-          margin: 0 auto;
-          margin-top: 1em;
-          margin-bottom: .5em;
-
-          text-align: center;
-          color: #fff;
-
-          letter-spacing: 1px;
-          line-height: .9em;
-          font-size: 4em;
-
-          font-weight: bold;
-          text-transform: uppercase;
-          font-family: inherit;
-
-        }
-
-        #capabilities p {
-          justify-self: start;
-          align-self: center;
-          width: 90%;
-
-          text-align: justify;
-          color: #dfc06c;
-          font-size: 1.2em;
-          letter-spacing: 0.15em;
-
-          margin-bottom: 1.06em;
-          margin: 0 auto;
-
-          font-weight: normal;
-          font-family: inherit;
-        }
-
-        .content-wrapper {
-          justify-self: center;
-          align-self: center;
-          width: 100%;
-          height: auto;
-
-          margin: 0 auto;
-
-          margin-top: 60px;
-          margin-bottom: 60px;
-
-          display: grid;
-          grid-template-rows: [start] 20% [col-2] 60% [col-3] 20% [end];
-          grid-template-columns: 100%;
-
-
-          /*border: 1px solid red;*/
-        }
-
-        .content-wrapper img{
-          align-self: center;
-          justify-self: center;
-          width: 70%;
-          /*border: 1px solid red;*/
-        }
-
-        .content-list {
-          justify-self: start;
-          align-self: center;
-
-          width: 100%;
-        }
-
-        #capabilities h4 {
-          justify-self: center;
-
-          margin-top: 15px;
-          padding: 5px;
-          margin-left: 4px;
-
-          letter-spacing: 2px;
-          font-size: 1em;
-          color: #fff;
-          text-transform: uppercase;
-          text-align: left;
-          font-weight: bold;
-          font-family: inherit;
-
-          box-shadow: #171717 0px 2px 2px 2px;
-
-        }
-
-    /************** END CUSTOM.HTML CSS *******/
-
-
 
     /************* BUILD.HTML CSS ***********************/
 
     #message-box {
       position: relative;
-      top: 20vh;
+      top: 110px;
 
-      width: 98%;
+      width: 600px;
       height: auto;
 
       margin: 0 auto;
       margin-bottom: 10px;
-      padding: 5px;
+      padding: 10px;
 
       text-align: left;
 
@@ -1742,13 +1597,15 @@ body {
     }
 
     #form-wrapper {
+      position: relative;
+      top: 60px;
       height: 55vh;
     }
 
     form {
       position: relative;
 
-      width: 98%;
+      width: 600px;
 
       padding: 20px;
 
@@ -1762,8 +1619,10 @@ body {
     }
 
     .buildPage form {
+      position: relative;
       top: 20vh;
       margin: 0 auto;
+
     }
 
     .row-1 {
@@ -1858,7 +1717,7 @@ body {
     }
 
     .row-3 textarea {
-     width: 100%;
+     width: 90%;
      height: 100px;
      border-style: solid;
      border-width: thin;
@@ -1869,7 +1728,6 @@ body {
    }
 
    #submit_button {
-     margin-left: 70px;
      padding: 1px;
 
      background-color: #fff;
@@ -1899,6 +1757,8 @@ body {
       grid-template-rows: auto;
       grid-template-columns: 100%;
       grid-auto-flow: row;
+
+      /*border: 10px solid red;*/
     }
 
     .logo-Box {
@@ -1916,8 +1776,10 @@ body {
     }
 
     #response-1 {
+
       width: 100%;
       margin: 0 auto;
+      padding-top: 20px;
 
       text-align: center;
       font-size: 30px;
@@ -1932,9 +1794,12 @@ body {
 
     #response-2 {
       width: 100%;
-      margin: 0 auto;
-      padding-bottom: 20px;
 
+      margin: 0 auto;
+      margin-bottom: 50px;
+      padding-top: 20px;
+
+      font-size: 1em;
       text-align: center;
       font-family: sans-serif;
       /*border: 1px solid black;*/
@@ -1950,7 +1815,7 @@ body {
       grid-template-areas: "pdf request";
 
       overflow-y: scroll;
-      border: 1px solid black;
+      /*border: 1px solid black;*/
     }
 
     .trainingPage .pdf {
@@ -2089,7 +1954,7 @@ body {
     .banner {
       position: relative;
       top: 90px;
-      height: auto;
+      height: 300px;
       width: 100%;
       background: url("/static/images/walls.jpg") ;
       background-repeat: no-repeat;
@@ -2105,34 +1970,31 @@ body {
       justify-items: center;
       align-items: center;
 
-      padding-top: 15px;
-
       /*border: 1px solid red;*/
     }
 
     .banner h3 {
-      width: 90%;
+      width: 70%;
 
-      font-size: 1em;
+      font-size: 25px;
       font-weight: 300;
-      line-height: 2em;
+      line-height: 1.3em;
     }
 
     #company-name {
       color: #fff;
-      font-size: 2.5em;
+      font-size: 30px;
       font-weight: bolder;
     }
 
     .quick-facts {
       position: relative;
-      top: 90px;
+      top: 40px;
       height: 100px;
 
       width: 100%;
 
       margin: 0 auto;
-      padding: 5px;
 
       background: rgba(0,0,0,.8) ;
       color: #fff;
@@ -2153,14 +2015,14 @@ body {
       justify-self: center;
       align-self: center;
 
-      font-size: 2em;
+      font-size: 25px;
       font-style: italic;
       font-weight: lighter;
     }
 
     .values-wrapper {
       position: relative;
-      top: 90px;
+      top: 40px;
       height: auto;
       width: auto;
 
@@ -2172,13 +2034,14 @@ body {
       font-family: sans-serif, verdana, Arial;
 
       /*border: 1px solid red;*/
+
     }
 
 
     #values-heading {
       justify-self: center;
       text-align: left;
-      font-size: 4.1em;
+      font-size: 50px;
       font-weight: bold;
       color: #00AEEF;
 
@@ -2189,8 +2052,8 @@ body {
 
     .values-col {
       display: grid;
-      width: 90%;
-
+      width: 65%;
+      max-width: 1200px;
       height: auto;
 
       margin: 0 auto;
@@ -2226,7 +2089,6 @@ body {
 
       display: grid;
       grid-template-rows: [start] 20% [col-2] 20% [col-3] 60% [end];
-      grid-template-columns: 100%;
       grid-row-gap: 10px;
 
       background: #EBEBEB;
@@ -2237,14 +2099,11 @@ body {
 
     #expertise h3 {
       justify-self: start;
-
-      margin-top: 20px;
-      margin-bottom: 20px;
-      font-size: 4.1em;
-
+      margin-left: 10%;
+      margin-top: 5px;
+      font-size: 25px;
       font-style: italic;
       letter-spacing: 1px;
-      line-height: 45px;
       font-weight: bold;
       color: #00AEEF;
       text-transform: uppercase;
@@ -2253,9 +2112,8 @@ body {
     #expertise p {
       justify-self: center;
 
-      font-size: 2em;
+      font-size: 25px;
       font-weight: 300;
-      line-height: 28.5px;
       color: #342D2E;
       text-transform: capitalize;
 
@@ -2270,6 +2128,23 @@ body {
       text-transform: capitalize;
 
       font-family: "Bebas Neue";
+    }
+
+    #expertise .section-button {
+      margin-top: 15px;
+      margin-bottom: 15px;
+    }
+
+    #expertise .button-text{
+      padding: 6px;
+
+    }
+
+    #subtitle {
+      display: inline-block;
+      letter-spacing: 1px;
+      font-weight: normal;
+      text-align: center;
     }
 
     #promise {
@@ -2300,6 +2175,8 @@ body {
       text-shadow: 1.5px 1.5px #c0c0c0;
     }
 
+
+
     /************ END ABOUT US PAGE *********************/
 
 
@@ -2310,7 +2187,7 @@ body {
     position: relative;
     /*top: 90px;*/
     width: 100%;
-    height: auto;
+    height: 339px;
 
     background-color: #484242;
 
@@ -2337,7 +2214,7 @@ body {
 
   .buildPage footer {
     position: relative;
-    top: 90px;
+    top: 70vh;
   }
 
   .responsePage footer {
@@ -2357,8 +2234,6 @@ body {
 
     width: 100%;
     height: 100%;
-
-    margin-top: 20px;
 
     font-size: 25px;
     font-weight: bolder;
@@ -2394,40 +2269,40 @@ body {
   .info-section-wrapper {
     grid-area: info-section-wrapper;
     justify-items: center;
-    align-items: center;
+    align-items: center
 
-    width: 100%;
-    min-width: 320px;
-    height: auto;
+    width: 25%;
+    min-width: 600px;
+    height: 95%;
+
+    margin: 0 auto;
 
     /*-- set as grid  --*/
     display: grid;
 
     /*-- set as 2-column grid  --*/
-    grid-template-rows:  [start] repeat(2, 1fr) [end];
-    grid-template-columns: 100%;
+    grid-template-columns:  [start] repeat(2, 1fr) [end];
 
     /* set grid area */
-    grid-template-areas: "info-section-about"
-                         "info-section-address";
+    grid-template-areas: "info-section-about info-section-address";
 
-    /*border: 1px solid red;*/
+    /*border: 1px solid black;*/
   }
 
   #info-section-about {
     grid-area: info-section-about;
     width: 100%;
-    height: auto;
+    height: 100%;
 
     padding: 10px;   /*-- 2x unit padding */
-    text-align: center;
+    text-align: left;
 
     /*border: 1px solid #fff;*/
   }
 
   #info-section-about li{
     display: block;
-    margin: 5px;  /*-- 2x unit margin */
+    margin: 10px;  /*-- 2x unit margin */
 
     color: #fff;
   }
@@ -2448,26 +2323,25 @@ body {
   #info-section-address {
     grid-area: info-section-address;
     width: 100%;
-    height: auto;
+    height: 100%;
 
-    margin: 0 auto;
-    padding-top: 20px;
-    margin-bottom: 10px;
+    margin: 0px 0px 0px 0px;   /*-- 2x unit margin */
+    padding-left: 20px;
 
-    border-top: 1.5px dashed #342d2e;
-    border-left: 0px;
+    border-left: 1.5px dashed #342d2e;
 
     /*border: 1px solid #f2ff22;*/
   }
 
   #info-section-address img {
     display: block;
-    height: 6.5vh;
+    height: 6vh;
     min-height: 35px;
     max-height: 80px;
 
     margin: 0 auto;
     margin-bottom: 5px;
+    padding: 5px;
 
   }
 
@@ -2499,30 +2373,21 @@ body {
     display: grid;
 
     /*-- set as 12-column grid  --*/
-    grid-template-rows:  [start] 70% [middle] 30% [end];
-    grid-template-columns: 100%;
-    grid-column-gap: 2px;
+    grid-template-columns:  [start] repeat(2, 1fr) [end];
 
     /* set grid area */
-    grid-template-areas: "ul"
-                         "copyright";
-
-
+    grid-template-areas: "ul copyright";
 
     /*border: 1px solid #e4f4d4;*/
   }
 
   .share-copyright-section ul {
     grid-area: ul;
+    justify-self: end;
     align-self: center;
-    justify-self: center;
-
-    font-size: .75em;
 
     width: auto;
 
-    margin: 0 auto;
-    margin-bottom: 10px;
 
     /*border: 1px solid #f2ff22;*/
 
@@ -2530,19 +2395,13 @@ body {
 
   .share-copyright-section li {
     display: inline;
-    width: auto;
+    float: none;
+
+    margin: 20px;
 
     color: #706c6c;
 
     /*border: 1px solid #f2ffff;*/
-  }
-
-  .share-copyright-section .title {
-    margin-left: 7px;
-  }
-
-  .social {
-    margin-left: 20px;
   }
 
 .share-copyright-section a {
@@ -2558,13 +2417,9 @@ body {
 
     align-self: center;
 
-    width: 100%;
+    width: auto;
 
     color: #706c6c;
-
-    font-size: .7em;
-
-    padding-bottom: 10px;
 
     /*border: 1px solid #f2ffff;*/
   }
