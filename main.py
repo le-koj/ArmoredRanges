@@ -9,6 +9,7 @@
 ###############################################
 
 import webapp2, cgi, os, jinja2
+
 from google.appengine.api import app_identity, mail
 import sys
 
@@ -129,7 +130,7 @@ class EstimateHandler(MainHandler):
     #_____ method to process estimate request _____#
     def post(self):
         sender_address = 'armoredrange5@gmail.com'
-        email = 'info@armoredrange.com'
+        email = 'armoredrange5@gmail.com'
         telephone = cgi.escape(self.request.get('telephone'))
         country = cgi.escape(self.request.get('country'))
         subject = cgi.escape(self.request.get('firstName')) + " " + cgi.escape(self.request.get('lastName'))

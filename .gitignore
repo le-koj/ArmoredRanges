@@ -1,0 +1,5 @@
+.idea
+env2/
+.DS_Store
+main.pyc
+.gitattributes

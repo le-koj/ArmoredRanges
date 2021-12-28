@@ -1,0 +1,2179 @@
+/*________________________
+
+name: STANDARD CSS FILE
+version: 1
+date: 07/19/2018
+author: Le Koj
+website: armoredrange.com
+
+_________________________*/
+
+  /*** Initial CSS settings  ***/
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+
+  padding: 0;
+  margin: 0;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+:link, :visited {
+  text-decoration: none;
+}
+
+a {
+  outline: 0;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.containerPage, .aboutPage, .trainingPage, .galleryPage {
+  scroll-behavior: smooth;
+}
+
+
+  /*** General body settings  ***/
+body {
+  background-color: #fff;   /*-- white background  --*/
+
+  color: #000;        /*-- black text  --*/
+  font-family: "Source Sans Pro", Helvetica,sans-serif, verdana, Arial;
+  font-size: .875em;        /*-- 14px of 16px --*/
+  font-weight: normal;
+  text-align: center;     /*-- centered text placement  --*/
+
+  overflow-x: scroll;
+  min-width: 320px;
+}
+
+  /*** Nav-Bar settings  ***/
+.nav-bar {
+   position: fixed;    /*-- stationary at top of window  --*/
+   /*top: 0px;           /*-- very top-corner position  --*/
+   /*left: 0px;          /*-- very left-corner position  --*/
+   z-index: 999;       /*-- top stacked element  --*/
+
+   background-color: #342d2e /*#332D2E*/;
+
+   width: 100%;      /*-- full window width  --*/
+   height:90px ;
+   /*min-height: 75px;    /*-- restrict minimum viewport height  --*/
+   /*max-height: 90px;    /*-- restrict maximum viewport height  --*/
+
+    /*-- set as grid  --*/
+   display: grid;
+
+    /*-- set as 2-row grid  --*/
+   grid-template-rows:  [start] 60% [mid] 40% [end];
+
+    /*-- set grid areas  --*/
+   grid-template-areas: "logo-bar"
+                         "menu-bar-wrapper";
+  }
+
+  #logo-bar {
+    grid-area: logo-bar;    /*-- place in row-1  --*/
+    justify-items: start;
+
+    display: grid;
+    grid-template-columns: [start] repeat(2,1fr) [end];
+
+    grid-template-areas: "logo mini-bar";
+  }
+
+
+  #logo-bar #homelink{
+    grid-area: logo;
+    width: 100;
+
+  }
+
+  #logo-bar img {
+    width: 160px;
+    float: left;
+    margin-left: 15px;
+
+    padding-top: 3px;
+  }
+
+  .mini-button {
+    width: 30px;
+    height: 25px;
+
+    grid-area: mini-bar;
+    justify-self: end;
+    align-self: center;
+
+    margin-right: 20px;
+
+    display: grid;
+    grid-template-rows: [start] repeat(3, 1fr) [end];
+
+    justify-content: center;
+
+    border-radius: 1.5px;
+
+    /*border: 1px solid red;*/
+  }
+
+  .mini-button:hover {
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  .mini-bar {
+    background: #00AEEF;
+
+    width: 25px;
+    margin: 3px;
+    border-radius: 1px;
+  }
+
+  .trainingPage .mini-bar {
+    background: #BA906D;
+  }
+
+  #menu-bar-wrapper {
+    grid-area: menu-bar-wrapper;
+    width: 100%;
+    height: 100%;
+
+    background-color: #00AEEF;    /*-- light blue bg-color for menu options --*/
+  }
+
+  #menu-bar {
+    position: absolute;
+
+    top: 44px;
+
+    margin: 10px auto;
+
+    width: 100%;
+    height: auto;
+
+    display: grid;
+
+    grid-template-columns: [start] 100% [end];
+    grid-auto-flow: row;
+
+    font-weight: 300;
+    line-height: 20px;
+
+    background: rgba(0, 0, 0, 0.9);
+
+    /*border: 1px solid black;*/
+  }
+
+  #menu-bar .left, #menu-bar a {
+    /*display: none;*/
+    color: #fff;
+  }
+
+  #menu-bar .left {
+    height: 100%;
+    padding: 7px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    border-bottom: 2px solid #202020;
+  }
+
+  #menu-bar .right {
+    /*display: none;*/
+    height: 100%;
+    padding: 7px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    border-bottom: 2px solid #202020;
+  }
+
+  #menu-bar #scroll-top{
+    display: none;
+    font-size: 20px;
+
+    padding-top: 10px;
+
+    /* border: 1px solid black; */
+  }
+
+  #menu-bar .left:hover {
+    background-color: #337ab7;
+  }
+
+  #menu-bar .right:hover {
+    background-color: #337ab7;
+  }
+
+
+    /*** opening article settings  ***/
+
+
+ .opening-article {
+    position: relative;
+    top: 90px;
+    background: #101010;
+    width: 100%;
+    height: 542px ;/*605px;   /*45vh;*/
+
+    overflow: hidden;
+  }
+
+  .carousel {
+    top: 90px;
+    height: 150px ;
+
+    overflow-y: hidden;
+
+  }
+
+  .carousel-indicators li {
+    background: rgba(0, 174, 239, 0.6);
+  }
+
+  .slider {
+    position: relative;
+    width: 600%;
+    height: auto;
+
+    /*-- set as grid  --*/
+    display: grid;
+
+    /* set as 3-row grid */
+    grid-template-columns: [start] repeat(6,1fr) [end];
+
+    grid-template-rows: [start] 100% [end];
+
+    animation: 60s slidy infinite;
+  }
+
+  .figure {
+    width: 100%;
+    display: inline;
+
+    /*z-index: -1;*/
+  }
+
+  .carousel-inner img {
+    width: 100%;
+    height: auto;
+  }
+
+  .figure img {
+    width: 100%;
+    height: auto;
+  }
+
+  .sliderRadio {
+    display: none;
+  }
+
+  .pre .next {
+    width: 20px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 999;
+
+    cursor: pointer;
+
+    background: rgba(255, 255, 255, 0.5);
+
+    border: 3px solid black;
+  }
+
+  .pre {
+    left: 0;
+  }
+
+  .next {
+    right: 0;
+  }
+
+  .slider-nav {
+    position: absolute;
+    z-index: 99;
+
+    width: 100%;
+    height: 11px;
+    bottom: 6%;
+
+    text-align: center;
+  }
+
+  .dots {
+    position: relative;
+    top: -3px;
+    width: 10px;
+    height: 10px;
+    margin-left: 0 5px;
+
+    display: inline-block;
+    background: rgba(0, 174, 239, 0.6);
+    border-radius: 50%;
+  }
+
+  /*** product section settings  ***/
+.product-section {
+  position: relative;
+  top: 90px;
+  /*background-color: #000;*/
+  width: 100%;
+  height: auto; /*35vh;*/
+
+  margin: 0 auto; /* center box */
+  padding-bottom: 10px;
+
+  /*-- set as grid  --*/
+  display: grid;
+
+  /* set as 3-row grid */
+  grid-template-rows: [start] 15% [row-2] 65% [row-3] 20% [end];
+
+  /* set grid area */
+  grid-template-areas: "section-header"
+                       "product-table"
+                       "section-button";
+
+  grid-row-gap: 10px;
+
+  /*border: 3px solid black;*/
+
+}
+
+  .product-section .section-header {
+    grid-area: section-header;
+    align-self: center;
+    justify-self: start;
+    width: auto;
+
+    padding-left: 10px;
+
+    font-style: italic;
+    font-size: 2em;
+    font-weight: 600;
+    color: #00AEEF;
+    letter-spacing: 1px;
+
+    /*border: 1px solid black;*/
+  }
+
+  .product-section #product-table {
+    grid-area: product-table;
+    width: 100%;
+
+    /*set as grid*/
+    display: grid;
+
+    /* set as 12-column grid */
+    grid-template-rows: [start] repeat(3, 1fr) [end];
+
+    /* set grid area */
+    grid-template-areas: "product-1"
+                         "product-2"
+                         "product-3";
+
+    grid-row-gap: 10px;
+
+    /*border: 1px solid black;*/
+  }
+
+  .product-box {
+    display: block;
+    width: 90%;
+    height: auto;
+    justify-self: center;
+    align-self: center;
+    /* set as grid */
+    display: grid;
+
+    /* set as 2-row grid */
+    grid-template-rows: [start] 70% [last] 30% [end];
+
+    border-radius: 0 5px 5px 0;
+
+  }
+
+  #product-1 {
+    grid-area: product-1;
+
+
+  }
+
+  .product-box img {
+    width: 100%;
+    /*height: 100%;*/
+
+    background: #fff;
+  }
+
+  .product-box .product-image:hover {
+    background: #ececec;
+  }
+
+  .product-image {
+    box-shadow: 0px 0px 5px #000000;
+    border-radius: 2px 2px 0px 0;
+
+  }
+
+  #product-2 {
+    grid-area: product-2;
+
+
+    /*border: 1px solid #000;*/
+  }
+
+  #product-3 {
+    grid-area: product-3;
+
+    /*border: 1px solid blue;*/
+  }
+
+  .product-section .section-button {
+    grid-area: section-button;
+    width: 100%;
+
+
+    /*-- set as grid  --*/
+    display: grid;
+
+    /*-- set as 12-column grid  --*/
+    grid-template-columns:  [start] 100% [end];
+
+   /* set grid area */
+   grid-template-areas: "button-text";
+
+   justify-items: center;
+   align-items: center;
+
+   padding: 5px;
+
+   /*border: 1px solid blue;*/
+  }
+
+  /*...
+  .product-section .button {
+    border: 1px solid #000;
+    width: 100px;
+
+  } ...*/
+
+  .button-text{
+    grid-area: button-text;
+
+    width: 250px;
+    height: auto;
+
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #00AEEF;
+
+    padding-top: 4px;  /* to push the text to the box center */
+    padding-bottom: 2px;
+
+    border: 2px solid #00AEEF;
+    -webkit-border-radius: .2em .2em .2em .2em / .2em .2em .2em .2em;
+       -moz-border-radius: .2em .2em .2em .2em / .2em .2em .2em .2em;
+            border-radius: .2em .2em .2em .2em / .2em .2em .2em .2em;
+
+  }
+
+  .button-text:hover {
+    color: #fff;
+    background: #00AEEF;
+  }
+
+  .override .button-text {
+    width: auto;
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+
+
+
+  /****************   CONTAINER.HTML   ******/
+
+
+  .container-section-2 {
+    position: relative;
+    top: 90px;
+
+    width: 100%;
+    /*min-width: 1000px;*/
+    height: auto;
+
+    margin: 0 auto;
+
+    background: #fff;
+
+    /* set as grid */
+    display: grid;
+
+    /* set as 2-column grid */
+    grid-template-rows: [start] 75% [middle] 25% [end];
+
+    /* set grid area */
+    grid-template-areas: "cs2-col-1-wrapper"
+                         "cs2-col-2";
+
+
+    /*border: 1px solid #000;*/
+  }
+
+  .cs2-col-1-wrapper {
+    grid-area: cs2-col-1-wrapper;
+    align-self: center;
+    width: 100%;
+    height: auto;
+    /*height: 210px;*/
+
+    text-align: left;
+
+    /* set up as grid */
+    display: grid;
+
+    /* set as 2-row grid */
+    grid-template-rows: [start] 60% [middle] 40% [end];
+
+    /* set grid areas */
+    grid-template-areas: "cs2-col-1-r1"
+                         "cs2-col-1-r2";
+
+    /*grid-row-gap: 5px;*/
+
+    border-style: solid;
+    border-width: 2px;
+
+    border-image: linear-gradient(to left, rgba(255,255,255,0) 0%, rgba(0,174,239,0.8) 50%, rgba(255,255,255,0) 100%) 0 0 20 0 !important;
+
+    /*border: 1px solid #000;*/
+
+  }
+
+  #cs2-col-1-r1 {
+    grid-area: cs2-col-1-r1;
+    align-self: center;
+    justify-self: center;
+    width: 90%;
+
+    /*border: 1px solid red;*/
+  }
+
+  #cs2-col-1-r2 {
+    grid-area: cs2-col-1-r2;
+    align-self: center;
+    justify-self: center;
+    width: 90%;
+
+    line-height: 18px;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: sans-serif, verdana, Arial;
+    color: #000;
+    text-align: justify;
+
+    padding: 5px;
+
+    /*border: 1px solid red;*/
+  }
+
+  .cs2-col-2 {
+    grid-area: cs2-col-2;
+    align-self: start;
+    justify-self: end;
+    width: 100%;
+    height: auto;
+
+    padding: 10px;
+
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+
+    border-style: solid;
+    border-width: 2px;
+
+    border-image: linear-gradient(to left, rgba(255,255,255,0) 0%, rgba(0,174,239,0.8) 50%, rgba(255,255,255,0) 100%) 0 0 20 0 !important;
+
+
+  }
+
+  .cs2-col-2 .button-text {
+    display: block;
+    padding: 10px;
+    margin: 10px auto;
+    margin-top: 30px;
+
+    width: 150px;
+
+  }
+
+  .cs2-col-2 p {
+    display: block;
+
+
+  }
+
+
+  .container-section-3 {
+    position: relative;
+    top: 90px;
+    height: auto;
+    background: #1e1e1e;
+
+    /* set as grid */
+    display: grid;
+
+    /* set as 1-column grid */
+    grid-template-columns: [start] 100% [end];
+
+    /* set as 1-row-grid */
+    grid-template-rows: [start] 100%  [end]
+
+    /*border: 1px solid #000;*/
+  }
+
+  .cs3-link-wrapper {
+    width: 100%;
+
+    margin: 0px auto;
+    margin-bottom: 0px;
+
+    /* set as grid */
+    display: grid;
+
+    /* set as 3-column grid */
+    grid-template-row: [start] repeat(3, 1fr) [end];
+
+    /*border: 1px solid #fff;*/
+  }
+
+  .cs3-link-wrapper a {
+
+    /* set as grid */
+    display: grid;
+
+    /* set as 3-column grid */
+    grid-template-columns: [start] 100% [end];
+
+    align-content: center;
+
+    font-size: 1.5em;
+    color: #6d6d6d;
+
+    padding-top: 7px;
+
+    /*border-top: 2px solid #4c4c4c;*/
+
+    border-bottom: 2px solid #4c4c4c;
+
+    /*border: 1px solid blue;*/
+  }
+
+  .cs3-link-wrapper a:hover {
+    border: none;
+    color: #fff;
+    box-shadow: 5px 0px 10px #000000;
+  }
+
+
+  .features-section {
+    position: relative;
+    top: 90px;
+    height: auto;
+    width: 100%;
+
+    /* set as grid */
+    display: grid;
+
+    /* set as 1-row-grid */
+    grid-template-rows: [start] 100% [end];
+
+    /* set as 1-column-grid */
+    grid-template-columns: [start] 100% [end];
+
+    background: #000 /*#1e1e1e*/;
+    color: #fff;
+    font-family: sans-serif, verdana, Arial;
+  }
+
+.fs-wrapper {
+  width: 90%;
+  height: auto;
+
+  margin: 0px auto;
+
+  margin-bottom: 50px;
+  margin-top: 50px;
+
+  /* set as grid */
+  display: grid;
+
+  /* set as 4-row-grid */
+  grid-template-rows: [start] repeat(4, 1fr) [end];
+
+  justify-items: center;
+  align-items: center;
+
+
+  /*border: 1px solid blue;*/
+}
+
+.fs-row-wrapper {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  margin-bottom: 5px;
+  padding-bottom: 20px;
+
+  border-bottom: 2px solid #2f2f2f;
+
+  /*border: 1px solid red;*/
+
+
+}
+
+.fs-row-wrapper h1 {
+  width: 100%;
+  font-size: 3em;
+  text-align: left;
+  line-height: 45px;
+
+  align-self: center;
+  justify-self: center;
+
+  padding: 5px;
+}
+
+.fs-row-wrapper p {
+  width: 80%;
+  text-align: justify;
+  line-height: 25px;
+  font-size: 15px;
+
+  margin-top: 5px;
+  padding: 5px;
+  color: #a5a5a5;
+
+}
+
+.fs-row-wrapper span {
+  display: block;
+  margin-top: 10px;
+  color: #a5a5a5;
+
+}
+
+.fs-row-wrapper img {
+  width: 100%;
+  justify-self: center;
+  align-self: center;
+}
+
+.fs-article .quote {
+  margin-top: 10px;
+  text-align: left;
+  font-size: 20px;
+  font-style: italic;
+  color: #00AEEF;
+}
+
+
+.fs-row-1, .fs-row-3  {
+  display: grid;
+  width: 100%;
+  height: auto;
+  grid-template-rows: [start] 30% [middle] 70% [end];
+
+  justify-items: start;
+  align-items: center;
+
+  grid-row-gap: 30px;
+
+  /*border: 1px solid #fff;*/
+
+}
+
+.fs-row-1 .fs-article, .fs-row-3 .fs-article {
+  display: grid;
+  grid-template-rows: auto;
+
+  justify-items: start;
+  align-items: center;
+
+  padding-left: 10px;
+
+}
+
+.fs-row-2, .fs-row-4 {
+  display: grid;
+  width: 100%;
+  height: auto;
+  grid-template-rows: [start] 30% [middle] 70% [end];
+
+  grid-template-areas: "picture"
+                       "context";
+
+  grid-row-gap: 30px;
+
+  justify-items: start;
+  align-items: center;
+
+}
+
+.fs-row-2 .fs-article, .fs-row-4 .fs-article {
+  grid-area: context;
+}
+
+.fs-row-2 img, .fs-row-4 img {
+  grid-area: picture;
+}
+
+
+
+.gallery-section {
+  position: relative;
+  /*top: 90px;*/
+  height: auto;
+}
+
+.gallery-section img {
+  width: 100%;
+  height: auto;
+
+  margin: 0 auto;
+
+}
+
+.specs-section {
+  position: relative;
+  /*top: 90px;*/
+  height: auto;
+
+  display: grid;
+  grid-template-columns: [start] 100% [end];
+  grid-template-rows: [start] 10% [middle] 80% [end];
+
+  background-color: #00AEEF;
+
+  margin-bottom: 65px;
+}
+
+.specs-section h1 {
+  align-self: center;
+  font-size: 2.6em;
+  font-weight: bold;
+}
+
+.specs-row-wrapper {
+    display: grid;
+    grid-template-columns: [start] 100% [end];
+    grid-auto-flow: row;
+
+    background-color: #00AEEF;
+}
+
+.specification-box {
+  display: grid;
+  grid-template-columns: [start] 10% [middle] 90% [end];
+  grid-template-rows: auto;
+
+  color: #fff;
+  font-size: 16px;
+  letter-spacing: .3px;
+
+  background: #1c1c1c;
+
+  box-shadow: 2px 0px 5px 0px #000;
+
+}
+
+.plus-sign {
+  justify-self: center;
+  align-self: center;
+
+  color: #eaeaea;
+
+  margin-bottom: 5px;
+}
+
+.specification-box p {
+  justify-self: start;
+  align-self: center;
+  text-align: left;
+  font-size: .8em;
+
+
+  color: #999696;
+
+  margin-top: 15px;
+  padding: 5px;
+
+}
+
+  /****************   END CONTAINER.HTML   ******/
+
+
+
+  /*************** TRAINING.HTML *********/
+  .trainingPage #menu-bar-wrapper {
+    background-color: #BA906D;
+  }
+
+  div.train.container-section-3 {
+    background-color: #BA906D;
+    color: #fff;
+  }
+
+  div.train.container-section-3 h2 {
+    color: #fff;
+  }
+
+  div.train.container-section-3 h2:hover {
+    color: #000;
+  }
+
+  #train-features-section {
+    width: 100%;
+    height: auto;
+
+    margin-bottom: 90px;
+
+    background-color: #202020;
+
+  }
+
+  #train-features-section .fs-wrapper {
+    width: 90%;
+    height: auto;
+
+    margin: 0px auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+
+    padding: 10px;
+
+    display: grid;
+
+    grid-template-rows: auto;
+    grid-auto-flow: row;
+    grid-template-areas: "feature-row-1"
+                         "feature-row-2"
+                         "feature-row-3";
+
+   grid-row-gap: 5px;
+
+   /*border: 1px solid green;*/
+
+  }
+
+  /***** row-1 *****/
+  #train-features-section h2 {
+    grid-area: feature-row-1;
+    width: 100%;
+
+    align-self: center;
+    justify-self: center;
+
+    padding-top: 6px;
+    padding-left: 20px;
+
+    text-align: left;
+    font-size: 3em;
+    font-weight: 400;
+
+    /*border: 1px solid white;*/
+  }
+
+  /***** row-2 *****/
+  #train-features-section .row-2 {
+    grid-area: feature-row-2;
+    width: 100%;
+
+    align-self: center;
+    justify-self: center;
+
+    display: grid;
+
+    /* 3-row-grid */
+    grid-template-rows: auto;
+    grid-template-columns: [start] 100%  [end];
+    grid-auto-flow: row;
+    grid-template-areas: "fs-row-1"
+                         "fs-row-2"
+                         "fs-row-3";
+
+    grid-row-gap: 10px;
+
+    /*border: 1px solid red;*/
+
+  }
+
+  /***** row-3 *****/
+  #train-features-section .row-3 {
+    grid-area: feature-row-3;
+    width: 100%;
+
+    align-self: center;
+    justify-self: center;
+
+    display: grid;
+
+    /* 3-row-grid */
+    grid-template-rows: auto;
+    grid-template-columns: [start] 100%  [end];
+    grid-auto-flow: row;
+    grid-template-areas: "fs-row-4"
+                         "fs-row-5"
+                         "fs-row-6";
+
+    grid-row-gap: 10px;
+
+  }
+
+  #train-features-section .fs-col-1 {
+    grid-area: fs-row-1;
+    align-self: center;
+    justify-self: center;
+
+    margin-left: 7px;
+
+    width: 100%;
+
+    /*border: 1px solid blue;*/
+  }
+
+  #train-features-section .fs-col-2 {
+    grid-area: fs-row-2;
+    align-self: center;
+    justify-self: center;
+
+    width: 100%;
+
+
+  }
+
+  #train-features-section .fs-col-3 {
+    grid-area: fs-row-3;
+    align-self: center;
+    justify-self: center;
+
+    width: 100%;
+
+
+  }
+
+  #train-features-section .fs-col-4 {
+    grid-area: fs-row-4;
+    align-self: center;
+    justify-self: center;
+
+    width: 100%;
+
+  }
+
+  #train-features-section .fs-col-5 {
+    grid-area: fs-row-5;
+    align-self: center;
+    justify-self: center;
+
+    width: 100%;
+
+  }
+
+  #train-features-section .fs-col-6 {
+    grid-area: fs-row-6;
+    align-self: center;
+    justify-self: center;
+
+    width: 100%;
+    /*border: 1px solid red;*/
+  }
+
+
+  /* grid layout for inner elements */
+  .training-features {
+    display: grid;
+    grid-template-rows: auto;
+    grid-auto-flow: row;
+    grid-row-gap: 5px;
+
+    align-items: center;
+    justify-items: center;
+
+    box-shadow: #000 0px 5px 9px 5px;
+
+  }
+
+  .fs-col img{
+    width: 90%;
+    height: 100px;
+
+    margin: 0px auto;
+  }
+
+  .fs-col h1{
+    align-self: center;
+    justify-self: center;
+    width: 100%;
+    color: #fff;
+
+    margin: 0px auto;
+    /*border: 1px solid yellow;*/
+  }
+
+  .fs-col p {
+    padding: 5px;
+    color: #999696;
+  }
+
+
+
+
+
+
+
+
+  .trainingPage .specs-section {
+    background: #BA906D;
+  }
+
+  .trainingPage .specs-section h1 {
+    margin-top: 10px;
+    color: #fff;
+  }
+
+
+  /************** END TRAINING.HTML *****/
+
+
+  /********** GALLERY CSS *******/
+
+  .gallery {
+    position: relative;
+    top: 100px;
+    width: 85%;
+    max-width: 2000px;;
+    min-width: 1000px;
+    height: auto;
+
+    margin: 0 auto;
+    margin-bottom: 20px;
+
+    padding: 10px;
+
+    /*-- set as grid  --*/
+    display: grid;
+
+    /* set as 3-column grid */
+    grid-template-columns: [start] repeat(3, 1fr) [end];
+
+    grid-auto-flow: row;
+
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+  }
+
+  .pop {
+    padding-bottom: 30px;
+    background: radial-gradient(closest-side at 50% 95%, rgba(0,0,0,0.8) 0%,rgba(0,0,0,0) 90%);
+  }
+
+  .gallery .figure:hover {
+    transition: all .3s ease-in-out;
+    transform: scale(1.1);
+  }
+
+  .preview {
+    display: none;
+    position: fixed;
+    top: 90px;
+    bottom: 0px;
+
+    z-index: 9;
+
+    /*height: 100vh;*/
+    width: 100%;
+
+    background: rgba(0, 174, 239, 0.7);
+  }
+
+  a#exit {
+    position: absolute;
+    top: 10px;
+    z-index: 999;
+    right: 20px;
+    border-radius: 50% 50% 50% 50%;
+    width: 30px;
+    height: 30px;
+
+    cursor: default;
+
+    padding-top: 6px;
+
+    text-align: center;
+    font-size: 12px;
+
+    box-shadow: -1px 1px 5px #191919;
+    /*border: 1px solid black;*/
+  }
+
+  .preview img {
+    position: relative;
+    top: 90px;
+    width: 95%;
+    height: auto;
+
+    padding: 10px;
+
+    margin: 0 auto;
+
+  }
+
+  .prev-wrapper {
+    position: absolute;
+    top: 0;
+    height: calc(100vh - 90px);
+    width: 40px;
+    left: 0;
+
+    display: grid;
+    grid-template-columns: [start] 100% [end];
+    grid-template-rows: [start] 100% [end];
+
+    grid-template-areas: "prev";
+
+    align-items: center;
+
+    /*background: rgba(0, 174, 239, 0.4);*/
+
+    /*border: 1px solid black;*/
+  }
+
+  .containerPage .prev-wrapper, .trainingPage .prev-wrapper {
+    height: 100%;
+  }
+
+
+
+  /* Position the "prev button" to the left */
+  .prev {
+    grid-area: prev;
+    border-radius: 0 5px 5px 0;
+
+    font-size: 30px;
+    color: #fff;
+
+    cursor: pointer;
+
+    padding-bottom: 5px;
+
+    background: rgba(0, 174, 239, 0.4);
+  }
+
+  .next-wrapper {
+    position: absolute;
+    top: 0;
+    height: calc(100vh - 90px);
+    width: 40px;
+    right: 0;
+
+    display: grid;
+    grid-template-columns: [start] 100% [end];
+    grid-template-rows: [start] 100% [end];
+
+    grid-template-areas: "next";
+
+    align-items: center;
+
+    /*background: rgba(0, 174, 239, 0.4);*/
+  }
+
+  .containerPage .next-wrapper, .trainingPage .next-wrapper {
+    height: 100%;
+  }
+
+    /* Position the "next button" to the right */
+    .next {
+      grid-area: next;
+      border-radius: 3px 0 0 3px;
+
+      font-size: 30px;
+      color: #fff;
+
+      cursor: pointer;
+      /*border: 1px solid red;*/
+
+      padding-bottom: 5px;
+
+      background: rgba(0, 174, 239, 0.4);
+    }
+
+
+
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover, .next:hover {
+      background-color: rgba(0,0,0,0.8);
+    }
+
+
+    /************* BUILD.HTML CSS ***********************/
+
+    #message-box {
+      position: relative;
+      top: 20vh;
+
+      width: 600px;
+      height: auto;
+
+      margin: 0 auto;
+      margin-bottom: 10px;
+      padding: 10px;
+
+      text-align: left;
+
+      box-shadow: 0px 0px 5px 0px #888888;
+      border-radius: 5px;
+      /*border: 1px solid black;*/
+
+    }
+
+    #message-box h3 {
+      font-size: 25px;
+      font-family: sans-serif;
+
+      margin: 5px;
+
+    }
+
+    #message-box p {
+      line-height: 16px;
+      font-size: 14px;
+      font-family: sans-serif;
+      color: #323232;
+
+      margin: 5px;
+    }
+
+    #form-wrapper {
+      height: 55vh;
+    }
+
+    form {
+      position: relative;
+
+      width: 600px;
+
+      padding: 20px;
+
+      font-family: sans-serif;
+
+      box-shadow: 0px 0px 5px 0px #888888;
+      border-radius: 5px;
+
+      /*border: 1px solid black;*/
+
+    }
+
+    .buildPage form {
+      top: 20vh;
+      margin: 0 auto;
+    }
+
+    .row-1 {
+      width: 99%;
+      display: grid;
+      grid-template-columns: [start] 20% [two] 40% [three] 40% [end];
+      grid-template-rows: [start] auto [end];
+      grid-template-areas: "col-1 col-2 col-3"
+                           "label-1 label-2 label-3";
+      grid-column-gap: 5px;
+
+
+      margin-bottom: 10px;
+
+      /*border: 1px solid black;*/
+    }
+
+    .row-1 input {
+      height: 25px;
+      border-style: solid;
+      border-width: thin;
+      border-radius: 5px;
+
+      padding-left: 5px;
+
+    }
+
+    label {
+      justify-self: start;
+      color: #00AEEF;
+    }
+
+    .error {
+      color: #ff0000;
+      text-align: left;
+      font-size: 12px;
+    }
+
+    #first-error {
+      grid-area: label-2;
+    }
+
+    #last-error {
+      grid-area: label-3;
+    }
+
+    .row-2 {
+      width: 99%;
+      display: grid;
+      grid-template-columns: [start] 20% [two] 80% [end];
+      grid-template-rows: [start] auto [end];
+      grid-template-areas: "col-1 col-2"
+                           "label-1 label-2";
+      grid-column-gap: 5px;
+
+      margin-bottom: 10px;
+
+      /*border: 1px solid black;*/
+    }
+
+    #email-error {
+      grid-area: label-2;
+    }
+
+     .row-2 input {
+      width: 50%;
+      height: 25px;
+      border-style: solid;
+      border-width: thin;
+      border-radius: 5px;
+
+      padding-left: 5px;
+
+    }
+
+    .row-3 {
+      width: 99%;
+      display: grid;
+      grid-template-columns: [start] 20% [two] 80% [end];
+      grid-template-rows: [start] auto [end];
+      grid-template-areas: "col-1 col-2"
+                           "label-1 label-2";
+      grid-column-gap: 5px;
+
+      margin-bottom: 10px;
+
+      /*border: 1px solid black;*/
+    }
+
+    #telephone-error {
+      grid-area: label-2;
+    }
+
+    .row-3 textarea {
+     width: 90%;
+     height: 100px;
+     border-style: solid;
+     border-width: thin;
+     border-radius: 5px;
+
+     padding-left: 5px;
+
+   }
+
+   #submit_button {
+     padding: 1px;
+
+     background-color: #fff;
+   }
+
+   #submit_button:hover {
+     background: #00AEEF;
+     color: #fff;
+   }
+
+    /************* END BUILD.HTML ***********************/
+
+
+
+    /************ RESPONSE.HTML ************************/
+
+    .responsePage {
+      background: rgba(0, 0, 0, 0.1);
+    }
+
+    .page-wrapper {
+      height: 63vh;
+    }
+
+    .logo-Box {
+      position: relative;
+      top: 100px;
+      width: 80%;
+
+      margin: 0px auto;
+
+      /*border: 1px solid black;*/
+    }
+
+    .logo-Box img {
+      width: 60%;
+      padding-top: 50px;
+      /*border: 1px solid red;*/
+    }
+
+    #response-1 {
+      position: relative;
+      top: 130px;
+      width: 600px;
+      margin: 0 auto;
+
+      text-align: center;
+      font-size: 30px;
+      font-style: italic;
+      font-weight: bold;
+      letter-spacing: 1px;
+      font-family: sans-serif;
+      color: #00AEEF;
+
+      /*border: 1px solid black;*/
+    }
+
+    #response-2 {
+      position: relative;
+      top: 130px;
+      width: 600px;
+      margin: 0 auto;
+      text-align: center;
+      font-family: sans-serif;
+      /*border: 1px solid black;*/
+    }
+
+    /************ END RESPONSE.HTML ********************/
+
+
+    /************ ESTIMATE PREVIEW ************************/
+    .preview.pdf {
+      /*height: 92vh;*/
+      grid-template-columns: [start] 60% [middle] 40% [end];
+      grid-template-areas: "pdf request";
+
+      overflow-y: scroll;
+      border: 1px solid black;
+    }
+
+    .trainingPage .pdf {
+      background: rgba(186, 144, 109, 0.7);
+    }
+
+    #pdf_wrapper{
+      grid-area: pdf;
+      width: 95%;
+      height: 90vh;
+      margin-left: 10px;
+
+      align-self: center;
+      background: rgba(0, 0, 0, 0.5);
+      box-shadow: 0px 0px 5px 0px #888888;
+      border-radius: 5px;
+      /*border: 5px solid black;*/
+
+    }
+
+    #estimate_form {
+      grid-area: request;
+
+      align-self: center;
+      justify-self: center;
+
+      width: 98%;
+      min-width: 466px;
+      max-width: 585px;
+
+      margin-right: 15px;
+
+      background: rgba(0, 0, 0, 0.5);
+
+      /*border: 1px solid black;*/
+    }
+
+    #estimate_form.row-3 {
+      width: 99%;
+      display: grid;
+      grid-template-columns: [start] 20% [two] 80% [end];
+      grid-column-gap: 5px;
+
+      margin-bottom: 10px;
+
+      /*border: 1px solid black;*/
+    }
+
+    #telephone {width: 50%;
+    height: 25px;
+    border-style: solid;
+    border-width: thin;
+
+    border-radius: 5px;
+
+    padding-left: 5px;
+      border-radius: 5px;
+    }
+
+    input[type='number']::-webkit-inner-spin-button,
+    input[type='number']::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    input[type='number']{
+      -moz-appearance: textfield;
+      margin: 0;
+    }
+
+
+
+    #country {
+      width: 50%;
+      height: 25px;
+      border-style: solid;
+      border-width: thin;
+
+      border-radius: 5px;
+
+      padding-left: 5px;
+      border-radius: 5px;
+    }
+
+    .row-4 {
+      width: 99%;
+      display: grid;
+      grid-template-columns: [start] 20% [two] 80% [end];
+      grid-template-rows: [start] auto [end];
+      grid-template-areas: "col-1 col-2"
+                           "label-1 label-2";
+      grid-column-gap: 5px;
+
+      margin-bottom: 10px;
+
+      /*border: 1px solid black;*/
+    }
+
+    #message-error, #country-error {
+      grid-area: label-2;
+    }
+
+
+
+    .row-4 #message {
+     width: 90%;
+     height: 200px;
+     border-style: solid;
+     border-width: thin;
+     border-radius: 5px;
+
+     padding-left: 5px;
+
+   }
+
+   #submit_button.button-text.estimate-button {
+     padding: 1px;
+     font-size: 20px;
+
+   }
+
+   #submit_button.button-text.estimate-button:hover {
+     background: #39ff14;
+     color: #fff;
+     border-style: none;
+   }
+    /************ END ESTIMATE PREVIEW ********************/
+
+
+    /************ ABOUT US PAGE ************************/
+
+    .aboutPage {
+      background-color: #c0c0c0;
+    }
+
+    .banner {
+      position: relative;
+      top: 90px;
+      height: 500px;
+      width: 100%;
+      background: url("/static/images/walls.jpg") ;
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      text-align: center;
+      color: #00AEEF;
+
+      display: grid;
+      grid-template-columns: [start] 100% [end];
+      grid-template-rows: [start] 100% [end];
+
+      justify-items: center;
+      align-items: center;
+
+      /*border: 1px solid red;*/
+    }
+
+    .banner h3 {
+      width: 70%;
+
+      font-size: 25px;
+      font-weight: 300;
+      line-height: 1.3em;
+    }
+
+    #company-name {
+      color: #fff;
+      font-size: 30px;
+      font-weight: bolder;
+    }
+
+    .quick-facts {
+      position: relative;
+      top: 30px;
+      height: 100px;
+
+      width: 50%;
+      max-width: 1200px;
+      min-width: 900px;
+
+      margin: 0 auto;
+
+      background: rgba(0,0,0,.8) ;
+      color: #fff;
+
+      display: grid;
+      grid-template-columns: [start] 100% [end];
+      grid-template-rows: [start] 100% [end];
+
+      grid-template-areas: "facts";
+
+      justify-items: center;
+
+      /*border: 1px solid red;*/
+    }
+
+    #fact {
+      grid-area: facts;
+      justify-self: center;
+      align-self: center;
+
+      font-size: 25px;
+      font-style: italic;
+      font-weight: lighter;
+    }
+
+    .values-wrapper {
+      position: relative;
+      top: 40px;
+      height: auto;
+      width: auto;
+
+      display: grid;
+      grid-template-rows: [start] 20% [middle] 80% [end];
+      grid-row-gap: 10px;
+
+      color: #fff;
+      font-family: sans-serif, verdana, Arial;
+
+      /*border: 1px solid red;*/
+
+    }
+
+
+    #values-heading {
+      justify-self: center;
+      text-align: left;
+      font-size: 50px;
+      font-weight: bold;
+      color: #00AEEF;
+
+      padding-top: 30px;
+
+      /*border: 1px solid #fff;*/
+    }
+
+    .values-col {
+      display: grid;
+      width: 65%;
+      max-width: 1200px;
+      height: auto;
+
+      margin: 0 auto;
+      padding: 10px;
+
+      display: grid;
+      grid-template-columns: [start] 100% [end];
+      grid-column-gap: 20px;
+
+      background: rgba(0,0,0,.5) ;
+
+      box-shadow: #8d8d8d 2px 2px 2px 0px;
+
+      /*border: 1px solid blue;*/
+    }
+
+    .values-col p {
+      font-size: 16px;
+      letter-spacing: 1.5px;
+      text-align: justify;
+      color: #c2c0c0;
+    }
+
+    #expertise {
+      position: relative;
+      top: 80px;
+
+      width: 100%;
+      height: auto;
+
+      padding: 10px;
+      margin-bottom: 20px;
+
+      display: grid;
+      grid-template-rows: [start] 20% [col-2] 20% [col-3] 60% [end];
+      grid-row-gap: 10px;
+
+      background: #EBEBEB;
+
+      /*border: 1px solid blue;*/
+
+    }
+
+    #expertise h3 {
+      justify-self: start;
+      margin-left: 10%;
+      margin-top: 5px;
+      font-size: 25px;
+      font-style: italic;
+      letter-spacing: 1px;
+      font-weight: bold;
+      color: #00AEEF;
+      text-transform: uppercase;
+    }
+
+    #expertise p {
+      justify-self: center;
+
+      font-size: 25px;
+      font-weight: 300;
+      color: #342D2E;
+      text-transform: capitalize;
+
+      font-family: "Bebas Neue";
+    }
+
+    #expertise h4 {
+      justify-self: center;
+      font-size: 18px;
+      font-weight: normal;
+      color: #A5A5A5;
+      text-transform: capitalize;
+
+      font-family: "Bebas Neue";
+    }
+
+    #promise {
+      position: relative;
+      top: 100px;
+
+      color: #000;
+      font-size: 20px;
+
+      margin: 0px auto;
+
+      text-shadow: 1.5px 1.5px #c0c0c0;
+    }
+
+    #promise-quote {
+      position: relative;
+      top: 100px;
+
+      color: #342D2E;
+      font-size: 16px;
+      font-style: italic;
+      letter-spacing: 1px;
+
+      margin: 0px auto;
+      margin-top: 1px;
+      margin-bottom: 50px;
+
+      text-shadow: 1.5px 1.5px #c0c0c0;
+    }
+
+    /************ END ABOUT US PAGE *********************/
+
+
+
+
+    /*** footer settings  ***/
+  footer {
+    position: relative;
+    /*top: 90px;*/
+    width: 100%;
+    height: auto;
+
+    background-color: #484242;
+
+    /*-- set as grid  --*/
+    display: grid;
+
+    /*-- set as 3-row grid  --*/
+    grid-template-rows:  [start] 10% [row-1-2] 70% [row-2-3] 20% [end];
+
+    /*-- set grid areas  --*/
+    grid-template-areas: "footer-scroll-top"
+                         "info-section"
+                         "share-copyright-section";
+  }
+
+  .override footer {
+    position: relative;
+    top: 90px;
+  }
+
+  .galleryPage footer {
+    top: 90px;
+  }
+
+  .buildPage footer {
+    position: relative;
+    top: 90px;
+  }
+
+  .responsePage footer {
+    position: relative;
+    top: 90px;
+  }
+
+  .aboutPage footer {
+    position: relative;
+    top: 90px;
+  }
+
+  #footer-scroll-top {
+    grid-area: footer-scroll-top;
+    justify-items: center;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
+
+    margin-top: 20px;
+
+    font-size: 25px;
+    font-weight: bolder;
+
+    /*border: 1px solid black;*/
+  }
+
+  #footer-scroll-top a {
+    color: #00AEEF;
+  }
+
+  #info-section {
+    grid-area: info-section;
+    width: 100%;
+    height: 100%;
+
+    /*-- set as grid  --*/
+    display: grid;
+
+    /*-- set as 1-column grid  --*/
+    grid-template-columns:  [start] 100% [end];
+
+    /* set as 1-row-grid */
+    grid-template-rows: [start] 100% [end];
+
+    /* set grid area */
+    grid-template-areas: "info-section-wrapper";
+
+
+    /*border: 1px solid black;*/
+  }
+
+  .info-section-wrapper {
+    grid-area: info-section-wrapper;
+    justify-items: center;
+    align-items: center;
+
+    width: 100%;
+    min-width: 320px;
+    height: auto;
+
+    /*-- set as grid  --*/
+    display: grid;
+
+    /*-- set as 2-column grid  --*/
+    grid-template-rows:  [start] repeat(2, 1fr) [end];
+
+    /* set grid area */
+    grid-template-areas: "info-section-about"
+                         "info-section-address";
+
+    /*border: 1px solid red;*/
+  }
+
+  #info-section-about {
+    grid-area: info-section-about;
+    width: 100%;
+    height: auto;
+
+    padding: 10px;   /*-- 2x unit padding */
+    text-align: center;
+
+    /*border: 1px solid #fff;*/
+  }
+
+  #info-section-about li{
+    display: block;
+    margin: 5px;  /*-- 2x unit margin */
+
+    color: #fff;
+  }
+
+  #info-section-about a{
+    color: #999696;
+  }
+
+  #info-section-about a:hover{
+    color: #00AEEF;
+  }
+
+  #info-section-about #heading{
+    color: #eaeaea;
+    font-weight: 600;
+  }
+
+  #info-section-address {
+    grid-area: info-section-address;
+    width: 100%;
+    height: auto;
+
+    margin: 0px 0px 0px 0px;   /*-- 2x unit margin */
+    padding-top: 20px;
+    margin-bottom: 10px;
+
+    border-top: 1.5px dashed #342d2e;
+
+    /*border: 1px solid #f2ff22;*/
+  }
+
+  #info-section-address img {
+    display: block;
+    height: 10vh;
+    min-height: 111px;
+    margin: 0 auto;
+    margin-bottom: 5px;
+
+  }
+
+  #info-section-address p {
+    display: block;
+    margin: 2px auto;
+    letter-spacing: 3px;
+
+    color: #999696;
+
+    /*border: 1px solid #fff;*/
+  }
+
+  #info-section-address p b {
+    color: #bcbcbc;
+
+    /*border: 1px solid #fff;*/
+  }
+
+  .share-copyright-section {
+    grid-area: share-copyright-section;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: #342d2e;
+
+    /*-- set as grid  --*/
+    display: grid;
+
+    /*-- set as 12-column grid  --*/
+    grid-template-rows:  [start] 70% [middle] 30% [end];
+    grid-column-gap: 2px;
+
+    /* set grid area */
+    grid-template-areas: "ul"
+                         "copyright";
+
+
+
+    /*border: 1px solid #e4f4d4;*/
+  }
+
+  .share-copyright-section ul {
+    grid-area: ul;
+    align-self: center;
+
+    font-size: .75em;
+
+    padding-top: 10px;
+
+    width: 100%;
+
+    /*border: 1px solid #f2ff22;*/
+
+  }
+
+  .share-copyright-section li {
+    display: inline;
+    float: left;
+    color: #706c6c;
+
+    /*border: 1px solid #f2ffff;*/
+  }
+
+  .share-copyright-section .title {
+    margin-left: 7px;
+  }
+
+  .social {
+    margin-left: 20px;
+  }
+
+.share-copyright-section a {
+    align-self: center;
+
+    color: #c2c0c0;
+
+    /*border: 1px solid #f2ffff;*/
+  }
+
+  .share-copyright-section p {
+    grid-area: copyright;
+
+    align-self: center;
+
+    width: 100%;
+
+    color: #706c6c;
+
+    font-size: .7em;
+
+    /*border: 1px solid #f2ffff;*/
+  }
