@@ -22,7 +22,7 @@ Kivy-Garden==0.1.4
 msgpack==0.6.1
 mysqlclient==1.4.2.post1
 pipenv==2018.7.1
-protobuf==3.7.0
+protobuf==3.15.0
 pyasn1==0.4.5
 pyasn1-modules==0.2.4
 Pygments==2.4.2
